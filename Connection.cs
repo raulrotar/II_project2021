@@ -12,7 +12,7 @@ namespace ProiectII
 
         //raul:  ROG-GL703GM
         //adelin: DESKTOP-50EC7V7
-
+       
         public bool Open()
         {
             try
