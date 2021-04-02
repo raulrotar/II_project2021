@@ -43,7 +43,6 @@ namespace ProiectII
             using (AddNewUser nu = new AddNewUser())
             {
                 nu.ShowDialog();
-
             }
         }
 
