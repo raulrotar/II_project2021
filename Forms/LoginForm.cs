@@ -187,7 +187,7 @@ namespace ProiectII
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex);
+                    MessageBox.Show("Connection Error!","Information");
                 }
             }
         }
