@@ -17,19 +17,16 @@ namespace ProiectII.Forms
             InitializeComponent();
         }
 
-        
-      
-
         private void ResetPasword_Load(object sender, EventArgs e)
         {
-
+            emailComboBox.SelectedIndex = 0;
         }
 
         
         #region Insert Email TextBox
           private void IE_Click(object sender, MouseEventArgs e)
         {
-            if (txtBox_InsertEmail.Text == "someone@example.com")
+            if (txtBox_InsertEmail.Text == "Insert Email")
             {
                 txtBox_InsertEmail.Text = "";
             }
@@ -38,7 +35,7 @@ namespace ProiectII.Forms
 
         private void IE_Enter(object sender, EventArgs e)
         {
-            if (txtBox_InsertEmail.Text == "someone@example.com")
+            if (txtBox_InsertEmail.Text == "Insert Email")
             {
                 txtBox_InsertEmail.Text = "";
             }
@@ -48,7 +45,7 @@ namespace ProiectII.Forms
         {
             if (txtBox_InsertEmail.Text == "")
             {
-                txtBox_InsertEmail.Text = "someone@example.com";
+                txtBox_InsertEmail.Text = "Insert Email";
             }
         }
 
@@ -87,19 +84,19 @@ namespace ProiectII.Forms
         {
             if (txtBox_Password.Text == "")
             {
-                txtBox_Password.Text = "Password";
+                txtBox_Password.Text = "New Password";
             }
         }
         private void NP_Click(object sender, MouseEventArgs e)
         {
-            if (txtBox_Password.Text == "Password")
+            if (txtBox_Password.Text == "New Password")
             {
                 txtBox_Password.Text = "";
             }
         }
         private void NP_Enter(object sender, EventArgs e)
         {
-            if (txtBox_Password.Text == "Password")
+            if (txtBox_Password.Text == "New Password")
             {
                 txtBox_Password.Text = "";
             }
@@ -111,7 +108,7 @@ namespace ProiectII.Forms
         #region Confirm Password TextBox
         private void CP_Enter(object sender, EventArgs e)
         {
-            if (txtBox_ConfirmPassword.Text == "Confirm Password")
+            if (txtBox_ConfirmPassword.Text == "Confirm New Password")
             {
                 txtBox_ConfirmPassword.Text = "";
             }
@@ -120,13 +117,13 @@ namespace ProiectII.Forms
         {
             if (txtBox_ConfirmPassword.Text == "")
             {
-                txtBox_ConfirmPassword.Text = "Confirm Password";
+                txtBox_ConfirmPassword.Text = "Confirm New Password";
             }
         }
 
         private void CP_Click(object sender, MouseEventArgs e)
         {
-            if (txtBox_ConfirmPassword.Text == "Confirm Password")
+            if (txtBox_ConfirmPassword.Text == "Confirm New Password")
             {
                 txtBox_ConfirmPassword.Text = "";
             }
@@ -168,22 +165,25 @@ namespace ProiectII.Forms
 
         
 
-        private void txtBox_InsertEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btn_resetFields_Click_1(object sender, EventArgs e)
         {
-            txtBox_InsertEmail.Text = "someone@example.com";
+            txtBox_InsertEmail.Text = "Insert Email";
             txtBox_SCode.Text = "Security Code";
-            txtBox_Password.Text = "Password";
-            txtBox_ConfirmPassword.Text = "Confirm Password";
+            txtBox_Password.Text = "New Password";
+            txtBox_ConfirmPassword.Text = "Confirm New Password";
+            emailComboBox.SelectedIndex = 0;
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox7_MouseClick(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("The Security code chosen when the account was created!",pictureBox7);
         }
     }
 }
