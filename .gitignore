@@ -6,3 +6,4 @@ obj/
 *.sln
 
 test2.txt
+Connection.cs
