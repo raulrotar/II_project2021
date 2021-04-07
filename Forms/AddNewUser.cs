@@ -295,7 +295,10 @@ namespace ProiectII.Forms
                 for (int i = 0; i < set.Tables[0].Rows.Count; i++)
                 {
                     string fullName = (set.Tables[0].Rows[i][0] + " " + set.Tables[0].Rows[i][1]);
-                    if (comboBox_ShowDoctors.Text != fullName)
+                    if (comboBox_ShowDoctors.Items.Contains(fullName)) 
+                    {
+                    
+                    }else
                     {
                        comboBox_ShowDoctors.Items.Add(set.Tables[0].Rows[i][0] + " " + set.Tables[0].Rows[i][1]);
                     }
