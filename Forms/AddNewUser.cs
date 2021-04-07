@@ -13,7 +13,6 @@ namespace ProiectII.Forms
 {
     public partial class AddNewUser : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-1LEIQIA;Initial Catalog=DentalApp1;Integrated Security=True");
         public AddNewUser()
         {
             InitializeComponent();
@@ -285,23 +284,24 @@ namespace ProiectII.Forms
 
         private void PopulateDoctorsComboBox()
         {
+            Connection conn = new Connection();
             try
             {
-               con.Open();
-               SqlCommand sc = new SqlCommand("select Nume,Prenume from dbo.Doctori",con);
-               SqlDataAdapter dataAdapter = new SqlDataAdapter(sc);
-               DataSet dataSet = new DataSet();
-               dataAdapter.Fill(dataSet);
-                for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+               conn.Open();
+                string query = "select Nume,Prenume from dbo.Doctori";
+                DataSet set;
+                set = conn.ExecuteDataSet(query);
+              
+                for (int i = 0; i < set.Tables[0].Rows.Count; i++)
                 {
-                    string fullName = (dataSet.Tables[0].Rows[i][0] + " " + dataSet.Tables[0].Rows[i][1]);
+                    string fullName = (set.Tables[0].Rows[i][0] + " " + set.Tables[0].Rows[i][1]);
                     if (comboBox_ShowDoctors.Text != fullName)
                     {
-                       comboBox_ShowDoctors.Items.Add(dataSet.Tables[0].Rows[i][0] + " " + dataSet.Tables[0].Rows[i][1]);
+                       comboBox_ShowDoctors.Items.Add(set.Tables[0].Rows[i][0] + " " + set.Tables[0].Rows[i][1]);
                     }
                 }
                 comboBox_ShowDoctors.SelectedIndex = 0;
-                con.Close();
+                conn.Close();
             }
             catch (Exception)
             {
