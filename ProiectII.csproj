@@ -73,6 +73,42 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\UC_CreateNewAppointment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_CreateNewAppointment.Designer.cs">
+      <DependentUpon>UC_CreateNewAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_CurrentVisit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_CurrentVisit.Designer.cs">
+      <DependentUpon>UC_CurrentVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_LogisticalChanges.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_LogisticalChanges.Designer.cs">
+      <DependentUpon>UC_LogisticalChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_ModifyExistingAppointment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_ModifyExistingAppointment.Designer.cs">
+      <DependentUpon>UC_ModifyExistingAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_VisualizeAllAppointments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_VisualizeAllAppointments.Designer.cs">
+      <DependentUpon>UC_VisualizeAllAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_VisualizeAllVisits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_VisualizeAllVisits.Designer.cs">
+      <DependentUpon>UC_VisualizeAllVisits.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AddNewUser.resx">
       <DependentUpon>AddNewUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +130,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\UC_CreateNewAppointment.resx">
+      <DependentUpon>UC_CreateNewAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_CurrentVisit.resx">
+      <DependentUpon>UC_CurrentVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_LogisticalChanges.resx">
+      <DependentUpon>UC_LogisticalChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_ModifyExistingAppointment.resx">
+      <DependentUpon>UC_ModifyExistingAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_VisualizeAllAppointments.resx">
+      <DependentUpon>UC_VisualizeAllAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_VisualizeAllVisits.resx">
+      <DependentUpon>UC_VisualizeAllVisits.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,8 +161,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserControls\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
