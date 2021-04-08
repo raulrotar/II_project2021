@@ -202,6 +202,12 @@ namespace ProiectII
             txtBox_Password.PasswordChar = '*';
         }
 
-       
+        private void btn_QuickAccess_Click(object sender, EventArgs e)
+        {
+            using( MainApp mainApp = new MainApp())
+            {
+                mainApp.ShowDialog();
+            }
+        }
     }
 }
