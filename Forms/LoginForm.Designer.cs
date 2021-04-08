@@ -46,6 +46,7 @@ namespace ProiectII
             this.btn_Login = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_QuickAccess = new System.Windows.Forms.Button();
             this.loginGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -246,12 +247,23 @@ namespace ProiectII
             this.label1.TabIndex = 3;
             this.label1.Text = "Insert nume grup here";
             // 
+            // btn_QuickAccess
+            // 
+            this.btn_QuickAccess.Location = new System.Drawing.Point(139, 440);
+            this.btn_QuickAccess.Name = "btn_QuickAccess";
+            this.btn_QuickAccess.Size = new System.Drawing.Size(194, 60);
+            this.btn_QuickAccess.TabIndex = 4;
+            this.btn_QuickAccess.Text = "Quick Access to main menu form";
+            this.btn_QuickAccess.UseVisualStyleBackColor = true;
+            this.btn_QuickAccess.Click += new System.EventHandler(this.btn_QuickAccess_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.Controls.Add(this.btn_QuickAccess);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.loginGB);
@@ -288,6 +300,7 @@ namespace ProiectII
         private System.Windows.Forms.TextBox txtBox_Username;
         public System.Windows.Forms.TextBox txtBox_Password;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btn_QuickAccess;
     }
 }
 

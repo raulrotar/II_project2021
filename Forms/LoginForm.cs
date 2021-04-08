@@ -139,5 +139,10 @@ namespace ProiectII
         {
 
         }
+
+        private void btn_QuickAccess_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
 }
