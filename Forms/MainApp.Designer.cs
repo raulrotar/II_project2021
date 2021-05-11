@@ -55,9 +55,9 @@ namespace ProiectII.Forms
             this.LeftPannel.Controls.Add(this.btn_ToateProgramarile);
             this.LeftPannel.Controls.Add(this.btn_CreazaProgramare);
             this.LeftPannel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LeftPannel.Location = new System.Drawing.Point(0, 148);
+            this.LeftPannel.Location = new System.Drawing.Point(0, 149);
             this.LeftPannel.Name = "LeftPannel";
-            this.LeftPannel.Size = new System.Drawing.Size(280, 663);
+            this.LeftPannel.Size = new System.Drawing.Size(280, 884);
             this.LeftPannel.TabIndex = 1;
             // 
             // btn_ModificaProgramare
@@ -179,7 +179,7 @@ namespace ProiectII.Forms
             this.Up_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Up_Panel.Location = new System.Drawing.Point(0, 0);
             this.Up_Panel.Name = "Up_Panel";
-            this.Up_Panel.Size = new System.Drawing.Size(1393, 148);
+            this.Up_Panel.Size = new System.Drawing.Size(1901, 149);
             this.Up_Panel.TabIndex = 0;
             this.Up_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Up_Panel_Paint);
             // 
@@ -188,17 +188,19 @@ namespace ProiectII.Forms
             this.Main_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Main_Panel.AutoSize = true;
             this.Main_Panel.BackColor = System.Drawing.Color.White;
-            this.Main_Panel.Location = new System.Drawing.Point(278, 149);
+            this.Main_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Main_Panel.Location = new System.Drawing.Point(279, 148);
             this.Main_Panel.Name = "Main_Panel";
-            this.Main_Panel.Size = new System.Drawing.Size(1118, 661);
+            this.Main_Panel.Size = new System.Drawing.Size(1622, 886);
             this.Main_Panel.TabIndex = 2;
             // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1393, 811);
+            this.ClientSize = new System.Drawing.Size(1901, 1033);
             this.Controls.Add(this.Main_Panel);
             this.Controls.Add(this.LeftPannel);
             this.Controls.Add(this.Up_Panel);
@@ -213,6 +215,7 @@ namespace ProiectII.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Up_Panel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
