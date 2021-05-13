@@ -61,20 +61,20 @@ namespace ProiectII.UserControls
             this.btn_ClearFields = new System.Windows.Forms.Button();
             this.btn_FinishVisit = new System.Windows.Forms.Button();
             this.grpBox_PatientInfo = new System.Windows.Forms.GroupBox();
-            this.grpBox_VisitInfo = new System.Windows.Forms.GroupBox();
-            this.txtBox_EmailAddress = new System.Windows.Forms.TextBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.comboBox_Email = new System.Windows.Forms.ComboBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.txtBox_PatientLName = new System.Windows.Forms.TextBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.txtBox_PatientAge = new System.Windows.Forms.TextBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.txtBox_PatientPhoneNr = new System.Windows.Forms.TextBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.txtBox_PatientAge = new System.Windows.Forms.TextBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.txtBox_PatientLName = new System.Windows.Forms.TextBox();
+            this.comboBox_Email = new System.Windows.Forms.ComboBox();
+            this.txtBox_EmailAddress = new System.Windows.Forms.TextBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.grpBox_VisitInfo = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -86,11 +86,11 @@ namespace ProiectII.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.grpBox_PatientInfo.SuspendLayout();
-            this.grpBox_VisitInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.grpBox_VisitInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,7 +101,7 @@ namespace ProiectII.UserControls
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1630, 115);
+            this.panel1.Size = new System.Drawing.Size(1630, 150);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -146,7 +146,7 @@ namespace ProiectII.UserControls
             this.txtBox_PatientFName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_PatientFName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_PatientFName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_PatientFName.Location = new System.Drawing.Point(71, 58);
+            this.txtBox_PatientFName.Location = new System.Drawing.Point(134, 58);
             this.txtBox_PatientFName.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_PatientFName.Name = "txtBox_PatientFName";
             this.txtBox_PatientFName.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -214,7 +214,7 @@ namespace ProiectII.UserControls
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel2.Location = new System.Drawing.Point(69, 90);
+            this.panel2.Location = new System.Drawing.Point(132, 90);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(225, 1);
@@ -269,7 +269,7 @@ namespace ProiectII.UserControls
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(78, 51);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
@@ -282,7 +282,7 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_PatientNIN.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_PatientNIN.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_PatientNIN.Location = new System.Drawing.Point(1020, 55);
+            this.txtBox_PatientNIN.Location = new System.Drawing.Point(1083, 55);
             this.txtBox_PatientNIN.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_PatientNIN.Multiline = true;
             this.txtBox_PatientNIN.Name = "txtBox_PatientNIN";
@@ -294,7 +294,7 @@ namespace ProiectII.UserControls
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel6.Location = new System.Drawing.Point(1013, 88);
+            this.panel6.Location = new System.Drawing.Point(1076, 88);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(224, 1);
@@ -303,7 +303,7 @@ namespace ProiectII.UserControls
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(964, 51);
+            this.pictureBox6.Location = new System.Drawing.Point(1027, 51);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(40, 40);
@@ -420,7 +420,7 @@ namespace ProiectII.UserControls
             this.btn_ClearFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ClearFields.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ClearFields.ForeColor = System.Drawing.Color.White;
-            this.btn_ClearFields.Location = new System.Drawing.Point(345, 757);
+            this.btn_ClearFields.Location = new System.Drawing.Point(353, 850);
             this.btn_ClearFields.Name = "btn_ClearFields";
             this.btn_ClearFields.Size = new System.Drawing.Size(165, 60);
             this.btn_ClearFields.TabIndex = 42;
@@ -434,7 +434,7 @@ namespace ProiectII.UserControls
             this.btn_FinishVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_FinishVisit.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FinishVisit.ForeColor = System.Drawing.Color.White;
-            this.btn_FinishVisit.Location = new System.Drawing.Point(1050, 757);
+            this.btn_FinishVisit.Location = new System.Drawing.Point(1058, 850);
             this.btn_FinishVisit.Name = "btn_FinishVisit";
             this.btn_FinishVisit.Size = new System.Drawing.Size(165, 60);
             this.btn_FinishVisit.TabIndex = 43;
@@ -464,12 +464,166 @@ namespace ProiectII.UserControls
             this.grpBox_PatientInfo.Controls.Add(this.txtBox_PatientNIN);
             this.grpBox_PatientInfo.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBox_PatientInfo.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.grpBox_PatientInfo.Location = new System.Drawing.Point(25, 133);
+            this.grpBox_PatientInfo.Location = new System.Drawing.Point(30, 226);
             this.grpBox_PatientInfo.Name = "grpBox_PatientInfo";
             this.grpBox_PatientInfo.Size = new System.Drawing.Size(1572, 262);
             this.grpBox_PatientInfo.TabIndex = 44;
             this.grpBox_PatientInfo.TabStop = false;
             this.grpBox_PatientInfo.Text = "Patient Personal Information";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(524, 162);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox13.TabIndex = 56;
+            this.pictureBox13.TabStop = false;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel13.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel13.Location = new System.Drawing.Point(578, 200);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(265, 1);
+            this.panel13.TabIndex = 57;
+            // 
+            // txtBox_PatientPhoneNr
+            // 
+            this.txtBox_PatientPhoneNr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBox_PatientPhoneNr.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_PatientPhoneNr.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtBox_PatientPhoneNr.Location = new System.Drawing.Point(580, 169);
+            this.txtBox_PatientPhoneNr.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBox_PatientPhoneNr.Name = "txtBox_PatientPhoneNr";
+            this.txtBox_PatientPhoneNr.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBox_PatientPhoneNr.Size = new System.Drawing.Size(266, 28);
+            this.txtBox_PatientPhoneNr.TabIndex = 58;
+            this.txtBox_PatientPhoneNr.Text = "Patient Phone Number";
+            this.txtBox_PatientPhoneNr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(78, 162);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(40, 39);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 53;
+            this.pictureBox12.TabStop = false;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel12.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel12.Location = new System.Drawing.Point(132, 201);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(225, 1);
+            this.panel12.TabIndex = 54;
+            // 
+            // txtBox_PatientAge
+            // 
+            this.txtBox_PatientAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBox_PatientAge.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_PatientAge.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtBox_PatientAge.Location = new System.Drawing.Point(134, 169);
+            this.txtBox_PatientAge.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBox_PatientAge.Name = "txtBox_PatientAge";
+            this.txtBox_PatientAge.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBox_PatientAge.Size = new System.Drawing.Size(223, 28);
+            this.txtBox_PatientAge.TabIndex = 55;
+            this.txtBox_PatientAge.Text = "Patient Age";
+            this.txtBox_PatientAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(524, 51);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox11.TabIndex = 50;
+            this.pictureBox11.TabStop = false;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel11.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel11.Location = new System.Drawing.Point(578, 90);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(225, 1);
+            this.panel11.TabIndex = 51;
+            // 
+            // txtBox_PatientLName
+            // 
+            this.txtBox_PatientLName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBox_PatientLName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_PatientLName.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtBox_PatientLName.Location = new System.Drawing.Point(580, 58);
+            this.txtBox_PatientLName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBox_PatientLName.Name = "txtBox_PatientLName";
+            this.txtBox_PatientLName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBox_PatientLName.Size = new System.Drawing.Size(223, 28);
+            this.txtBox_PatientLName.TabIndex = 52;
+            this.txtBox_PatientLName.Text = "Patient Last Name";
+            this.txtBox_PatientLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // comboBox_Email
+            // 
+            this.comboBox_Email.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Email.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_Email.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Email.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.comboBox_Email.FormattingEnabled = true;
+            this.comboBox_Email.Items.AddRange(new object[] {
+            "@yahoo.com",
+            "@gmail.com"});
+            this.comboBox_Email.Location = new System.Drawing.Point(1297, 163);
+            this.comboBox_Email.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox_Email.Name = "comboBox_Email";
+            this.comboBox_Email.Size = new System.Drawing.Size(175, 38);
+            this.comboBox_Email.TabIndex = 49;
+            // 
+            // txtBox_EmailAddress
+            // 
+            this.txtBox_EmailAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBox_EmailAddress.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_EmailAddress.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtBox_EmailAddress.Location = new System.Drawing.Point(1075, 170);
+            this.txtBox_EmailAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBox_EmailAddress.Multiline = true;
+            this.txtBox_EmailAddress.Name = "txtBox_EmailAddress";
+            this.txtBox_EmailAddress.Size = new System.Drawing.Size(223, 28);
+            this.txtBox_EmailAddress.TabIndex = 48;
+            this.txtBox_EmailAddress.Text = "Email Address";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel10.Location = new System.Drawing.Point(1070, 202);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(406, 1);
+            this.panel10.TabIndex = 47;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(1027, 166);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox10.TabIndex = 46;
+            this.pictureBox10.TabStop = false;
             // 
             // grpBox_VisitInfo
             // 
@@ -495,166 +649,12 @@ namespace ProiectII.UserControls
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox7);
             this.grpBox_VisitInfo.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBox_VisitInfo.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.grpBox_VisitInfo.Location = new System.Drawing.Point(25, 434);
+            this.grpBox_VisitInfo.Location = new System.Drawing.Point(30, 527);
             this.grpBox_VisitInfo.Name = "grpBox_VisitInfo";
             this.grpBox_VisitInfo.Size = new System.Drawing.Size(1572, 262);
             this.grpBox_VisitInfo.TabIndex = 45;
             this.grpBox_VisitInfo.TabStop = false;
             this.grpBox_VisitInfo.Text = "Visit Information";
-            // 
-            // txtBox_EmailAddress
-            // 
-            this.txtBox_EmailAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_EmailAddress.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_EmailAddress.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_EmailAddress.Location = new System.Drawing.Point(1012, 170);
-            this.txtBox_EmailAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_EmailAddress.Multiline = true;
-            this.txtBox_EmailAddress.Name = "txtBox_EmailAddress";
-            this.txtBox_EmailAddress.Size = new System.Drawing.Size(223, 24);
-            this.txtBox_EmailAddress.TabIndex = 48;
-            this.txtBox_EmailAddress.Text = "Email Address";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel10.Location = new System.Drawing.Point(1007, 202);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(406, 1);
-            this.panel10.TabIndex = 47;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(964, 166);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox10.TabIndex = 46;
-            this.pictureBox10.TabStop = false;
-            // 
-            // comboBox_Email
-            // 
-            this.comboBox_Email.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Email.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_Email.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Email.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.comboBox_Email.FormattingEnabled = true;
-            this.comboBox_Email.Items.AddRange(new object[] {
-            "@yahoo.com",
-            "@gmail.com"});
-            this.comboBox_Email.Location = new System.Drawing.Point(1234, 163);
-            this.comboBox_Email.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox_Email.Name = "comboBox_Email";
-            this.comboBox_Email.Size = new System.Drawing.Size(175, 38);
-            this.comboBox_Email.TabIndex = 49;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(461, 51);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox11.TabIndex = 50;
-            this.pictureBox11.TabStop = false;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel11.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel11.Location = new System.Drawing.Point(515, 90);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(225, 1);
-            this.panel11.TabIndex = 51;
-            // 
-            // txtBox_PatientLName
-            // 
-            this.txtBox_PatientLName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_PatientLName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_PatientLName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_PatientLName.Location = new System.Drawing.Point(517, 58);
-            this.txtBox_PatientLName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_PatientLName.Name = "txtBox_PatientLName";
-            this.txtBox_PatientLName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBox_PatientLName.Size = new System.Drawing.Size(223, 28);
-            this.txtBox_PatientLName.TabIndex = 52;
-            this.txtBox_PatientLName.Text = "Patient Last Name";
-            this.txtBox_PatientLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(15, 162);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox12.TabIndex = 53;
-            this.pictureBox12.TabStop = false;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel12.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel12.Location = new System.Drawing.Point(69, 201);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(225, 1);
-            this.panel12.TabIndex = 54;
-            // 
-            // txtBox_PatientAge
-            // 
-            this.txtBox_PatientAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_PatientAge.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_PatientAge.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_PatientAge.Location = new System.Drawing.Point(71, 169);
-            this.txtBox_PatientAge.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_PatientAge.Name = "txtBox_PatientAge";
-            this.txtBox_PatientAge.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBox_PatientAge.Size = new System.Drawing.Size(223, 28);
-            this.txtBox_PatientAge.TabIndex = 55;
-            this.txtBox_PatientAge.Text = "Patient Age";
-            this.txtBox_PatientAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(461, 162);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox13.TabIndex = 56;
-            this.pictureBox13.TabStop = false;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel13.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel13.Location = new System.Drawing.Point(515, 200);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(265, 1);
-            this.panel13.TabIndex = 57;
-            // 
-            // txtBox_PatientPhoneNr
-            // 
-            this.txtBox_PatientPhoneNr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_PatientPhoneNr.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_PatientPhoneNr.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_PatientPhoneNr.Location = new System.Drawing.Point(517, 169);
-            this.txtBox_PatientPhoneNr.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_PatientPhoneNr.Name = "txtBox_PatientPhoneNr";
-            this.txtBox_PatientPhoneNr.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBox_PatientPhoneNr.Size = new System.Drawing.Size(266, 28);
-            this.txtBox_PatientPhoneNr.TabIndex = 58;
-            this.txtBox_PatientPhoneNr.Text = "Patient Phone Number";
-            this.txtBox_PatientPhoneNr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UC_CurrentVisit
             // 
@@ -668,7 +668,7 @@ namespace ProiectII.UserControls
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_CurrentVisit";
-            this.Size = new System.Drawing.Size(1630, 850);
+            this.Size = new System.Drawing.Size(1630, 1000);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -682,12 +682,12 @@ namespace ProiectII.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.grpBox_PatientInfo.ResumeLayout(false);
             this.grpBox_PatientInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.grpBox_VisitInfo.ResumeLayout(false);
             this.grpBox_VisitInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
 
         }
