@@ -32,13 +32,13 @@ namespace ProiectII.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApp));
             this.LeftPannel = new System.Windows.Forms.Panel();
             this.btn_SchimbariLogistice = new System.Windows.Forms.Button();
-            this.btn_ModificaProgramare = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_ToateProgramarile = new System.Windows.Forms.Button();
             this.btn_VizitaCurenta = new System.Windows.Forms.Button();
             this.btn_CautaVizite = new System.Windows.Forms.Button();
-            this.btn_ToateProgramarile = new System.Windows.Forms.Button();
             this.btn_CreazaProgramare = new System.Windows.Forms.Button();
             this.Main_Panel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_ModificaProgramare = new System.Windows.Forms.Button();
             this.LeftPannel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,40 +46,19 @@ namespace ProiectII.Forms
             // LeftPannel
             // 
             this.LeftPannel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.LeftPannel.Controls.Add(this.btn_ModificaProgramare);
             this.LeftPannel.Controls.Add(this.btn_SchimbariLogistice);
             this.LeftPannel.Controls.Add(this.pictureBox1);
             this.LeftPannel.Controls.Add(this.btn_ToateProgramarile);
-            this.LeftPannel.Controls.Add(this.btn_ModificaProgramare);
             this.LeftPannel.Controls.Add(this.btn_VizitaCurenta);
             this.LeftPannel.Controls.Add(this.btn_CautaVizite);
             this.LeftPannel.Controls.Add(this.btn_CreazaProgramare);
             this.LeftPannel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPannel.Location = new System.Drawing.Point(0, 0);
             this.LeftPannel.Name = "LeftPannel";
-
             this.LeftPannel.Size = new System.Drawing.Size(280, 1001);
-
             this.LeftPannel.TabIndex = 1;
-        
-
-            // btn_SchimbariLogistice
             // 
-            this.btn_SchimbariLogistice.FlatAppearance.BorderSize = 0;
-            this.btn_SchimbariLogistice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SchimbariLogistice.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SchimbariLogistice.ForeColor = System.Drawing.Color.White;
-            this.btn_SchimbariLogistice.Image = ((System.Drawing.Image)(resources.GetObject("btn_SchimbariLogistice.Image")));
-            this.btn_SchimbariLogistice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SchimbariLogistice.Location = new System.Drawing.Point(0, 729);
-            this.btn_SchimbariLogistice.Name = "btn_SchimbariLogistice";
-            this.btn_SchimbariLogistice.Size = new System.Drawing.Size(278, 140);
-            this.btn_SchimbariLogistice.TabIndex = 7;
-            this.btn_SchimbariLogistice.Text = "     Logistical Changes";
-            this.btn_SchimbariLogistice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_SchimbariLogistice.UseVisualStyleBackColor = true;
-            this.btn_SchimbariLogistice.Click += new System.EventHandler(this.btn_SchimbariLogistice_Click);
-            // 
-
             // btn_SchimbariLogistice
             // 
             this.btn_SchimbariLogistice.FlatAppearance.BorderSize = 0;
@@ -96,10 +75,33 @@ namespace ProiectII.Forms
             this.btn_SchimbariLogistice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SchimbariLogistice.UseVisualStyleBackColor = true;
             this.btn_SchimbariLogistice.Click += new System.EventHandler(this.btn_SchimbariLogistice_Click);
-
-
-            this.btn_ModificaProgramare.Location = new System.Drawing.Point(0, 730);
-
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_ToateProgramarile
+            // 
+            this.btn_ToateProgramarile.FlatAppearance.BorderSize = 0;
+            this.btn_ToateProgramarile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ToateProgramarile.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ToateProgramarile.ForeColor = System.Drawing.Color.White;
+            this.btn_ToateProgramarile.Image = ((System.Drawing.Image)(resources.GetObject("btn_ToateProgramarile.Image")));
+            this.btn_ToateProgramarile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ToateProgramarile.Location = new System.Drawing.Point(-1, 149);
+            this.btn_ToateProgramarile.Name = "btn_ToateProgramarile";
+            this.btn_ToateProgramarile.Size = new System.Drawing.Size(278, 140);
+            this.btn_ToateProgramarile.TabIndex = 4;
+            this.btn_ToateProgramarile.Text = "     Visualize All          Appointments";
+            this.btn_ToateProgramarile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_ToateProgramarile.UseVisualStyleBackColor = true;
+            this.btn_ToateProgramarile.Click += new System.EventHandler(this.btn_ToateProgramarile_Click);
             // 
             // btn_VizitaCurenta
             // 
@@ -135,23 +137,6 @@ namespace ProiectII.Forms
             this.btn_CautaVizite.UseVisualStyleBackColor = true;
             this.btn_CautaVizite.Click += new System.EventHandler(this.btn_CautaVizite_Click);
             // 
-            // btn_ToateProgramarile
-            // 
-            this.btn_ToateProgramarile.FlatAppearance.BorderSize = 0;
-            this.btn_ToateProgramarile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ToateProgramarile.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ToateProgramarile.ForeColor = System.Drawing.Color.White;
-            this.btn_ToateProgramarile.Image = ((System.Drawing.Image)(resources.GetObject("btn_ToateProgramarile.Image")));
-            this.btn_ToateProgramarile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ToateProgramarile.Location = new System.Drawing.Point(-1, 149);
-            this.btn_ToateProgramarile.Name = "btn_ToateProgramarile";
-            this.btn_ToateProgramarile.Size = new System.Drawing.Size(278, 140);
-            this.btn_ToateProgramarile.TabIndex = 4;
-            this.btn_ToateProgramarile.Text = "     Visualize All          Appointments";
-            this.btn_ToateProgramarile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_ToateProgramarile.UseVisualStyleBackColor = true;
-            this.btn_ToateProgramarile.Click += new System.EventHandler(this.btn_ToateProgramarile_Click);
-            // 
             // btn_CreazaProgramare
             // 
             this.btn_CreazaProgramare.FlatAppearance.BorderSize = 0;
@@ -181,15 +166,22 @@ namespace ProiectII.Forms
             this.Main_Panel.Size = new System.Drawing.Size(1630, 1000);
             this.Main_Panel.TabIndex = 2;
             // 
-            // pictureBox1
+            // btn_ModificaProgramare
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(280, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btn_ModificaProgramare.FlatAppearance.BorderSize = 0;
+            this.btn_ModificaProgramare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ModificaProgramare.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ModificaProgramare.ForeColor = System.Drawing.Color.White;
+            this.btn_ModificaProgramare.Image = ((System.Drawing.Image)(resources.GetObject("btn_ModificaProgramare.Image")));
+            this.btn_ModificaProgramare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ModificaProgramare.Location = new System.Drawing.Point(1, 728);
+            this.btn_ModificaProgramare.Name = "btn_ModificaProgramare";
+            this.btn_ModificaProgramare.Size = new System.Drawing.Size(278, 140);
+            this.btn_ModificaProgramare.TabIndex = 8;
+            this.btn_ModificaProgramare.Text = "    Modify Existing Appointment";
+            this.btn_ModificaProgramare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_ModificaProgramare.UseVisualStyleBackColor = true;
+            this.btn_ModificaProgramare.Click += new System.EventHandler(this.btn_ModificaProgramare_Click_1);
             // 
             // MainApp
             // 
@@ -216,11 +208,11 @@ namespace ProiectII.Forms
         private System.Windows.Forms.Panel LeftPannel;
         private System.Windows.Forms.Button btn_VizitaCurenta;
         private System.Windows.Forms.Button btn_SchimbariLogistice;
-        private System.Windows.Forms.Button btn_ModificaProgramare;
         private System.Windows.Forms.Button btn_CreazaProgramare;
         private System.Windows.Forms.Button btn_ToateProgramarile;
         private System.Windows.Forms.Button btn_CautaVizite;
         private System.Windows.Forms.Panel Main_Panel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_ModificaProgramare;
     }
 }
