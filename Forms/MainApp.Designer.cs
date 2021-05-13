@@ -55,11 +55,13 @@ namespace ProiectII.Forms
             this.LeftPannel.Controls.Add(this.btn_ToateProgramarile);
             this.LeftPannel.Controls.Add(this.btn_CreazaProgramare);
             this.LeftPannel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LeftPannel.Location = new System.Drawing.Point(0, 148);
+            this.LeftPannel.Location = new System.Drawing.Point(0, 149);
             this.LeftPannel.Name = "LeftPannel";
+
             this.LeftPannel.Size = new System.Drawing.Size(280, 853);
             this.LeftPannel.TabIndex = 1;
-            // 
+        
+
             // btn_SchimbariLogistice
             // 
             this.btn_SchimbariLogistice.FlatAppearance.BorderSize = 0;
@@ -179,7 +181,9 @@ namespace ProiectII.Forms
             this.Up_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Up_Panel.Location = new System.Drawing.Point(0, 0);
             this.Up_Panel.Name = "Up_Panel";
+
             this.Up_Panel.Size = new System.Drawing.Size(1904, 148);
+
             this.Up_Panel.TabIndex = 0;
             this.Up_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Up_Panel_Paint);
             // 
@@ -193,14 +197,18 @@ namespace ProiectII.Forms
             this.Main_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Main_Panel.Location = new System.Drawing.Point(279, 148);
             this.Main_Panel.Name = "Main_Panel";
+
             this.Main_Panel.Size = new System.Drawing.Size(1629, 851);
+
             this.Main_Panel.TabIndex = 2;
             // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
+
             this.ClientSize = new System.Drawing.Size(1904, 1001);
+
             this.Controls.Add(this.Main_Panel);
             this.Controls.Add(this.LeftPannel);
             this.Controls.Add(this.Up_Panel);
