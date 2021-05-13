@@ -31,8 +31,8 @@ namespace ProiectII.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApp));
             this.LeftPannel = new System.Windows.Forms.Panel();
-            this.btn_ModificaProgramare = new System.Windows.Forms.Button();
             this.btn_SchimbariLogistice = new System.Windows.Forms.Button();
+            this.btn_ModificaProgramare = new System.Windows.Forms.Button();
             this.btn_VizitaCurenta = new System.Windows.Forms.Button();
             this.btn_CautaVizite = new System.Windows.Forms.Button();
             this.btn_ToateProgramarile = new System.Windows.Forms.Button();
@@ -59,8 +59,25 @@ namespace ProiectII.Forms
             this.LeftPannel.Name = "LeftPannel";
 
             this.LeftPannel.Size = new System.Drawing.Size(280, 853);
-
             this.LeftPannel.TabIndex = 1;
+        
+
+            // btn_SchimbariLogistice
+            // 
+            this.btn_SchimbariLogistice.FlatAppearance.BorderSize = 0;
+            this.btn_SchimbariLogistice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SchimbariLogistice.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SchimbariLogistice.ForeColor = System.Drawing.Color.White;
+            this.btn_SchimbariLogistice.Image = ((System.Drawing.Image)(resources.GetObject("btn_SchimbariLogistice.Image")));
+            this.btn_SchimbariLogistice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_SchimbariLogistice.Location = new System.Drawing.Point(0, 729);
+            this.btn_SchimbariLogistice.Name = "btn_SchimbariLogistice";
+            this.btn_SchimbariLogistice.Size = new System.Drawing.Size(278, 140);
+            this.btn_SchimbariLogistice.TabIndex = 7;
+            this.btn_SchimbariLogistice.Text = "     Logistical Changes";
+            this.btn_SchimbariLogistice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_SchimbariLogistice.UseVisualStyleBackColor = true;
+            this.btn_SchimbariLogistice.Click += new System.EventHandler(this.btn_SchimbariLogistice_Click);
             // 
             // btn_ModificaProgramare
             // 
@@ -78,23 +95,6 @@ namespace ProiectII.Forms
             this.btn_ModificaProgramare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ModificaProgramare.UseVisualStyleBackColor = true;
             this.btn_ModificaProgramare.Click += new System.EventHandler(this.btn_ModificaProgramare_Click);
-            // 
-            // btn_SchimbariLogistice
-            // 
-            this.btn_SchimbariLogistice.FlatAppearance.BorderSize = 0;
-            this.btn_SchimbariLogistice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SchimbariLogistice.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SchimbariLogistice.ForeColor = System.Drawing.Color.White;
-            this.btn_SchimbariLogistice.Image = ((System.Drawing.Image)(resources.GetObject("btn_SchimbariLogistice.Image")));
-            this.btn_SchimbariLogistice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SchimbariLogistice.Location = new System.Drawing.Point(0, 729);
-            this.btn_SchimbariLogistice.Name = "btn_SchimbariLogistice";
-            this.btn_SchimbariLogistice.Size = new System.Drawing.Size(278, 140);
-            this.btn_SchimbariLogistice.TabIndex = 7;
-            this.btn_SchimbariLogistice.Text = "     Logistical Changes";
-            this.btn_SchimbariLogistice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_SchimbariLogistice.UseVisualStyleBackColor = true;
-            this.btn_SchimbariLogistice.Click += new System.EventHandler(this.btn_SchimbariLogistice_Click);
             // 
             // btn_VizitaCurenta
             // 
