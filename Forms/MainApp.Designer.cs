@@ -56,9 +56,30 @@ namespace ProiectII.Forms
             this.LeftPannel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPannel.Location = new System.Drawing.Point(0, 0);
             this.LeftPannel.Name = "LeftPannel";
+
             this.LeftPannel.Size = new System.Drawing.Size(280, 1001);
+
             this.LeftPannel.TabIndex = 1;
+        
+
+            // btn_SchimbariLogistice
             // 
+            this.btn_SchimbariLogistice.FlatAppearance.BorderSize = 0;
+            this.btn_SchimbariLogistice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SchimbariLogistice.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SchimbariLogistice.ForeColor = System.Drawing.Color.White;
+            this.btn_SchimbariLogistice.Image = ((System.Drawing.Image)(resources.GetObject("btn_SchimbariLogistice.Image")));
+            this.btn_SchimbariLogistice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_SchimbariLogistice.Location = new System.Drawing.Point(0, 729);
+            this.btn_SchimbariLogistice.Name = "btn_SchimbariLogistice";
+            this.btn_SchimbariLogistice.Size = new System.Drawing.Size(278, 140);
+            this.btn_SchimbariLogistice.TabIndex = 7;
+            this.btn_SchimbariLogistice.Text = "     Logistical Changes";
+            this.btn_SchimbariLogistice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_SchimbariLogistice.UseVisualStyleBackColor = true;
+            this.btn_SchimbariLogistice.Click += new System.EventHandler(this.btn_SchimbariLogistice_Click);
+            // 
+
             // btn_SchimbariLogistice
             // 
             this.btn_SchimbariLogistice.FlatAppearance.BorderSize = 0;
@@ -75,23 +96,10 @@ namespace ProiectII.Forms
             this.btn_SchimbariLogistice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SchimbariLogistice.UseVisualStyleBackColor = true;
             this.btn_SchimbariLogistice.Click += new System.EventHandler(this.btn_SchimbariLogistice_Click);
-            // 
-            // btn_ModificaProgramare
-            // 
-            this.btn_ModificaProgramare.FlatAppearance.BorderSize = 0;
-            this.btn_ModificaProgramare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ModificaProgramare.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ModificaProgramare.ForeColor = System.Drawing.Color.White;
-            this.btn_ModificaProgramare.Image = ((System.Drawing.Image)(resources.GetObject("btn_ModificaProgramare.Image")));
-            this.btn_ModificaProgramare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+
             this.btn_ModificaProgramare.Location = new System.Drawing.Point(0, 730);
-            this.btn_ModificaProgramare.Name = "btn_ModificaProgramare";
-            this.btn_ModificaProgramare.Size = new System.Drawing.Size(278, 140);
-            this.btn_ModificaProgramare.TabIndex = 6;
-            this.btn_ModificaProgramare.Text = "     Modify Existing    Appointment";
-            this.btn_ModificaProgramare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_ModificaProgramare.UseVisualStyleBackColor = true;
-            this.btn_ModificaProgramare.Click += new System.EventHandler(this.btn_ModificaProgramare_Click);
+
             // 
             // btn_VizitaCurenta
             // 

@@ -16,5 +16,7 @@ namespace ProiectII.UserControls
         {
             InitializeComponent();
         }
+
+        
     }
 }
