@@ -48,8 +48,8 @@ namespace ProiectII.Forms
             // LeftPannel
             // 
             this.LeftPannel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.LeftPannel.Controls.Add(this.btn_ModificaProgramare);
             this.LeftPannel.Controls.Add(this.btn_SchimbariLogistice);
+            this.LeftPannel.Controls.Add(this.btn_ModificaProgramare);
             this.LeftPannel.Controls.Add(this.btn_VizitaCurenta);
             this.LeftPannel.Controls.Add(this.btn_CautaVizite);
             this.LeftPannel.Controls.Add(this.btn_ToateProgramarile);
@@ -57,7 +57,9 @@ namespace ProiectII.Forms
             this.LeftPannel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPannel.Location = new System.Drawing.Point(0, 149);
             this.LeftPannel.Name = "LeftPannel";
-            this.LeftPannel.Size = new System.Drawing.Size(280, 884);
+
+            this.LeftPannel.Size = new System.Drawing.Size(280, 853);
+
             this.LeftPannel.TabIndex = 1;
             // 
             // btn_ModificaProgramare
@@ -68,9 +70,9 @@ namespace ProiectII.Forms
             this.btn_ModificaProgramare.ForeColor = System.Drawing.Color.White;
             this.btn_ModificaProgramare.Image = ((System.Drawing.Image)(resources.GetObject("btn_ModificaProgramare.Image")));
             this.btn_ModificaProgramare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ModificaProgramare.Location = new System.Drawing.Point(-1, 423);
+            this.btn_ModificaProgramare.Location = new System.Drawing.Point(0, 580);
             this.btn_ModificaProgramare.Name = "btn_ModificaProgramare";
-            this.btn_ModificaProgramare.Size = new System.Drawing.Size(278, 108);
+            this.btn_ModificaProgramare.Size = new System.Drawing.Size(278, 140);
             this.btn_ModificaProgramare.TabIndex = 6;
             this.btn_ModificaProgramare.Text = "     Modify Existing    Appointment";
             this.btn_ModificaProgramare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -85,9 +87,9 @@ namespace ProiectII.Forms
             this.btn_SchimbariLogistice.ForeColor = System.Drawing.Color.White;
             this.btn_SchimbariLogistice.Image = ((System.Drawing.Image)(resources.GetObject("btn_SchimbariLogistice.Image")));
             this.btn_SchimbariLogistice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SchimbariLogistice.Location = new System.Drawing.Point(0, 537);
+            this.btn_SchimbariLogistice.Location = new System.Drawing.Point(0, 729);
             this.btn_SchimbariLogistice.Name = "btn_SchimbariLogistice";
-            this.btn_SchimbariLogistice.Size = new System.Drawing.Size(278, 122);
+            this.btn_SchimbariLogistice.Size = new System.Drawing.Size(278, 140);
             this.btn_SchimbariLogistice.TabIndex = 7;
             this.btn_SchimbariLogistice.Text = "     Logistical Changes";
             this.btn_SchimbariLogistice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -104,7 +106,7 @@ namespace ProiectII.Forms
             this.btn_VizitaCurenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_VizitaCurenta.Location = new System.Drawing.Point(-1, -1);
             this.btn_VizitaCurenta.Name = "btn_VizitaCurenta";
-            this.btn_VizitaCurenta.Size = new System.Drawing.Size(278, 100);
+            this.btn_VizitaCurenta.Size = new System.Drawing.Size(278, 140);
             this.btn_VizitaCurenta.TabIndex = 2;
             this.btn_VizitaCurenta.Text = "     Current Visit";
             this.btn_VizitaCurenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -119,9 +121,9 @@ namespace ProiectII.Forms
             this.btn_CautaVizite.ForeColor = System.Drawing.Color.White;
             this.btn_CautaVizite.Image = ((System.Drawing.Image)(resources.GetObject("btn_CautaVizite.Image")));
             this.btn_CautaVizite.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CautaVizite.Location = new System.Drawing.Point(0, 105);
+            this.btn_CautaVizite.Location = new System.Drawing.Point(1, 148);
             this.btn_CautaVizite.Name = "btn_CautaVizite";
-            this.btn_CautaVizite.Size = new System.Drawing.Size(277, 100);
+            this.btn_CautaVizite.Size = new System.Drawing.Size(277, 140);
             this.btn_CautaVizite.TabIndex = 3;
             this.btn_CautaVizite.Text = "     Visualize All Visits";
             this.btn_CautaVizite.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -136,9 +138,9 @@ namespace ProiectII.Forms
             this.btn_ToateProgramarile.ForeColor = System.Drawing.Color.White;
             this.btn_ToateProgramarile.Image = ((System.Drawing.Image)(resources.GetObject("btn_ToateProgramarile.Image")));
             this.btn_ToateProgramarile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ToateProgramarile.Location = new System.Drawing.Point(-1, 211);
+            this.btn_ToateProgramarile.Location = new System.Drawing.Point(0, 291);
             this.btn_ToateProgramarile.Name = "btn_ToateProgramarile";
-            this.btn_ToateProgramarile.Size = new System.Drawing.Size(278, 100);
+            this.btn_ToateProgramarile.Size = new System.Drawing.Size(278, 140);
             this.btn_ToateProgramarile.TabIndex = 4;
             this.btn_ToateProgramarile.Text = "     Visualize All          Appointments";
             this.btn_ToateProgramarile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -153,9 +155,9 @@ namespace ProiectII.Forms
             this.btn_CreazaProgramare.ForeColor = System.Drawing.Color.White;
             this.btn_CreazaProgramare.Image = ((System.Drawing.Image)(resources.GetObject("btn_CreazaProgramare.Image")));
             this.btn_CreazaProgramare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CreazaProgramare.Location = new System.Drawing.Point(-1, 317);
+            this.btn_CreazaProgramare.Location = new System.Drawing.Point(0, 434);
             this.btn_CreazaProgramare.Name = "btn_CreazaProgramare";
-            this.btn_CreazaProgramare.Size = new System.Drawing.Size(278, 100);
+            this.btn_CreazaProgramare.Size = new System.Drawing.Size(278, 140);
             this.btn_CreazaProgramare.TabIndex = 5;
             this.btn_CreazaProgramare.Text = "      Create New          Appointment";
             this.btn_CreazaProgramare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -179,7 +181,9 @@ namespace ProiectII.Forms
             this.Up_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Up_Panel.Location = new System.Drawing.Point(0, 0);
             this.Up_Panel.Name = "Up_Panel";
-            this.Up_Panel.Size = new System.Drawing.Size(1901, 149);
+
+            this.Up_Panel.Size = new System.Drawing.Size(1904, 148);
+
             this.Up_Panel.TabIndex = 0;
             this.Up_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Up_Panel_Paint);
             // 
@@ -193,14 +197,18 @@ namespace ProiectII.Forms
             this.Main_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Main_Panel.Location = new System.Drawing.Point(279, 148);
             this.Main_Panel.Name = "Main_Panel";
-            this.Main_Panel.Size = new System.Drawing.Size(1622, 886);
+
+            this.Main_Panel.Size = new System.Drawing.Size(1629, 851);
+
             this.Main_Panel.TabIndex = 2;
             // 
             // MainApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1901, 1033);
+
+            this.ClientSize = new System.Drawing.Size(1904, 1001);
+
             this.Controls.Add(this.Main_Panel);
             this.Controls.Add(this.LeftPannel);
             this.Controls.Add(this.Up_Panel);
