@@ -17,6 +17,39 @@ namespace ProiectII.UserControls
             InitializeComponent();
         }
 
-        
+        private void UC_VisualizeAllAppointments_Load(object sender, EventArgs e)
+        {
+            comboBox_SearchBy.SelectedIndex = 0;
+        }
+
+        private void VAA_Click(object sender, EventArgs e)
+        {
+            if (txtBox_Search.Text == "Search Here")
+            {
+                txtBox_Search.Text = "";
+            }
+        }
+
+        private void VAA_Enter(object sender, EventArgs e)
+        {
+            if (txtBox_Search.Text == "Search Here")
+            {
+                txtBox_Search.Text = "";
+            }
+        }
+
+        private void VAA_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_Search.Text == "")
+            {
+                txtBox_Search.Text = "Search Here";
+            }
+        }
+
+        private void btn_ClearSearchFields_Click(object sender, EventArgs e)
+        {
+            txtBox_Search.Text = "Search Here";
+            comboBox_SearchBy.SelectedIndex = 0;
+        }
     }
 }
