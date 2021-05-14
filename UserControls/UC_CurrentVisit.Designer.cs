@@ -180,8 +180,11 @@ namespace ProiectII.UserControls
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dateTimePicker.CalendarForeColor = System.Drawing.Color.White;
+            this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.White;
+            this.dateTimePicker.CalendarTitleBackColor = System.Drawing.Color.White;
+            this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.Color.White;
             this.dateTimePicker.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker.Location = new System.Drawing.Point(760, 72);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
