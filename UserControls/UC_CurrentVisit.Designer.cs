@@ -154,6 +154,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientFName.TabIndex = 24;
             this.txtBox_PatientFName.Text = "Patient First Name";
             this.txtBox_PatientFName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientFName.Click += new System.EventHandler(this.PFN_Click);
+            this.txtBox_PatientFName.Leave += new System.EventHandler(this.PFN_Leave);
             // 
             // panel5
             // 
@@ -285,7 +287,7 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_PatientNIN.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_PatientNIN.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_PatientNIN.Location = new System.Drawing.Point(1083, 55);
+            this.txtBox_PatientNIN.Location = new System.Drawing.Point(1083, 53);
             this.txtBox_PatientNIN.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_PatientNIN.Multiline = true;
             this.txtBox_PatientNIN.Name = "txtBox_PatientNIN";
@@ -293,6 +295,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.TabIndex = 29;
             this.txtBox_PatientNIN.Text = "Patient NIN";
             this.txtBox_PatientNIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientNIN.Click += new System.EventHandler(this.PNIN_Click);
+            this.txtBox_PatientNIN.Leave += new System.EventHandler(this.PNIN_Leave);
             // 
             // panel6
             // 
@@ -418,7 +422,7 @@ namespace ProiectII.UserControls
             // 
             // btn_ClearFields
             // 
-            this.btn_ClearFields.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_ClearFields.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_ClearFields.FlatAppearance.BorderSize = 0;
             this.btn_ClearFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ClearFields.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -508,6 +512,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientPhoneNr.TabIndex = 58;
             this.txtBox_PatientPhoneNr.Text = "Patient Phone Number";
             this.txtBox_PatientPhoneNr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientPhoneNr.Click += new System.EventHandler(this.PPN_Click);
+            this.txtBox_PatientPhoneNr.Leave += new System.EventHandler(this.PPN_Leave);
             // 
             // pictureBox12
             // 
@@ -543,6 +549,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientAge.TabIndex = 55;
             this.txtBox_PatientAge.Text = "Patient Age";
             this.txtBox_PatientAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientAge.Click += new System.EventHandler(this.PAge_Click);
+            this.txtBox_PatientAge.Leave += new System.EventHandler(this.PAge_Leave);
             // 
             // pictureBox11
             // 
@@ -578,6 +586,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientLName.TabIndex = 52;
             this.txtBox_PatientLName.Text = "Patient Last Name";
             this.txtBox_PatientLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientLName.Click += new System.EventHandler(this.PLN_Click);
+            this.txtBox_PatientLName.Leave += new System.EventHandler(this.PLN_Leave);
             // 
             // comboBox_Email
             // 
@@ -607,6 +617,8 @@ namespace ProiectII.UserControls
             this.txtBox_EmailAddress.Size = new System.Drawing.Size(223, 28);
             this.txtBox_EmailAddress.TabIndex = 48;
             this.txtBox_EmailAddress.Text = "Email Address";
+            this.txtBox_EmailAddress.Click += new System.EventHandler(this.PEmailAddress_Click);
+            this.txtBox_EmailAddress.Leave += new System.EventHandler(this.PEmailAddress_Leave);
             // 
             // panel10
             // 
@@ -672,6 +684,7 @@ namespace ProiectII.UserControls
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_CurrentVisit";
             this.Size = new System.Drawing.Size(1630, 1000);
+            this.Load += new System.EventHandler(this.UC_CurrentVisit_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

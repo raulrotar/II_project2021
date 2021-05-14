@@ -131,7 +131,7 @@ namespace ProiectII.UserControls
             // 
             // btn_ClearSearchFields
             // 
-            this.btn_ClearSearchFields.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_ClearSearchFields.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_ClearSearchFields.FlatAppearance.BorderSize = 0;
             this.btn_ClearSearchFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ClearSearchFields.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
