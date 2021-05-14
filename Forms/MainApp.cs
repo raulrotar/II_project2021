@@ -83,5 +83,11 @@ namespace ProiectII.Forms
             UC_VisualizeAllVisits visualizeAllVisits = new UC_VisualizeAllVisits();
             addControls(visualizeAllVisits);
         }
+
+        private void btn_ModificaProgramare_Click_1(object sender, EventArgs e)
+        {
+            UC_ModifyExistingAppointment modifyExistingAppointment = new UC_ModifyExistingAppointment();
+            addControls(modifyExistingAppointment);
+        }
     }
 }
