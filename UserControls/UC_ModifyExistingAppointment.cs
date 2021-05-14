@@ -16,5 +16,11 @@ namespace ProiectII.UserControls
         {
             InitializeComponent();
         }
+
+        private void UC_ModifyExistingAppointment_Load(object sender, EventArgs e)
+        {
+            comboBox_SearchBy.SelectedIndex = 0;
+            comboBox_Email.SelectedIndex = 0;
+        }
     }
 }
