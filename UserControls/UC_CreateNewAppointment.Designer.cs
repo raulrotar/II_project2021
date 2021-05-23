@@ -37,10 +37,8 @@ namespace ProiectII.UserControls
             this.grpBox_VisitInfo = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtBox_DoctorName = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtBox_AssistantName = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtBox_Hour = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -66,6 +64,8 @@ namespace ProiectII.UserControls
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtBox_PatientNIN = new System.Windows.Forms.TextBox();
+            this.cmbBox_Doctor = new System.Windows.Forms.ComboBox();
+            this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.grpBox_VisitInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -139,12 +139,12 @@ namespace ProiectII.UserControls
             // 
             // grpBox_VisitInfo
             // 
+            this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Assistant);
+            this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Doctor);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox4);
             this.grpBox_VisitInfo.Controls.Add(this.panel3);
-            this.grpBox_VisitInfo.Controls.Add(this.txtBox_DoctorName);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox5);
             this.grpBox_VisitInfo.Controls.Add(this.panel4);
-            this.grpBox_VisitInfo.Controls.Add(this.txtBox_AssistantName);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox3);
             this.grpBox_VisitInfo.Controls.Add(this.txtBox_Hour);
             this.grpBox_VisitInfo.Controls.Add(this.panel5);
@@ -180,19 +180,6 @@ namespace ProiectII.UserControls
             this.panel3.Size = new System.Drawing.Size(225, 1);
             this.panel3.TabIndex = 20;
             // 
-            // txtBox_DoctorName
-            // 
-            this.txtBox_DoctorName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_DoctorName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.txtBox_DoctorName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_DoctorName.Location = new System.Drawing.Point(101, 91);
-            this.txtBox_DoctorName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_DoctorName.Name = "txtBox_DoctorName";
-            this.txtBox_DoctorName.Size = new System.Drawing.Size(223, 28);
-            this.txtBox_DoctorName.TabIndex = 25;
-            this.txtBox_DoctorName.Text = "Doctor\'s Name";
-            this.txtBox_DoctorName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
@@ -213,19 +200,6 @@ namespace ProiectII.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(225, 1);
             this.panel4.TabIndex = 19;
-            // 
-            // txtBox_AssistantName
-            // 
-            this.txtBox_AssistantName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_AssistantName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.txtBox_AssistantName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_AssistantName.Location = new System.Drawing.Point(414, 90);
-            this.txtBox_AssistantName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_AssistantName.Name = "txtBox_AssistantName";
-            this.txtBox_AssistantName.Size = new System.Drawing.Size(223, 28);
-            this.txtBox_AssistantName.TabIndex = 26;
-            this.txtBox_AssistantName.Text = "Assistant\'s Name";
-            this.txtBox_AssistantName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox3
             // 
@@ -542,6 +516,30 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.Text = "Patient NIN";
             this.txtBox_PatientNIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // cmbBox_Doctor
+            // 
+            this.cmbBox_Doctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBox_Doctor.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_Doctor.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmbBox_Doctor.FormattingEnabled = true;
+            this.cmbBox_Doctor.Location = new System.Drawing.Point(99, 85);
+            this.cmbBox_Doctor.Name = "cmbBox_Doctor";
+            this.cmbBox_Doctor.Size = new System.Drawing.Size(225, 34);
+            this.cmbBox_Doctor.TabIndex = 24;
+            this.cmbBox_Doctor.Text = "Doctor\'s Name";
+            // 
+            // cmbBox_Assistant
+            // 
+            this.cmbBox_Assistant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBox_Assistant.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_Assistant.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmbBox_Assistant.FormattingEnabled = true;
+            this.cmbBox_Assistant.Location = new System.Drawing.Point(412, 85);
+            this.cmbBox_Assistant.Name = "cmbBox_Assistant";
+            this.cmbBox_Assistant.Size = new System.Drawing.Size(225, 34);
+            this.cmbBox_Assistant.TabIndex = 25;
+            this.cmbBox_Assistant.Text = "Assistant\'s Name";
+            // 
             // UC_CreateNewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,10 +583,8 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.GroupBox grpBox_VisitInfo;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtBox_DoctorName;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtBox_AssistantName;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtBox_Hour;
         private System.Windows.Forms.Panel panel5;
@@ -614,5 +610,7 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.TextBox txtBox_PatientNIN;
+        private System.Windows.Forms.ComboBox cmbBox_Assistant;
+        private System.Windows.Forms.ComboBox cmbBox_Doctor;
     }
 }
