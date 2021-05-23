@@ -12,6 +12,7 @@ namespace ProiectII.UserControls
 {
     public partial class UC_VisualizeAllVisits : UserControl
     {
+        Connection con = new Connection();
         public UC_VisualizeAllVisits()
         {
             InitializeComponent();
@@ -49,6 +50,61 @@ namespace ProiectII.UserControls
             if (txtBox_Search.Text == "")
             {
                 txtBox_Search.Text = "Search Here";
+            }
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string query;
+                if (comboBox_SearchBy.Text == "Month")
+                {
+
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Vizita ORDER BY MONTH(Ziua) DESC";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Vizita WHERE MONTH(Ziua)='" + txtBox_Search.Text + "'";
+                    }
+                }
+                else if (comboBox_SearchBy.Text == "Year")
+                {
+
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Vizita ORDER BY YEAR(Ziua) DESC";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Vizita WHERE YEAR(Ziua)='" + txtBox_Search.Text + "' ";
+                    }
+                }
+                else
+                {
+
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Vizita ORDER BY DAY(Ziua) DESC";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Vizita WHERE DAY(Ziua)='" + txtBox_Search.Text + "' ";
+                    }
+                }
+
+                DataSet set;
+                set = con.ExecuteDataSet(query);
+                DataTable dataTable = set.Tables[0];
+                dataGridView1.DataSource = dataTable;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

@@ -31,13 +31,13 @@ namespace ProiectII.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_LogisticalChanges));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_DeleteRecord = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Search = new System.Windows.Forms.Button();
             this.txtBox_Search = new System.Windows.Forms.TextBox();
             this.comboBox_SearchBy = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -66,6 +66,19 @@ namespace ProiectII.UserControls
             this.panel1.Size = new System.Drawing.Size(1630, 150);
             this.panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(623, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(317, 41);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Logistical Changes";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
@@ -87,6 +100,7 @@ namespace ProiectII.UserControls
             this.btn_DeleteRecord.TabIndex = 20;
             this.btn_DeleteRecord.Text = "Delete Record";
             this.btn_DeleteRecord.UseVisualStyleBackColor = false;
+            this.btn_DeleteRecord.Click += new System.EventHandler(this.btn_DeleteRecord_Click);
             // 
             // dataGridView1
             // 
@@ -111,6 +125,7 @@ namespace ProiectII.UserControls
             this.btn_Search.TabIndex = 18;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // txtBox_Search
             // 
@@ -141,19 +156,6 @@ namespace ProiectII.UserControls
             this.comboBox_SearchBy.Size = new System.Drawing.Size(310, 38);
             this.comboBox_SearchBy.TabIndex = 16;
             this.comboBox_SearchBy.SelectedIndexChanged += new System.EventHandler(this.comboBox_SearchBy_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(623, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 41);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Logistical Changes";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView2
             // 
@@ -195,6 +197,8 @@ namespace ProiectII.UserControls
             this.txtBox_Name.TabIndex = 31;
             this.txtBox_Name.Text = "Name";
             this.txtBox_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_Name.Click += new System.EventHandler(this.Name_Click);
+            this.txtBox_Name.Leave += new System.EventHandler(this.Name_Leave);
             // 
             // panel_Price
             // 
@@ -215,6 +219,8 @@ namespace ProiectII.UserControls
             this.txtBox_Price.TabIndex = 33;
             this.txtBox_Price.Text = "Price";
             this.txtBox_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_Price.Click += new System.EventHandler(this.Price_Click);
+            this.txtBox_Price.Leave += new System.EventHandler(this.Price_Leave);
             // 
             // picBox_Price
             // 
@@ -249,6 +255,7 @@ namespace ProiectII.UserControls
             this.btn_UpdateRecord.TabIndex = 37;
             this.btn_UpdateRecord.Text = "Update Record";
             this.btn_UpdateRecord.UseVisualStyleBackColor = false;
+            this.btn_UpdateRecord.Click += new System.EventHandler(this.btn_UpdateRecord_Click);
             // 
             // btn_InsertRecord
             // 
@@ -263,6 +270,7 @@ namespace ProiectII.UserControls
             this.btn_InsertRecord.TabIndex = 38;
             this.btn_InsertRecord.Text = "Insert Record";
             this.btn_InsertRecord.UseVisualStyleBackColor = false;
+            this.btn_InsertRecord.Click += new System.EventHandler(this.btn_InsertRecord_Click);
             // 
             // UC_LogisticalChanges
             // 

@@ -8,7 +8,7 @@ namespace ProiectII
     class Connection
     {
         SqlConnection con;
-        string connectionString = "Data Source=DESKTOP-4NUOG8A;Initial Catalog=DentalApp1;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-50EC7V7;Initial Catalog=DentalApp1;Integrated Security=True";
 
         //raul:   ROG-GL703GM
         //adelin: DESKTOP-50EC7V7
@@ -69,11 +69,9 @@ namespace ProiectII
             try
             {
                 int affected;
-                SqlTransaction sqlTransaction = con.BeginTransaction();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = sql;
                 affected = cmd.ExecuteNonQuery();
-                sqlTransaction.Commit();
                 return affected;
             }catch (Exception ex)
             {
