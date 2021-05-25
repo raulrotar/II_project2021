@@ -35,8 +35,6 @@ namespace ProiectII.UserControls
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Clear = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
-            this.txtBox_AssistantName = new System.Windows.Forms.TextBox();
-            this.txtBox_DoctorName = new System.Windows.Forms.TextBox();
             this.txtBox_PatientFName = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtBox_Hour = new System.Windows.Forms.TextBox();
@@ -71,6 +69,8 @@ namespace ProiectII.UserControls
             this.btn_Delete = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
+            this.cmbBox_Doctor = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -122,6 +122,7 @@ namespace ProiectII.UserControls
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(928, 556);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Select_ALL);
             // 
             // btn_Clear
             // 
@@ -152,32 +153,7 @@ namespace ProiectII.UserControls
             this.btn_Save.TabIndex = 12;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = false;
-            // 
-            // txtBox_AssistantName
-            // 
-            this.txtBox_AssistantName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_AssistantName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.txtBox_AssistantName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_AssistantName.Location = new System.Drawing.Point(391, 588);
-            this.txtBox_AssistantName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_AssistantName.Name = "txtBox_AssistantName";
-            this.txtBox_AssistantName.Size = new System.Drawing.Size(223, 28);
-            this.txtBox_AssistantName.TabIndex = 26;
-            this.txtBox_AssistantName.Text = "Assistant\'s Name";
-            this.txtBox_AssistantName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBox_DoctorName
-            // 
-            this.txtBox_DoctorName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_DoctorName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.txtBox_DoctorName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_DoctorName.Location = new System.Drawing.Point(72, 592);
-            this.txtBox_DoctorName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_DoctorName.Name = "txtBox_DoctorName";
-            this.txtBox_DoctorName.Size = new System.Drawing.Size(223, 28);
-            this.txtBox_DoctorName.TabIndex = 25;
-            this.txtBox_DoctorName.Text = "Doctor\'s Name";
-            this.txtBox_DoctorName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // txtBox_PatientFName
             // 
@@ -232,7 +208,7 @@ namespace ProiectII.UserControls
             // 
             this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel4.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel4.Location = new System.Drawing.Point(392, 622);
+            this.panel4.Location = new System.Drawing.Point(392, 625);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(225, 1);
@@ -325,6 +301,7 @@ namespace ProiectII.UserControls
             this.btn_Search.TabIndex = 30;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // txtBox_Search
             // 
@@ -346,9 +323,6 @@ namespace ProiectII.UserControls
             this.comboBox_SearchBy.FormattingEnabled = true;
             this.comboBox_SearchBy.Items.AddRange(new object[] {
             "Last Name",
-            "First Name",
-            "Doctor\'s Name",
-            "Assistant\'s Name ",
             "Date",
             "Hour"});
             this.comboBox_SearchBy.Location = new System.Drawing.Point(279, 185);
@@ -581,12 +555,38 @@ namespace ProiectII.UserControls
             this.pictureBox6.TabIndex = 32;
             this.pictureBox6.TabStop = false;
             // 
+            // cmbBox_Assistant
+            // 
+            this.cmbBox_Assistant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBox_Assistant.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_Assistant.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmbBox_Assistant.FormattingEnabled = true;
+            this.cmbBox_Assistant.Location = new System.Drawing.Point(392, 586);
+            this.cmbBox_Assistant.Name = "cmbBox_Assistant";
+            this.cmbBox_Assistant.Size = new System.Drawing.Size(225, 34);
+            this.cmbBox_Assistant.TabIndex = 68;
+            this.cmbBox_Assistant.Text = "Assistant\'s Name";
+            // 
+            // cmbBox_Doctor
+            // 
+            this.cmbBox_Doctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBox_Doctor.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_Doctor.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmbBox_Doctor.FormattingEnabled = true;
+            this.cmbBox_Doctor.Location = new System.Drawing.Point(70, 586);
+            this.cmbBox_Doctor.Name = "cmbBox_Doctor";
+            this.cmbBox_Doctor.Size = new System.Drawing.Size(225, 34);
+            this.cmbBox_Doctor.TabIndex = 67;
+            this.cmbBox_Doctor.Text = "Doctor\'s Name";
+            // 
             // UC_ModifyExistingAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmbBox_Assistant);
+            this.Controls.Add(this.cmbBox_Doctor);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.comboBox_Email);
             this.Controls.Add(this.txtBox_EmailAddress);
@@ -609,8 +609,6 @@ namespace ProiectII.UserControls
             this.Controls.Add(this.txtBox_Search);
             this.Controls.Add(this.comboBox_SearchBy);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtBox_AssistantName);
-            this.Controls.Add(this.txtBox_DoctorName);
             this.Controls.Add(this.txtBox_PatientFName);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.txtBox_Hour);
@@ -656,8 +654,6 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Button btn_Save;
-        private System.Windows.Forms.TextBox txtBox_AssistantName;
-        private System.Windows.Forms.TextBox txtBox_DoctorName;
         private System.Windows.Forms.TextBox txtBox_PatientFName;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtBox_Hour;
@@ -692,5 +688,7 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.ComboBox cmbBox_Assistant;
+        private System.Windows.Forms.ComboBox cmbBox_Doctor;
     }
 }

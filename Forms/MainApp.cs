@@ -20,7 +20,8 @@ namespace ProiectII.Forms
 
         private void MainApp_Load(object sender, EventArgs e)
         {
-            
+            UC_VisualizeAllAppointments visualizeAllAppointments = new UC_VisualizeAllAppointments();
+            addControls(visualizeAllAppointments);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

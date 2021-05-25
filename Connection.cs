@@ -8,11 +8,11 @@ namespace ProiectII
     class Connection
     {
         SqlConnection con;
-        string connectionString = "Data Source=DESKTOP-50EC7V7;Initial Catalog=DentalApp1;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-4NUOG8A;Initial Catalog=DentalApp1;Integrated Security=True";
 
         //raul:   ROG-GL703GM
         //adelin: DESKTOP-50EC7V7
-        //iulian: DESKTOP-1LEIQIA
+        //iulian: DESKTOP-4NUOG8A
 
         public bool Open()
         {

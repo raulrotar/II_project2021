@@ -32,17 +32,13 @@ namespace ProiectII.UserControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CurrentVisit));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBox_AssistantName = new System.Windows.Forms.TextBox();
-            this.txtBox_DoctorName = new System.Windows.Forms.TextBox();
             this.txtBox_PatientFName = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtBox_Hour = new System.Windows.Forms.TextBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -58,7 +54,6 @@ namespace ProiectII.UserControls
             this.cmbBox_Diagnostic = new System.Windows.Forms.ComboBox();
             this.cmbBox_Work = new System.Windows.Forms.ComboBox();
             this.cmbBox_Treatment = new System.Windows.Forms.ComboBox();
-            this.btn_ClearFields = new System.Windows.Forms.Button();
             this.btn_FinishVisit = new System.Windows.Forms.Button();
             this.grpBox_PatientInfo = new System.Windows.Forms.GroupBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -75,9 +70,10 @@ namespace ProiectII.UserControls
             this.panel10 = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.grpBox_VisitInfo = new System.Windows.Forms.GroupBox();
+            this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
+            this.btn_NextAppointment = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -115,32 +111,6 @@ namespace ProiectII.UserControls
             this.label1.TabIndex = 1;
             this.label1.Text = "Current Visit";
             // 
-            // txtBox_AssistantName
-            // 
-            this.txtBox_AssistantName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_AssistantName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.txtBox_AssistantName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_AssistantName.Location = new System.Drawing.Point(415, 72);
-            this.txtBox_AssistantName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_AssistantName.Name = "txtBox_AssistantName";
-            this.txtBox_AssistantName.Size = new System.Drawing.Size(223, 28);
-            this.txtBox_AssistantName.TabIndex = 26;
-            this.txtBox_AssistantName.Text = "Assistant\'s Name";
-            this.txtBox_AssistantName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBox_DoctorName
-            // 
-            this.txtBox_DoctorName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_DoctorName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.txtBox_DoctorName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_DoctorName.Location = new System.Drawing.Point(102, 73);
-            this.txtBox_DoctorName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_DoctorName.Name = "txtBox_DoctorName";
-            this.txtBox_DoctorName.Size = new System.Drawing.Size(223, 28);
-            this.txtBox_DoctorName.TabIndex = 25;
-            this.txtBox_DoctorName.Text = "Doctor\'s Name";
-            this.txtBox_DoctorName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtBox_PatientFName
             // 
             this.txtBox_PatientFName.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -161,7 +131,7 @@ namespace ProiectII.UserControls
             // 
             this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel5.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel5.Location = new System.Drawing.Point(1301, 106);
+            this.panel5.Location = new System.Drawing.Point(1231, 106);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(225, 1);
@@ -172,7 +142,7 @@ namespace ProiectII.UserControls
             this.txtBox_Hour.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Hour.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
             this.txtBox_Hour.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_Hour.Location = new System.Drawing.Point(1303, 72);
+            this.txtBox_Hour.Location = new System.Drawing.Point(1233, 72);
             this.txtBox_Hour.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Hour.Name = "txtBox_Hour";
             this.txtBox_Hour.Size = new System.Drawing.Size(223, 28);
@@ -188,7 +158,7 @@ namespace ProiectII.UserControls
             this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.White;
             this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.Color.White;
             this.dateTimePicker.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(760, 72);
+            this.dateTimePicker.Location = new System.Drawing.Point(589, 72);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(434, 35);
@@ -199,21 +169,11 @@ namespace ProiectII.UserControls
             // 
             this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel4.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel4.Location = new System.Drawing.Point(413, 106);
+            this.panel4.Location = new System.Drawing.Point(106, 106);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(225, 1);
             this.panel4.TabIndex = 19;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel3.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel3.Location = new System.Drawing.Point(100, 106);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(225, 1);
-            this.panel3.TabIndex = 20;
             // 
             // panel2
             // 
@@ -228,7 +188,7 @@ namespace ProiectII.UserControls
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(361, 67);
+            this.pictureBox5.Location = new System.Drawing.Point(54, 67);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 40);
@@ -236,21 +196,10 @@ namespace ProiectII.UserControls
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(46, 67);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1247, 67);
+            this.pictureBox3.Location = new System.Drawing.Point(1177, 67);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
@@ -263,7 +212,7 @@ namespace ProiectII.UserControls
             this.pictureBox2.ErrorImage = null;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(704, 67);
+            this.pictureBox2.Location = new System.Drawing.Point(533, 67);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
@@ -321,7 +270,7 @@ namespace ProiectII.UserControls
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(184, 170);
+            this.pictureBox7.Location = new System.Drawing.Point(132, 171);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(40, 40);
@@ -333,7 +282,7 @@ namespace ProiectII.UserControls
             // 
             this.panel8.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel8.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel8.Location = new System.Drawing.Point(667, 209);
+            this.panel8.Location = new System.Drawing.Point(705, 211);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(225, 1);
@@ -342,7 +291,7 @@ namespace ProiectII.UserControls
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(608, 170);
+            this.pictureBox8.Location = new System.Drawing.Point(646, 172);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(50, 40);
@@ -354,7 +303,7 @@ namespace ProiectII.UserControls
             // 
             this.panel9.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel9.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel9.Location = new System.Drawing.Point(1139, 209);
+            this.panel9.Location = new System.Drawing.Point(1185, 210);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(225, 1);
@@ -363,7 +312,7 @@ namespace ProiectII.UserControls
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(1085, 170);
+            this.pictureBox9.Location = new System.Drawing.Point(1131, 171);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(40, 40);
@@ -375,7 +324,7 @@ namespace ProiectII.UserControls
             // 
             this.panel7.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel7.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel7.Location = new System.Drawing.Point(238, 209);
+            this.panel7.Location = new System.Drawing.Point(186, 211);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(225, 1);
@@ -387,7 +336,7 @@ namespace ProiectII.UserControls
             this.cmbBox_Diagnostic.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBox_Diagnostic.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cmbBox_Diagnostic.FormattingEnabled = true;
-            this.cmbBox_Diagnostic.Location = new System.Drawing.Point(240, 171);
+            this.cmbBox_Diagnostic.Location = new System.Drawing.Point(188, 172);
             this.cmbBox_Diagnostic.Name = "cmbBox_Diagnostic";
             this.cmbBox_Diagnostic.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cmbBox_Diagnostic.Size = new System.Drawing.Size(223, 34);
@@ -400,7 +349,7 @@ namespace ProiectII.UserControls
             this.cmbBox_Work.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBox_Work.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cmbBox_Work.FormattingEnabled = true;
-            this.cmbBox_Work.Location = new System.Drawing.Point(669, 170);
+            this.cmbBox_Work.Location = new System.Drawing.Point(707, 172);
             this.cmbBox_Work.Name = "cmbBox_Work";
             this.cmbBox_Work.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cmbBox_Work.Size = new System.Drawing.Size(223, 34);
@@ -413,26 +362,12 @@ namespace ProiectII.UserControls
             this.cmbBox_Treatment.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBox_Treatment.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cmbBox_Treatment.FormattingEnabled = true;
-            this.cmbBox_Treatment.Location = new System.Drawing.Point(1141, 170);
+            this.cmbBox_Treatment.Location = new System.Drawing.Point(1187, 171);
             this.cmbBox_Treatment.Name = "cmbBox_Treatment";
             this.cmbBox_Treatment.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cmbBox_Treatment.Size = new System.Drawing.Size(223, 34);
             this.cmbBox_Treatment.TabIndex = 41;
             this.cmbBox_Treatment.Text = "Treatment";
-            // 
-            // btn_ClearFields
-            // 
-            this.btn_ClearFields.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_ClearFields.FlatAppearance.BorderSize = 0;
-            this.btn_ClearFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ClearFields.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ClearFields.ForeColor = System.Drawing.Color.White;
-            this.btn_ClearFields.Location = new System.Drawing.Point(353, 850);
-            this.btn_ClearFields.Name = "btn_ClearFields";
-            this.btn_ClearFields.Size = new System.Drawing.Size(165, 60);
-            this.btn_ClearFields.TabIndex = 42;
-            this.btn_ClearFields.Text = "Clear Fields";
-            this.btn_ClearFields.UseVisualStyleBackColor = false;
             // 
             // btn_FinishVisit
             // 
@@ -441,12 +376,13 @@ namespace ProiectII.UserControls
             this.btn_FinishVisit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_FinishVisit.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_FinishVisit.ForeColor = System.Drawing.Color.White;
-            this.btn_FinishVisit.Location = new System.Drawing.Point(1058, 850);
+            this.btn_FinishVisit.Location = new System.Drawing.Point(1028, 837);
             this.btn_FinishVisit.Name = "btn_FinishVisit";
-            this.btn_FinishVisit.Size = new System.Drawing.Size(165, 60);
+            this.btn_FinishVisit.Size = new System.Drawing.Size(231, 86);
             this.btn_FinishVisit.TabIndex = 43;
             this.btn_FinishVisit.Text = "Finish Visit";
             this.btn_FinishVisit.UseVisualStyleBackColor = false;
+            this.btn_FinishVisit.Click += new System.EventHandler(this.btn_FinishVisit_Click);
             // 
             // grpBox_PatientInfo
             // 
@@ -642,16 +578,13 @@ namespace ProiectII.UserControls
             // 
             // grpBox_VisitInfo
             // 
-            this.grpBox_VisitInfo.Controls.Add(this.pictureBox4);
-            this.grpBox_VisitInfo.Controls.Add(this.panel3);
-            this.grpBox_VisitInfo.Controls.Add(this.txtBox_DoctorName);
+            this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Assistant);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox5);
             this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Treatment);
             this.grpBox_VisitInfo.Controls.Add(this.panel4);
             this.grpBox_VisitInfo.Controls.Add(this.panel9);
             this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Work);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox9);
-            this.grpBox_VisitInfo.Controls.Add(this.txtBox_AssistantName);
             this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Diagnostic);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox3);
             this.grpBox_VisitInfo.Controls.Add(this.panel8);
@@ -671,15 +604,42 @@ namespace ProiectII.UserControls
             this.grpBox_VisitInfo.TabStop = false;
             this.grpBox_VisitInfo.Text = "Visit Information";
             // 
+            // cmbBox_Assistant
+            // 
+            this.cmbBox_Assistant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBox_Assistant.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_Assistant.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmbBox_Assistant.FormattingEnabled = true;
+            this.cmbBox_Assistant.Location = new System.Drawing.Point(106, 67);
+            this.cmbBox_Assistant.Name = "cmbBox_Assistant";
+            this.cmbBox_Assistant.Size = new System.Drawing.Size(225, 34);
+            this.cmbBox_Assistant.TabIndex = 42;
+            this.cmbBox_Assistant.Text = "Assistant\'s Name";
+            // 
+            // btn_NextAppointment
+            // 
+            this.btn_NextAppointment.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_NextAppointment.FlatAppearance.BorderSize = 0;
+            this.btn_NextAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NextAppointment.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NextAppointment.ForeColor = System.Drawing.Color.White;
+            this.btn_NextAppointment.Location = new System.Drawing.Point(372, 837);
+            this.btn_NextAppointment.Name = "btn_NextAppointment";
+            this.btn_NextAppointment.Size = new System.Drawing.Size(231, 86);
+            this.btn_NextAppointment.TabIndex = 46;
+            this.btn_NextAppointment.Text = "Next Appointment";
+            this.btn_NextAppointment.UseVisualStyleBackColor = false;
+            this.btn_NextAppointment.Click += new System.EventHandler(this.btn_NextAppointment_Click);
+            // 
             // UC_CurrentVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btn_NextAppointment);
             this.Controls.Add(this.grpBox_VisitInfo);
             this.Controls.Add(this.grpBox_PatientInfo);
             this.Controls.Add(this.btn_FinishVisit);
-            this.Controls.Add(this.btn_ClearFields);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_CurrentVisit";
@@ -688,7 +648,6 @@ namespace ProiectII.UserControls
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -712,17 +671,13 @@ namespace ProiectII.UserControls
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBox_AssistantName;
-        private System.Windows.Forms.TextBox txtBox_DoctorName;
         private System.Windows.Forms.TextBox txtBox_PatientFName;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtBox_Hour;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -738,7 +693,6 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.ComboBox cmbBox_Diagnostic;
         private System.Windows.Forms.ComboBox cmbBox_Work;
         private System.Windows.Forms.ComboBox cmbBox_Treatment;
-        private System.Windows.Forms.Button btn_ClearFields;
         private System.Windows.Forms.Button btn_FinishVisit;
         private System.Windows.Forms.GroupBox grpBox_PatientInfo;
         private System.Windows.Forms.GroupBox grpBox_VisitInfo;
@@ -755,5 +709,7 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TextBox txtBox_PatientAge;
+        private System.Windows.Forms.Button btn_NextAppointment;
+        private System.Windows.Forms.ComboBox cmbBox_Assistant;
     }
 }

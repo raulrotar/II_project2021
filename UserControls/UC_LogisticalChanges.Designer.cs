@@ -166,6 +166,7 @@ namespace ProiectII.UserControls
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1325, 437);
             this.dataGridView2.TabIndex = 27;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Select_All);
             // 
             // label3
             // 

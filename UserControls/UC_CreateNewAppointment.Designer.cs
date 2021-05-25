@@ -35,6 +35,8 @@ namespace ProiectII.UserControls
             this.btn_Clear = new System.Windows.Forms.Button();
             this.btn_Create = new System.Windows.Forms.Button();
             this.grpBox_VisitInfo = new System.Windows.Forms.GroupBox();
+            this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
+            this.cmbBox_Doctor = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -64,8 +66,6 @@ namespace ProiectII.UserControls
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtBox_PatientNIN = new System.Windows.Forms.TextBox();
-            this.cmbBox_Doctor = new System.Windows.Forms.ComboBox();
-            this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.grpBox_VisitInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -159,6 +159,30 @@ namespace ProiectII.UserControls
             this.grpBox_VisitInfo.TabStop = false;
             this.grpBox_VisitInfo.Text = "Appointment Information";
             // 
+            // cmbBox_Assistant
+            // 
+            this.cmbBox_Assistant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBox_Assistant.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_Assistant.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmbBox_Assistant.FormattingEnabled = true;
+            this.cmbBox_Assistant.Location = new System.Drawing.Point(412, 85);
+            this.cmbBox_Assistant.Name = "cmbBox_Assistant";
+            this.cmbBox_Assistant.Size = new System.Drawing.Size(225, 34);
+            this.cmbBox_Assistant.TabIndex = 25;
+            this.cmbBox_Assistant.Text = "Assistant\'s Name";
+            // 
+            // cmbBox_Doctor
+            // 
+            this.cmbBox_Doctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbBox_Doctor.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_Doctor.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmbBox_Doctor.FormattingEnabled = true;
+            this.cmbBox_Doctor.Location = new System.Drawing.Point(99, 85);
+            this.cmbBox_Doctor.Name = "cmbBox_Doctor";
+            this.cmbBox_Doctor.Size = new System.Drawing.Size(225, 34);
+            this.cmbBox_Doctor.TabIndex = 24;
+            this.cmbBox_Doctor.Text = "Doctor\'s Name";
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
@@ -224,6 +248,8 @@ namespace ProiectII.UserControls
             this.txtBox_Hour.TabIndex = 23;
             this.txtBox_Hour.Text = "Hour";
             this.txtBox_Hour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_Hour.Click += new System.EventHandler(this.Hour_Click);
+            this.txtBox_Hour.Leave += new System.EventHandler(this.Hour_Leave);
             // 
             // panel5
             // 
@@ -327,6 +353,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientPhoneNr.TabIndex = 58;
             this.txtBox_PatientPhoneNr.Text = "Patient Phone Number";
             this.txtBox_PatientPhoneNr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientPhoneNr.Click += new System.EventHandler(this.PNum_Click);
+            this.txtBox_PatientPhoneNr.Leave += new System.EventHandler(this.PNum_Leave);
             // 
             // pictureBox12
             // 
@@ -362,6 +390,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientAge.TabIndex = 55;
             this.txtBox_PatientAge.Text = "Patient Age";
             this.txtBox_PatientAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientAge.Click += new System.EventHandler(this.Age_Click);
+            this.txtBox_PatientAge.Leave += new System.EventHandler(this.Age_Leave);
             // 
             // pictureBox11
             // 
@@ -397,6 +427,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientLName.TabIndex = 52;
             this.txtBox_PatientLName.Text = "Patient Last Name";
             this.txtBox_PatientLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientLName.Click += new System.EventHandler(this.LName_Click);
+            this.txtBox_PatientLName.Leave += new System.EventHandler(this.LName_Leave);
             // 
             // comboBox_Email
             // 
@@ -426,6 +458,8 @@ namespace ProiectII.UserControls
             this.txtBox_EmailAddress.Size = new System.Drawing.Size(223, 28);
             this.txtBox_EmailAddress.TabIndex = 48;
             this.txtBox_EmailAddress.Text = "Email Address";
+            this.txtBox_EmailAddress.Click += new System.EventHandler(this.Email_Click);
+            this.txtBox_EmailAddress.Leave += new System.EventHandler(this.Email_Leave);
             // 
             // pictureBox1
             // 
@@ -481,6 +515,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientFName.TabIndex = 24;
             this.txtBox_PatientFName.Text = "Patient First Name";
             this.txtBox_PatientFName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientFName.Click += new System.EventHandler(this.FName_Click);
+            this.txtBox_PatientFName.Leave += new System.EventHandler(this.FName_Leave);
             // 
             // pictureBox6
             // 
@@ -515,30 +551,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.TabIndex = 29;
             this.txtBox_PatientNIN.Text = "Patient NIN";
             this.txtBox_PatientNIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cmbBox_Doctor
-            // 
-            this.cmbBox_Doctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbBox_Doctor.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBox_Doctor.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cmbBox_Doctor.FormattingEnabled = true;
-            this.cmbBox_Doctor.Location = new System.Drawing.Point(99, 85);
-            this.cmbBox_Doctor.Name = "cmbBox_Doctor";
-            this.cmbBox_Doctor.Size = new System.Drawing.Size(225, 34);
-            this.cmbBox_Doctor.TabIndex = 24;
-            this.cmbBox_Doctor.Text = "Doctor\'s Name";
-            // 
-            // cmbBox_Assistant
-            // 
-            this.cmbBox_Assistant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbBox_Assistant.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBox_Assistant.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cmbBox_Assistant.FormattingEnabled = true;
-            this.cmbBox_Assistant.Location = new System.Drawing.Point(412, 85);
-            this.cmbBox_Assistant.Name = "cmbBox_Assistant";
-            this.cmbBox_Assistant.Size = new System.Drawing.Size(225, 34);
-            this.cmbBox_Assistant.TabIndex = 25;
-            this.cmbBox_Assistant.Text = "Assistant\'s Name";
+            this.txtBox_PatientNIN.Click += new System.EventHandler(this.NIN_Click);
+            this.txtBox_PatientNIN.Leave += new System.EventHandler(this.NIN_Leave);
             // 
             // UC_CreateNewAppointment
             // 

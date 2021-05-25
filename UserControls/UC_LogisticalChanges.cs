@@ -13,6 +13,7 @@ namespace ProiectII.UserControls
     public partial class UC_LogisticalChanges : UserControl
     {
         Connection con = new Connection();
+        int id = 0;
         public UC_LogisticalChanges()
         {
             InitializeComponent();
@@ -156,15 +157,15 @@ namespace ProiectII.UserControls
             {
                 if (comboBox_SearchBy.Text == "Treatment")
                 {
-                    con.ExecuteNonQuery("UPDATE dbo.Tratament SET Nume ='" + txtBox_Name.Text + "' WHERE Nume='" + txtBox_Search.Text + "' ");
+                    con.ExecuteNonQuery("UPDATE dbo.Tratament SET Nume ='" + txtBox_Name.Text + "' WHERE Id='" + id + "' ");
                 }
                 else if (comboBox_SearchBy.Text == "Dental Work")
                 {
-                    con.ExecuteNonQuery("UPDATE dbo.Lucrari SET Nume ='" + txtBox_Name.Text + "',Pret='" + Int32.Parse(txtBox_Price.Text) + "' WHERE Nume='" + txtBox_Search.Text + "' ");
+                    con.ExecuteNonQuery("UPDATE dbo.Lucrari SET Nume ='" + txtBox_Name.Text + "',Pret='" + Int32.Parse(txtBox_Price.Text) + "' WHERE Id='" + id + "' ");
                 }
                 else
                 {
-                    con.ExecuteNonQuery("UPDATE dbo.Diagnostic SET Nume ='" + txtBox_Name.Text + "' WHERE Nume='" + txtBox_Search.Text + "' ");
+                    con.ExecuteNonQuery("UPDATE dbo.Diagnostic SET Nume ='" + txtBox_Name.Text + "' WHERE Id='" + id + "' ");
                 }
 
                 MessageBox.Show("Record Updated Successfully!");
@@ -184,15 +185,15 @@ namespace ProiectII.UserControls
             {
                 if (comboBox_SearchBy.Text == "Treatment")
                 {
-                    con.ExecuteNonQuery("DELETE FROM dbo.Tratament WHERE Nume='" + txtBox_Name.Text + "'");
+                    con.ExecuteNonQuery("DELETE FROM dbo.Tratament WHERE Id='" + id + "'");
                 }
                 else if (comboBox_SearchBy.Text == "Dental Work")
                 {
-                    con.ExecuteNonQuery("DELETE FROM dbo.Lucrari WHERE Nume='" + txtBox_Name.Text + "'");
+                    con.ExecuteNonQuery("DELETE FROM dbo.Lucrari WHERE Id='" + id + "'");
                 }
                 else
                 {
-                    con.ExecuteNonQuery("DELETE FROM dbo.Diagnostic WHERE Nume='" + txtBox_Name.Text + "'");
+                    con.ExecuteNonQuery("DELETE FROM dbo.Diagnostic WHERE Id='" + id + "'");
                 }
                 
                 MessageBox.Show("Record Deleted Successfully!");
@@ -234,6 +235,22 @@ namespace ProiectII.UserControls
             if (txtBox_Price.Text == "")
             {
                 txtBox_Price.Text = "Price";
+            }
+        }
+
+        private void Select_All(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            DataGridViewRow selectedRow = dataGridView2.Rows[index];
+             id = Int32.Parse(selectedRow.Cells[0].Value.ToString());
+            if (comboBox_SearchBy.Text == "Dental Work")
+            {
+                txtBox_Name.Text = selectedRow.Cells[1].Value.ToString();
+                txtBox_Price.Text = selectedRow.Cells[2].Value.ToString();
+            }
+            else
+            {
+                txtBox_Name.Text = selectedRow.Cells[1].Value.ToString();
             }
         }
     }

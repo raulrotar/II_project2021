@@ -13,6 +13,8 @@ namespace ProiectII.Forms
 {
     public partial class AddNewUser : Form
     {
+        Connection con = new Connection();
+        int Doc_CNP = 1;
         public AddNewUser()
         {
             InitializeComponent();
@@ -26,10 +28,7 @@ namespace ProiectII.Forms
             comboBox_Email.SelectedIndex = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Modificat butonul de raul!");
-        }
+      
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -284,13 +283,12 @@ namespace ProiectII.Forms
 
         private void PopulateDoctorsComboBox()
         {
-            Connection conn = new Connection();
             try
             {
-               conn.Open();
+               con.Open();
                 string query = "select Nume,Prenume from dbo.Doctori";
                 DataSet set;
-                set = conn.ExecuteDataSet(query);
+                set = con.ExecuteDataSet(query);
               
                 for (int i = 0; i < set.Tables[0].Rows.Count; i++)
                 {
@@ -304,7 +302,7 @@ namespace ProiectII.Forms
                     }
                 }
                 comboBox_ShowDoctors.SelectedIndex = 0;
-                conn.Close();
+                con.Close();
             }
             catch (Exception)
             {
@@ -322,6 +320,58 @@ namespace ProiectII.Forms
             }
         }
 
-      
+        private void btn_ResetFields_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void AddNewUser_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_CreateUser_Click(object sender, EventArgs e)
+        {
+
+            if (radioBtn_Doctor.Checked)
+            {
+                try
+                {
+                    con.Open();
+                    con.ExecuteNonQuery("INSERT INTO dbo.Doctori (CNP,Nume,Prenume,Username,Email,Parola,Nr_Telefon,Security_Code) VALUES ('"+Int32.Parse(txtBox_NIN.Text)+"','"+txtBox_LastName.Text+"','"+txtBox_FirstName.Text+"','"+txtBox_Username.Text+"','"+txtBox_EmailAddress.Text + comboBox_Email.Text+"','"+txtBox_Password.Text+"','"+Int32.Parse(txtBox_PhoneNumber.Text)+"','"+txtBox_SecurityCode.Text+"')");
+                    con.Close();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+               
+            }
+            else if (radioBtn_Nurse.Checked)
+            {
+                try
+                {
+                    con.Open();
+                    string[] DocFullName = (comboBox_ShowDoctors.Text).Split(' ');
+                    SqlDataReader DocNameReader = con.ExecuteReader("Select CNP from dbo.Doctori where Nume='" + DocFullName[0] + "' AND Prenume='" + DocFullName[1] + "'");
+                    while (DocNameReader.Read())
+                    {
+                        Doc_CNP = DocNameReader.GetInt32(0);
+                    }
+                    DocNameReader.Close();
+                    con.ExecuteNonQuery("INSERT INTO dbo.Asistenti (CNP,CNP_Doctor,Nume,Prenume,Username,Email,Parola,Nr_Telefon,Security_Code) VALUES ('" + Int32.Parse(txtBox_NIN.Text) + "','"+Doc_CNP+"','" + txtBox_LastName.Text + "','" + txtBox_FirstName.Text + "','" + txtBox_Username.Text + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "','" + txtBox_Password.Text + "','" + Int32.Parse(txtBox_PhoneNumber.Text) + "','" + txtBox_SecurityCode.Text + "')");
+                    con.Close();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Are you a nurse or a doctor? Please select your ocupation!!");
+            }
+        }
     }
 }
