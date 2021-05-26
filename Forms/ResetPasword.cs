@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace ProiectII.Forms
 {
+    
     public partial class ResetPasword : Form
     {
+        Connection con = new Connection();
         public ResetPasword()
         {
             InitializeComponent();
@@ -178,12 +174,143 @@ namespace ProiectII.Forms
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            String mail = txtBox_InsertEmail.Text + emailComboBox.SelectedItem.ToString();
+            String code = txtBox_SCode.Text;
+            String email = "";
+            String secCode = "";
 
+            if (txtBox_InsertEmail.Text.Equals("Insert Email") || txtBox_SCode.Text.Equals("Security Code") || txtBox_Password.Text.Equals("New Password") || txtBox_ConfirmPassword.Text.Equals("Confirm New Password"))
+            {
+                MessageBox.Show("Please fill in all the fields!");
+            }
+            else
+            {
+                try
+                {
+                    con.Open();
+                    string query_mail_doctors = "SELECT Email FROM dbo.Doctori WHERE Email='" + mail + "'";
+                    string query_mail_asist = "SELECT Email FROM dbo.Asistenti WHERE Email='" + mail + "'";
+                    string query_securityCode_doctors = "SELECT Security_Code From dbo.Doctori WHERE Security_Code='" + code + "'";
+                    string query_securityCode_asist = "SELECT Security_Code From dbo.Asistenti WHERE Security_Code='" + code + "'";
+                    string query_updatePass_doctors = "UPDATE dbo.Doctori SET Parola ='" + txtBox_Password.Text + "' WHERE Email = '" + txtBox_InsertEmail.Text + emailComboBox.SelectedItem + "'";
+                    string query_updatePass_asist = "UPDATE dbo.Asistenti SET Parola ='" + txtBox_Password.Text + "' WHERE Email = '" + txtBox_InsertEmail.Text + emailComboBox.SelectedItem + "'";
+
+                    SqlDataReader row;
+                    SqlDataReader row2;
+                    row = con.ExecuteReader(query_mail_doctors);
+                    if (row.HasRows)
+                    {
+                        while (row.Read())
+                        {
+                            email = row["Email"].ToString();
+                        }
+
+                        if (mail.Equals(email))
+                        {
+                            row.Close();
+                            row = con.ExecuteReader(query_securityCode_doctors);
+                            if (row.HasRows)
+                            {
+                                while (row.Read())
+                                {
+                                    secCode = row["Security_Code"].ToString();
+                                }
+                                if (code.Equals(secCode))
+                                {
+                                    if (txtBox_Password.Text.Equals(txtBox_ConfirmPassword.Text))
+                                    {
+                                        row.Close();
+                                        con.ExecuteNonQuery(query_updatePass_doctors);
+                                        MessageBox.Show("Password successfully updated!");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Password and Confirm Password values have to be the same!");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid Security Code!");
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid email");
+                        }
+                        row.Close();
+                    }
+                    else
+                    {
+                        row.Close();
+                        row2 = con.ExecuteReader(query_mail_asist);
+                        if (row2.HasRows)
+                        {
+                            while (row2.Read())
+                            {
+                                email = row2["Email"].ToString();
+                            }
+
+                            if (mail.Equals(email))
+                            {
+                                row2.Close();
+                                row2 = con.ExecuteReader(query_securityCode_asist);
+                                if (row2.HasRows)
+                                {
+                                    while (row2.Read())
+                                    {
+                                        secCode = row2["Security_Code"].ToString();
+                                    }
+                                    if (code.Equals(secCode))
+                                    {
+                                        if (txtBox_Password.Text.Equals(txtBox_ConfirmPassword.Text))
+                                        {
+                                            row2.Close();
+                                            con.ExecuteNonQuery(query_updatePass_asist);
+                                            MessageBox.Show("Password updated successfully!");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Password and Confirm Password values have to be the same!");
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Invalid Security Code!");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid email");
+                        }
+                        row2.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Connection Error!", "Information");
+                }
+
+                con.Close();
+            }
         }
 
         private void pictureBox7_MouseClick(object sender, MouseEventArgs e)
         {
             toolTip1.Show("The Security code chosen when the account was created!",pictureBox7);
+        }
+
+        private void txtBox_Password_TextChanged(object sender, EventArgs e)
+        {
+            txtBox_Password.PasswordChar = '*';
+        }
+
+        private void txtBox_ConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtBox_ConfirmPassword.PasswordChar = '*';
         }
     }
 }
