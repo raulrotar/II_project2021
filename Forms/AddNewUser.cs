@@ -13,6 +13,7 @@ namespace ProiectII.Forms
 {
     public partial class AddNewUser : Form
     {
+        Verifier verifier = new Verifier();
         Connection con = new Connection();
         int Doc_CNP = 1;
         public AddNewUser()
@@ -337,7 +338,13 @@ namespace ProiectII.Forms
                 try
                 {
                     con.Open();
-                    con.ExecuteNonQuery("INSERT INTO dbo.Doctori VALUES ('"+Int32.Parse(txtBox_NIN.Text)+"','"+txtBox_LastName.Text+"','"+txtBox_FirstName.Text+"','"+txtBox_Username.Text+"','"+txtBox_EmailAddress.Text + "" + comboBox_Email.Text+"','"+txtBox_Password.Text+"','"+Int32.Parse(txtBox_PhoneNr.Text)+"','"+txtBox_SecurityCode.Text+"')");
+                    if (verifier.CheckName(txtBox_FirstName.Text)&&verifier.CheckName(txtBox_LastName.Text)&&verifier.CheckNIN(txtBox_NIN.Text)&&verifier.CheckPhoneNumber(txtBox_PhoneNr.Text))                                 
+                    {
+                        con.ExecuteNonQuery("INSERT INTO dbo.Doctori VALUES ('" + Int32.Parse(txtBox_NIN.Text) + "','" + txtBox_LastName.Text + "','" + txtBox_FirstName.Text + "','" + txtBox_Username.Text + "','" + txtBox_EmailAddress.Text + "" + comboBox_Email.Text + "','" + txtBox_Password.Text + "','" + Int32.Parse(txtBox_PhoneNr.Text) + "','" + txtBox_SecurityCode.Text + "')");
+                    }else
+                    {
+                        MessageBox.Show("Wrong information format!");
+                    }
                     con.Close();
                 }
                 catch (Exception)

@@ -109,6 +109,7 @@
     <Compile Include="UserControls\UC_VisualizeAllVisits.Designer.cs">
       <DependentUpon>UC_VisualizeAllVisits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Verifier.cs" />
     <EmbeddedResource Include="Forms\AddNewUser.resx">
       <DependentUpon>AddNewUser.cs</DependentUpon>
     </EmbeddedResource>
