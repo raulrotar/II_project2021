@@ -1,7 +1,7 @@
 
 USE DentalApp1
 CREATE TABLE Doctori (
-	CNP int not null primary key,
+	CNP bigint not null primary key,
 	Nume varchar(255),
 	Prenume varchar(255),
 	Username varchar(255),
@@ -12,8 +12,8 @@ CREATE TABLE Doctori (
 );
 
 CREATE TABLE Asistenti (
-	CNP int not null primary key,
-	CNP_Doctor int not null foreign key references Doctori(CNP),
+	CNP bigint not null primary key,
+	CNP_Doctor bigint not null foreign key references Doctori(CNP),
 	Nume varchar(255),
 	Prenume varchar(255),
 	Username varchar(255),
@@ -24,9 +24,9 @@ CREATE TABLE Asistenti (
 );
 
 CREATE TABLE Pacienti (
-	CNP int not null primary key,
-	CNP_Doctor int not null foreign key references Doctori(CNP),
-	CNP_Asistent int not null foreign key references Asistenti(CNP),
+	CNP bigint not null primary key,
+	CNP_Doctor bigint not null foreign key references Doctori(CNP),
+	CNP_Asistent bigint not null foreign key references Asistenti(CNP),
 	Nume varchar(255),
 	Prenume varchar(255),
 	Varsta int,
@@ -54,21 +54,21 @@ CREATE TABLE Programare (
  Id int identity(1,1) primary key not null,
  NumePacient varchar(255) ,
  PrenumePacient varchar(255),
- CNP_Pacient int not null foreign key references Pacienti(CNP),
+ CNP_Pacient bigint not null foreign key references Pacienti(CNP),
  Varsta int ,
  NrTelefon int ,
  Email varchar(255) ,
- CNP_Doctor int not null foreign key references Doctori(CNP),
- CNP_Asistent int not null foreign key references Asistenti(CNP),
+ CNP_Doctor bigint not null foreign key references Doctori(CNP),
+ CNP_Asistent bigint not null foreign key references Asistenti(CNP),
  Ziua date,
  Ora time
 );
 
 CREATE TABLE Vizita (
 	Id int identity(1,1) primary key not null,
-	CNP_Doctor int not null foreign key references Doctori(CNP),
-	CNP_Asistent int not null foreign key references Asistenti(CNP),
-	CNP_Pacient int not null foreign key references Pacienti(CNP),
+	CNP_Doctor bigint not null foreign key references Doctori(CNP),
+	CNP_Asistent bigint not null foreign key references Asistenti(CNP),
+	CNP_Pacient bigint not null foreign key references Pacienti(CNP),
 	Ora time ,
 	Ziua date ,
 	Id_Lucrare int not null foreign key references Lucrari(Id),

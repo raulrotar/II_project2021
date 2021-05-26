@@ -13,6 +13,7 @@ namespace ProiectII.UserControls
 {
     public partial class UC_CreateNewAppointment : UserControl
     {
+        Verifier verifier = new Verifier();
         Connection con = new Connection();
         public UC_CreateNewAppointment()
         {
@@ -103,11 +104,16 @@ namespace ProiectII.UserControls
                 }
                 AsistNameReader.Close();
 
-
-                 con.ExecuteNonQuery("INSERT INTO dbo.Pacienti (CNP,CNP_Doctor,CNP_Asistent,Nume,Prenume,Varsta,Nr_Telefon,Email) VALUES('" + Int32.Parse(txtBox_PatientNIN.Text) + "','" + DocCNP + "','" + AsistCNP + "','" + txtBox_PatientLName.Text + "','" + txtBox_PatientFName.Text + "','" + Int32.Parse(txtBox_PatientAge.Text) + "','" + Int32.Parse(txtBox_PatientPhoneNr.Text) + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "')");
-
-                 con.ExecuteNonQuery("INSERT INTO dbo.Programare (NumePacient,PrenumePacient,CNP_Pacient,Varsta,NrTelefon,Email,CNP_Doctor,CNP_Asistent,Ziua,Ora)  VALUES ('"+txtBox_PatientLName.Text+"','"+txtBox_PatientFName.Text+"','"+Int32.Parse(txtBox_PatientNIN.Text)+"','"+Int32.Parse(txtBox_PatientAge.Text)+"','"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"','"+txtBox_EmailAddress.Text + comboBox_Email.Text+"','"+DocCNP+"','"+AsistCNP+"','"+dateTimePicker.Value+"','"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"')");                                                                                                                   
-
+                if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
+                {
+                     con.ExecuteNonQuery("INSERT INTO dbo.Pacienti (CNP,CNP_Doctor,CNP_Asistent,Nume,Prenume,Varsta,Nr_Telefon,Email) VALUES('" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DocCNP + "','" + AsistCNP + "','" + txtBox_PatientLName.Text + "','" + txtBox_PatientFName.Text + "','" + Int32.Parse(txtBox_PatientAge.Text) + "','" + Int32.Parse(txtBox_PatientPhoneNr.Text) + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "')");
+                     con.ExecuteNonQuery("INSERT INTO dbo.Programare (NumePacient,PrenumePacient,CNP_Pacient,Varsta,NrTelefon,Email,CNP_Doctor,CNP_Asistent,Ziua,Ora)  VALUES ('"+txtBox_PatientLName.Text+"','"+txtBox_PatientFName.Text+"','"+Int64.Parse(txtBox_PatientNIN.Text)+"','"+Int32.Parse(txtBox_PatientAge.Text)+"','"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"','"+txtBox_EmailAddress.Text + comboBox_Email.Text+"','"+DocCNP+"','"+AsistCNP+"','"+dateTimePicker.Value+"','"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"')");                                                                                                                   
+                }
+                else
+                {
+                    MessageBox.Show("Information was introduced in the wrong format!!!");
+                }
+                
                 con.Close();
             }
             catch (Exception)

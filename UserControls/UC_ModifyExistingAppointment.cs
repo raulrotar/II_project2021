@@ -13,8 +13,9 @@ namespace ProiectII.UserControls
 {
     public partial class UC_ModifyExistingAppointment : UserControl
     {
+        Verifier verifier = new Verifier();
         Connection con = new Connection();
-        int id = 0;
+        Int64 id = 0;
 
         public UC_ModifyExistingAppointment()
         {
@@ -142,7 +143,7 @@ namespace ProiectII.UserControls
             try
             {
                 con.Open();
-                int DocCNP = 1, AsistCNP = 1;
+                Int64 DocCNP = 1, AsistCNP = 1;
                 string[] DocName = (cmbBox_Doctor.Text).Split(' ');
                 string[] AsistName = (cmbBox_Assistant.Text).Split(' ');
 
@@ -159,10 +160,16 @@ namespace ProiectII.UserControls
                     AsistCNP = AsistNameReader.GetInt32(0);
                 }
                 AsistNameReader.Close();
-             
 
-                con.ExecuteNonQuery("UPDATE dbo.Programare SET NumePacient='"+txtBox_PatientLName.Text+"', PrenumePacient='"+txtBox_PatientFName.Text+"',CNP_Pacient='"+Int32.Parse(txtBox_PatientNIN.Text)+"',Varsta='"+Int32.Parse(txtBox_PatientAge.Text)+"' , NrTelefon='"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"',Email='"+txtBox_EmailAddress.Text +comboBox_Email.Text+"',CNP_Doctor='"+DocCNP+"',CNP_Asistent='"+AsistCNP+"',Ziua='"+dateTimePicker.Value+"',Ora='"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"'  WHERE Id='"+id+"'");
-                con.ExecuteNonQuery("UPDATE dbo.Pacienti SET CNP_Doctor='"+DocCNP+"',CNP_Asistent='"+AsistCNP+"',Nume='"+txtBox_PatientLName.Text+"',Prenume='"+txtBox_PatientFName.Text+"',Varsta='"+Int32.Parse(txtBox_PatientAge.Text)+"',Nr_Telefon='"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"',Email='"+txtBox_EmailAddress.Text + comboBox_Email.Text+"'  WHERE CNP='"+Int32.Parse(txtBox_PatientNIN.Text)+"'");
+                if(verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
+                {
+                    con.ExecuteNonQuery("UPDATE dbo.Programare SET NumePacient='"+txtBox_PatientLName.Text+"', PrenumePacient='"+txtBox_PatientFName.Text+"',CNP_Pacient='"+Int64.Parse(txtBox_PatientNIN.Text)+"',Varsta='"+Int32.Parse(txtBox_PatientAge.Text)+"' , NrTelefon='"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"',Email='"+txtBox_EmailAddress.Text +comboBox_Email.Text+"',CNP_Doctor='"+DocCNP+"',CNP_Asistent='"+AsistCNP+"',Ziua='"+dateTimePicker.Value+"',Ora='"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"'  WHERE Id='"+id+"'");
+                    con.ExecuteNonQuery("UPDATE dbo.Pacienti SET CNP_Doctor='"+DocCNP+"',CNP_Asistent='"+AsistCNP+"',Nume='"+txtBox_PatientLName.Text+"',Prenume='"+txtBox_PatientFName.Text+"',Varsta='"+Int32.Parse(txtBox_PatientAge.Text)+"',Nr_Telefon='"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"',Email='"+txtBox_EmailAddress.Text + comboBox_Email.Text+"'  WHERE CNP='"+Int64.Parse(txtBox_PatientNIN.Text)+"'");
+                }
+                else
+                {
+                    MessageBox.Show("Information was introduced in the wrong format!!!");
+                }
                 con.Close();
             }
             catch (Exception)

@@ -13,8 +13,9 @@ namespace ProiectII.UserControls
 {
     public partial class UC_CurrentVisit : UserControl
     {
+        Verifier verifier = new Verifier();
         Connection con = new Connection();
-        int CNP_Asistant = 0, CNP_Doctor = 0, Id_Lucrare = 1, Id_Diagnostic = 1,Id_Tratament=1;
+        Int64 CNP_Asistant = 0, CNP_Doctor = 0, Id_Lucrare = 1, Id_Diagnostic = 1,Id_Tratament=1;
         bool existsAppointments=true;
         public UC_CurrentVisit()
         {
@@ -279,8 +280,14 @@ namespace ProiectII.UserControls
                         Id_Tratament = TreatmentReader.GetInt32(0);
                     }
                     TreatmentReader.Close();
-                    con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Id_Lucrare,Id_Diagnostic,Id_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int32.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + Id_Diagnostic + "','" + Id_Lucrare + "','" + Id_Tratament + "')");
-
+                    if (verifier.CheckNIN(txtBox_PatientNIN.Text))
+                    {
+                        con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Id_Lucrare,Id_Diagnostic,Id_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + Id_Diagnostic + "','" + Id_Lucrare + "','" + Id_Tratament + "')");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Information was introduced in the wrong format!!!");
+                    }
                     con.Close();
                 }
                 catch (Exception)

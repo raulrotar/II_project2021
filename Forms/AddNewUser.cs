@@ -15,7 +15,7 @@ namespace ProiectII.Forms
     {
         Verifier verifier = new Verifier();
         Connection con = new Connection();
-        int Doc_CNP = 1;
+        Int64 Doc_CNP = 1111111111111;
         public AddNewUser()
         {
             InitializeComponent();
@@ -297,7 +297,8 @@ namespace ProiectII.Forms
                     if (comboBox_ShowDoctors.Items.Contains(fullName)) 
                     {
                     
-                    }else
+                    }
+                    else
                     {
                        comboBox_ShowDoctors.Items.Add(set.Tables[0].Rows[i][0] + " " + set.Tables[0].Rows[i][1]);
                     }
@@ -340,7 +341,7 @@ namespace ProiectII.Forms
                     con.Open();
                     if (verifier.CheckName(txtBox_FirstName.Text)&&verifier.CheckName(txtBox_LastName.Text)&&verifier.CheckNIN(txtBox_NIN.Text)&&verifier.CheckPhoneNumber(txtBox_PhoneNr.Text))                                 
                     {
-                        con.ExecuteNonQuery("INSERT INTO dbo.Doctori VALUES ('" + Int32.Parse(txtBox_NIN.Text) + "','" + txtBox_LastName.Text + "','" + txtBox_FirstName.Text + "','" + txtBox_Username.Text + "','" + txtBox_EmailAddress.Text + "" + comboBox_Email.Text + "','" + txtBox_Password.Text + "','" + Int32.Parse(txtBox_PhoneNr.Text) + "','" + txtBox_SecurityCode.Text + "')");
+                        con.ExecuteNonQuery("INSERT INTO dbo.Doctori VALUES ('" + Int64.Parse(txtBox_NIN.Text) + "','" + txtBox_LastName.Text + "','" + txtBox_FirstName.Text + "','" + txtBox_Username.Text + "','" + txtBox_EmailAddress.Text + "" + comboBox_Email.Text + "','" + txtBox_Password.Text + "','" + Int32.Parse(txtBox_PhoneNr.Text) + "','" + txtBox_SecurityCode.Text + "')");
                     }else
                     {
                         MessageBox.Show("Wrong information format!");
@@ -366,7 +367,15 @@ namespace ProiectII.Forms
                         Doc_CNP = DocNameReader.GetInt32(0);
                     }
                     DocNameReader.Close();
-                    con.ExecuteNonQuery("INSERT INTO dbo.Asistenti (CNP,CNP_Doctor,Nume,Prenume,Username,Email,Parola,Nr_Telefon,Security_Code) VALUES ('" + Int32.Parse(txtBox_NIN.Text) + "','"+Doc_CNP+"','" + txtBox_LastName.Text + "','" + txtBox_FirstName.Text + "','" + txtBox_Username.Text + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "','" + txtBox_Password.Text + "','" + Int32.Parse(txtBox_PhoneNr.Text) + "','" + txtBox_SecurityCode.Text + "')");
+                    if (verifier.CheckName(txtBox_FirstName.Text) && verifier.CheckName(txtBox_LastName.Text) && verifier.CheckNIN(txtBox_NIN.Text) && verifier.CheckPhoneNumber(txtBox_PhoneNr.Text))
+                    {
+                        con.ExecuteNonQuery("INSERT INTO dbo.Asistenti (CNP,CNP_Doctor,Nume,Prenume,Username,Email,Parola,Nr_Telefon,Security_Code) VALUES ('" + Int64.Parse(txtBox_NIN.Text) + "','"+Doc_CNP+"','" + txtBox_LastName.Text + "','" + txtBox_FirstName.Text + "','" + txtBox_Username.Text + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "','" + txtBox_Password.Text + "','" + Int32.Parse(txtBox_PhoneNr.Text) + "','" + txtBox_SecurityCode.Text + "')");
+                   
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong information format!");
+                    }
                     con.Close();
                 }
                 catch (Exception)
