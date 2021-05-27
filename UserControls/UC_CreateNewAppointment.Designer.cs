@@ -66,6 +66,7 @@ namespace ProiectII.UserControls
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtBox_PatientNIN = new System.Windows.Forms.TextBox();
+            this.Hour_Ok = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grpBox_VisitInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -139,6 +140,7 @@ namespace ProiectII.UserControls
             // 
             // grpBox_VisitInfo
             // 
+            this.grpBox_VisitInfo.Controls.Add(this.Hour_Ok);
             this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Assistant);
             this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Doctor);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox4);
@@ -228,7 +230,7 @@ namespace ProiectII.UserControls
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1246, 85);
+            this.pictureBox3.Location = new System.Drawing.Point(1197, 85);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
@@ -241,7 +243,7 @@ namespace ProiectII.UserControls
             this.txtBox_Hour.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Hour.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
             this.txtBox_Hour.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_Hour.Location = new System.Drawing.Point(1302, 90);
+            this.txtBox_Hour.Location = new System.Drawing.Point(1253, 90);
             this.txtBox_Hour.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Hour.Name = "txtBox_Hour";
             this.txtBox_Hour.Size = new System.Drawing.Size(223, 28);
@@ -255,7 +257,7 @@ namespace ProiectII.UserControls
             // 
             this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel5.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel5.Location = new System.Drawing.Point(1300, 124);
+            this.panel5.Location = new System.Drawing.Point(1251, 124);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(225, 1);
@@ -554,6 +556,18 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.Click += new System.EventHandler(this.NIN_Click);
             this.txtBox_PatientNIN.Leave += new System.EventHandler(this.NIN_Leave);
             // 
+            // Hour_Ok
+            // 
+            this.Hour_Ok.AutoSize = true;
+            this.Hour_Ok.BackColor = System.Drawing.Color.Transparent;
+            this.Hour_Ok.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hour_Ok.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Hour_Ok.Location = new System.Drawing.Point(1481, 85);
+            this.Hour_Ok.Name = "Hour_Ok";
+            this.Hour_Ok.Size = new System.Drawing.Size(56, 37);
+            this.Hour_Ok.TabIndex = 48;
+            this.Hour_Ok.Text = "OK";
+            // 
             // UC_CreateNewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -626,5 +640,6 @@ namespace ProiectII.UserControls
         public System.Windows.Forms.TextBox txtBox_PatientNIN;
         private System.Windows.Forms.ComboBox cmbBox_Assistant;
         private System.Windows.Forms.ComboBox cmbBox_Doctor;
+        private System.Windows.Forms.Label Hour_Ok;
     }
 }

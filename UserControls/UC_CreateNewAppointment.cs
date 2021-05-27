@@ -25,6 +25,7 @@ namespace ProiectII.UserControls
             comboBox_Email.SelectedIndex = 0;
             PopulateComboBoxes();
             dateTimePicker.Value = DateTime.Now;
+            Hour_Ok.Visible = false;
         }
 
         private void PopulateComboBoxes()
@@ -81,6 +82,29 @@ namespace ProiectII.UserControls
             txtBox_EmailAddress.Text = "Email Address";
         }
 
+        // Check if the hour is available
+        public bool CheckAvailabilility(DateTime date , string Hour)
+        {
+            DateTime hour = DateTime.Parse(Hour,System.Globalization.CultureInfo.CurrentCulture);
+            DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua='"+date+"' AND Ora='"+hour+"'");
+            if (set.Tables[0].Rows.Count > 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+        public bool CheckForPatient(string NIN)
+        {
+            Int64 CNP = Int64.Parse(NIN);
+            DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Pacienti WHERE CNP='"+Int64.Parse(NIN)+"'");
+            if (set.Tables[0].Rows.Count > 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void btn_Create_Click(object sender, EventArgs e)
         {
             
@@ -109,9 +133,20 @@ namespace ProiectII.UserControls
                 {
                     if (verifier.CheckDate(dateTimePicker.Value) && verifier.CheckHour(txtBox_Hour.Text))
                     {
-                     con.ExecuteNonQuery("INSERT INTO dbo.Pacienti (CNP,CNP_Doctor,CNP_Asistent,Nume,Prenume,Varsta,Nr_Telefon,Email) VALUES('" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DocCNP + "','" + AsistCNP + "','" + txtBox_PatientLName.Text + "','" + txtBox_PatientFName.Text + "','" + Int32.Parse(txtBox_PatientAge.Text) + "','" + Int32.Parse(txtBox_PatientPhoneNr.Text) + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "')");
-                     con.ExecuteNonQuery("INSERT INTO dbo.Programare (NumePacient,PrenumePacient,CNP_Pacient,Varsta,NrTelefon,Email,CNP_Doctor,CNP_Asistent,Ziua,Ora)  VALUES ('"+txtBox_PatientLName.Text+"','"+txtBox_PatientFName.Text+"','"+Int64.Parse(txtBox_PatientNIN.Text)+"','"+Int32.Parse(txtBox_PatientAge.Text)+"','"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"','"+txtBox_EmailAddress.Text + comboBox_Email.Text+"','"+DocCNP+"','"+AsistCNP+"','"+dateTimePicker.Value+"','"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"')");
-                        MessageBox.Show("The appointment was created successfully!!!");
+                        if (CheckAvailabilility(dateTimePicker.Value,txtBox_Hour.Text))
+                        {
+                            if (CheckForPatient(txtBox_PatientNIN.Text))
+                            {
+                                con.ExecuteNonQuery("INSERT INTO dbo.Pacienti (CNP,CNP_Doctor,CNP_Asistent,Nume,Prenume,Varsta,Nr_Telefon,Email) VALUES('" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DocCNP + "','" + AsistCNP + "','" + txtBox_PatientLName.Text + "','" + txtBox_PatientFName.Text + "','" + Int32.Parse(txtBox_PatientAge.Text) + "','" + Int32.Parse(txtBox_PatientPhoneNr.Text) + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "')");
+                            }
+                              con.ExecuteNonQuery("INSERT INTO dbo.Programare (NumePacient,PrenumePacient,CNP_Pacient,Varsta,NrTelefon,Email,CNP_Doctor,CNP_Asistent,Ziua,Ora)  VALUES ('"+txtBox_PatientLName.Text+"','"+txtBox_PatientFName.Text+"','"+Int64.Parse(txtBox_PatientNIN.Text)+"','"+Int32.Parse(txtBox_PatientAge.Text)+"','"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"','"+txtBox_EmailAddress.Text + comboBox_Email.Text+"','"+DocCNP+"','"+AsistCNP+"','"+dateTimePicker.Value+"','"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"')");
+                              MessageBox.Show("The appointment was created successfully!!!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The date and hour you selected are not available!!!");
+                        }
+                    
                     }
                     else
                     {
@@ -120,7 +155,7 @@ namespace ProiectII.UserControls
                 }
                 else
                 {
-                    MessageBox.Show("Information was introduced in the wrong format!!!");
+                    MessageBox.Show("Informations was introduced in the wrong format!!!");
                 }
                 
                 con.Close();
@@ -242,6 +277,26 @@ namespace ProiectII.UserControls
             {
                 txtBox_Hour.Text = "Hour";
             }
+
+            if (!verifier.CheckHour(txtBox_Hour.Text))
+            {
+                MessageBox.Show("The hour is not in a corect format!!!  Please use this format Hour:Minutes");
+                return;
+            }
+            else
+            {
+                  DateTime hour = DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture);
+                    if(hour.Minute == 30 || hour.Minute == 0)
+                    {
+                       Hour_Ok.Visible=true;
+                    }
+                    else
+                    { 
+                        MessageBox.Show("Visits take place every 30 minutes;  minutes are:" + hour.Minute);
+                    }
+            }
+
+
         }
     }
 }
