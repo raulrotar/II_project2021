@@ -60,7 +60,6 @@ namespace ProiectII.Forms
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtBox_SecurityCode = new System.Windows.Forms.TextBox();
             this.comboBox_Email = new System.Windows.Forms.ComboBox();
-            this.label_SecurityCode = new System.Windows.Forms.Label();
             this.picBox_SecurityCodeInfo = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -69,13 +68,13 @@ namespace ProiectII.Forms
             this.label_GeneralInfo = new System.Windows.Forms.Label();
             this.picBox_Example = new System.Windows.Forms.PictureBox();
             this.groupBox_PersonalInfo = new System.Windows.Forms.GroupBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.txtBox_PhoneNr = new System.Windows.Forms.TextBox();
             this.comboBox_ShowDoctors = new System.Windows.Forms.ComboBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.groupBox_Credentials = new System.Windows.Forms.GroupBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.txtBox_PhoneNr = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -89,55 +88,58 @@ namespace ProiectII.Forms
             ((System.ComponentModel.ISupportInitialize)(this.picBox_UsernameInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Example)).BeginInit();
             this.groupBox_PersonalInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.groupBox_Credentials.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_CreateUser
             // 
-            this.btn_CreateUser.FlatAppearance.BorderSize = 2;
+            this.btn_CreateUser.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btn_CreateUser.FlatAppearance.BorderSize = 0;
             this.btn_CreateUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_CreateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CreateUser.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CreateUser.ForeColor = System.Drawing.Color.Green;
+            this.btn_CreateUser.ForeColor = System.Drawing.Color.White;
             this.btn_CreateUser.Location = new System.Drawing.Point(773, 552);
             this.btn_CreateUser.Name = "btn_CreateUser";
             this.btn_CreateUser.Size = new System.Drawing.Size(131, 44);
             this.btn_CreateUser.TabIndex = 0;
             this.btn_CreateUser.Text = "Add User";
-            this.btn_CreateUser.UseVisualStyleBackColor = true;
+            this.btn_CreateUser.UseVisualStyleBackColor = false;
             this.btn_CreateUser.Click += new System.EventHandler(this.btn_CreateUser_Click);
             // 
             // btn_Close
             // 
-            this.btn_Close.FlatAppearance.BorderSize = 2;
+            this.btn_Close.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_Close.FlatAppearance.BorderSize = 0;
             this.btn_Close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Close.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_Close.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Close.ForeColor = System.Drawing.Color.White;
             this.btn_Close.Location = new System.Drawing.Point(132, 552);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(131, 44);
             this.btn_Close.TabIndex = 1;
             this.btn_Close.Text = "Exit";
-            this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.UseVisualStyleBackColor = false;
             this.btn_Close.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btn_ResetFields
             // 
-            this.btn_ResetFields.FlatAppearance.BorderSize = 2;
+            this.btn_ResetFields.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_ResetFields.FlatAppearance.BorderSize = 0;
             this.btn_ResetFields.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_ResetFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ResetFields.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ResetFields.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btn_ResetFields.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ResetFields.ForeColor = System.Drawing.Color.White;
             this.btn_ResetFields.Location = new System.Drawing.Point(438, 552);
             this.btn_ResetFields.Name = "btn_ResetFields";
             this.btn_ResetFields.Size = new System.Drawing.Size(131, 44);
             this.btn_ResetFields.TabIndex = 2;
             this.btn_ResetFields.Text = "Reset Fields";
-            this.btn_ResetFields.UseVisualStyleBackColor = true;
+            this.btn_ResetFields.UseVisualStyleBackColor = false;
             this.btn_ResetFields.Click += new System.EventHandler(this.btn_ResetFields_Click);
             // 
             // radioBtn_Doctor
@@ -201,6 +203,7 @@ namespace ProiectII.Forms
             this.txtBox_NIN.TabIndex = 19;
             this.txtBox_NIN.Text = "National Identification Number";
             this.txtBox_NIN.Click += new System.EventHandler(this.txtBox_NIN_Click);
+            this.txtBox_NIN.TextChanged += new System.EventHandler(this.NIN_TextChanged);
             this.txtBox_NIN.Enter += new System.EventHandler(this.txtBox_NIN_Enter);
             this.txtBox_NIN.Leave += new System.EventHandler(this.txtBox_NIN_Leave);
             // 
@@ -315,7 +318,7 @@ namespace ProiectII.Forms
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(452, 83);
+            this.pictureBox5.Location = new System.Drawing.Point(555, 50);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 40);
@@ -326,7 +329,7 @@ namespace ProiectII.Forms
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel5.Location = new System.Drawing.Point(495, 119);
+            this.panel5.Location = new System.Drawing.Point(598, 86);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(228, 1);
@@ -337,7 +340,7 @@ namespace ProiectII.Forms
             this.txtBox_Username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Username.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Username.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_Username.Location = new System.Drawing.Point(500, 89);
+            this.txtBox_Username.Location = new System.Drawing.Point(603, 56);
             this.txtBox_Username.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Username.Multiline = true;
             this.txtBox_Username.Name = "txtBox_Username";
@@ -351,7 +354,7 @@ namespace ProiectII.Forms
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(60, 150);
+            this.pictureBox6.Location = new System.Drawing.Point(54, 148);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(40, 40);
@@ -362,7 +365,7 @@ namespace ProiectII.Forms
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel6.Location = new System.Drawing.Point(103, 185);
+            this.panel6.Location = new System.Drawing.Point(97, 183);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(228, 1);
@@ -373,7 +376,7 @@ namespace ProiectII.Forms
             this.txtBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Password.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Password.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_Password.Location = new System.Drawing.Point(108, 156);
+            this.txtBox_Password.Location = new System.Drawing.Point(102, 154);
             this.txtBox_Password.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Password.Multiline = true;
             this.txtBox_Password.Name = "txtBox_Password";
@@ -420,7 +423,7 @@ namespace ProiectII.Forms
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(59, 80);
+            this.pictureBox8.Location = new System.Drawing.Point(54, 50);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(40, 40);
@@ -431,7 +434,7 @@ namespace ProiectII.Forms
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel8.Location = new System.Drawing.Point(103, 115);
+            this.panel8.Location = new System.Drawing.Point(99, 86);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(228, 1);
@@ -442,7 +445,7 @@ namespace ProiectII.Forms
             this.txtBox_SecurityCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_SecurityCode.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_SecurityCode.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_SecurityCode.Location = new System.Drawing.Point(108, 86);
+            this.txtBox_SecurityCode.Location = new System.Drawing.Point(102, 56);
             this.txtBox_SecurityCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_SecurityCode.Multiline = true;
             this.txtBox_SecurityCode.Name = "txtBox_SecurityCode";
@@ -469,21 +472,10 @@ namespace ProiectII.Forms
             this.comboBox_Email.Size = new System.Drawing.Size(175, 29);
             this.comboBox_Email.TabIndex = 41;
             // 
-            // label_SecurityCode
-            // 
-            this.label_SecurityCode.AutoSize = true;
-            this.label_SecurityCode.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_SecurityCode.Location = new System.Drawing.Point(64, 38);
-            this.label_SecurityCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label_SecurityCode.Name = "label_SecurityCode";
-            this.label_SecurityCode.Size = new System.Drawing.Size(319, 21);
-            this.label_SecurityCode.TabIndex = 42;
-            this.label_SecurityCode.Text = "What was your mother\'s maiden Name?";
-            // 
             // picBox_SecurityCodeInfo
             // 
             this.picBox_SecurityCodeInfo.Image = ((System.Drawing.Image)(resources.GetObject("picBox_SecurityCodeInfo.Image")));
-            this.picBox_SecurityCodeInfo.Location = new System.Drawing.Point(350, 86);
+            this.picBox_SecurityCodeInfo.Location = new System.Drawing.Point(328, 56);
             this.picBox_SecurityCodeInfo.Margin = new System.Windows.Forms.Padding(2);
             this.picBox_SecurityCodeInfo.Name = "picBox_SecurityCodeInfo";
             this.picBox_SecurityCodeInfo.Size = new System.Drawing.Size(30, 30);
@@ -495,7 +487,7 @@ namespace ProiectII.Forms
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(452, 148);
+            this.pictureBox9.Location = new System.Drawing.Point(555, 148);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(40, 40);
@@ -506,7 +498,7 @@ namespace ProiectII.Forms
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel9.Location = new System.Drawing.Point(495, 184);
+            this.panel9.Location = new System.Drawing.Point(598, 184);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(228, 1);
@@ -517,7 +509,7 @@ namespace ProiectII.Forms
             this.txtBox_ConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_ConfirmPassword.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_ConfirmPassword.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_ConfirmPassword.Location = new System.Drawing.Point(500, 154);
+            this.txtBox_ConfirmPassword.Location = new System.Drawing.Point(603, 154);
             this.txtBox_ConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_ConfirmPassword.Multiline = true;
             this.txtBox_ConfirmPassword.Name = "txtBox_ConfirmPassword";
@@ -531,7 +523,7 @@ namespace ProiectII.Forms
             // picBox_UsernameInfo
             // 
             this.picBox_UsernameInfo.Image = ((System.Drawing.Image)(resources.GetObject("picBox_UsernameInfo.Image")));
-            this.picBox_UsernameInfo.Location = new System.Drawing.Point(742, 89);
+            this.picBox_UsernameInfo.Location = new System.Drawing.Point(845, 56);
             this.picBox_UsernameInfo.Margin = new System.Windows.Forms.Padding(2);
             this.picBox_UsernameInfo.Name = "picBox_UsernameInfo";
             this.picBox_UsernameInfo.Size = new System.Drawing.Size(30, 30);
@@ -602,6 +594,42 @@ namespace ProiectII.Forms
             this.groupBox_PersonalInfo.TabStop = false;
             this.groupBox_PersonalInfo.Text = "Personal Information";
             // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(27, 165);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 59;
+            this.pictureBox13.TabStop = false;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel13.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel13.Location = new System.Drawing.Point(81, 203);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(265, 1);
+            this.panel13.TabIndex = 60;
+            // 
+            // txtBox_PhoneNr
+            // 
+            this.txtBox_PhoneNr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBox_PhoneNr.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_PhoneNr.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtBox_PhoneNr.Location = new System.Drawing.Point(80, 176);
+            this.txtBox_PhoneNr.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBox_PhoneNr.Name = "txtBox_PhoneNr";
+            this.txtBox_PhoneNr.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBox_PhoneNr.Size = new System.Drawing.Size(266, 19);
+            this.txtBox_PhoneNr.TabIndex = 61;
+            this.txtBox_PhoneNr.Text = "Phone Number";
+            this.txtBox_PhoneNr.Click += new System.EventHandler(this.PhoneNumber_Click);
+            this.txtBox_PhoneNr.Leave += new System.EventHandler(this.PhoneNumber_Leave);
+            // 
             // comboBox_ShowDoctors
             // 
             this.comboBox_ShowDoctors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -629,7 +657,6 @@ namespace ProiectII.Forms
             // groupBox_Credentials
             // 
             this.groupBox_Credentials.Controls.Add(this.pictureBox10);
-            this.groupBox_Credentials.Controls.Add(this.label_SecurityCode);
             this.groupBox_Credentials.Controls.Add(this.pictureBox8);
             this.groupBox_Credentials.Controls.Add(this.panel8);
             this.groupBox_Credentials.Controls.Add(this.txtBox_SecurityCode);
@@ -658,7 +685,7 @@ namespace ProiectII.Forms
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(350, 156);
+            this.pictureBox10.Location = new System.Drawing.Point(344, 154);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(30, 30);
@@ -666,40 +693,6 @@ namespace ProiectII.Forms
             this.pictureBox10.TabIndex = 48;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(27, 165);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 59;
-            this.pictureBox13.TabStop = false;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel13.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel13.Location = new System.Drawing.Point(81, 203);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(265, 1);
-            this.panel13.TabIndex = 60;
-            // 
-            // txtBox_PhoneNr
-            // 
-            this.txtBox_PhoneNr.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBox_PhoneNr.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_PhoneNr.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_PhoneNr.Location = new System.Drawing.Point(83, 172);
-            this.txtBox_PhoneNr.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBox_PhoneNr.Name = "txtBox_PhoneNr";
-            this.txtBox_PhoneNr.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBox_PhoneNr.Size = new System.Drawing.Size(266, 22);
-            this.txtBox_PhoneNr.TabIndex = 61;
-            this.txtBox_PhoneNr.Text = "Patient Phone Number";
             // 
             // AddNewUser
             // 
@@ -736,11 +729,11 @@ namespace ProiectII.Forms
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Example)).EndInit();
             this.groupBox_PersonalInfo.ResumeLayout(false);
             this.groupBox_PersonalInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.groupBox_Credentials.ResumeLayout(false);
             this.groupBox_Credentials.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -778,7 +771,6 @@ namespace ProiectII.Forms
         private System.Windows.Forms.Panel panel8;
         public System.Windows.Forms.TextBox txtBox_SecurityCode;
         private System.Windows.Forms.ComboBox comboBox_Email;
-        private System.Windows.Forms.Label label_SecurityCode;
         private System.Windows.Forms.PictureBox picBox_SecurityCodeInfo;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Panel panel9;

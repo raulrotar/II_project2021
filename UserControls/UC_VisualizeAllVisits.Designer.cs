@@ -81,6 +81,7 @@ namespace ProiectII.UserControls
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -127,6 +128,7 @@ namespace ProiectII.UserControls
             this.comboBox_SearchBy.FormattingEnabled = true;
             this.comboBox_SearchBy.Items.AddRange(new object[] {
             "Day",
+            "Patient Last Name",
             "Month",
             "Year"});
             this.comboBox_SearchBy.Location = new System.Drawing.Point(369, 232);

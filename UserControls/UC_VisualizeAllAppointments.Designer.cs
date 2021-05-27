@@ -83,6 +83,7 @@ namespace ProiectII.UserControls
             this.comboBox_SearchBy.FormattingEnabled = true;
             this.comboBox_SearchBy.Items.AddRange(new object[] {
             "Day",
+            "Patient Name",
             "Month",
             "Year"});
             this.comboBox_SearchBy.Location = new System.Drawing.Point(362, 211);
@@ -102,6 +103,7 @@ namespace ProiectII.UserControls
             this.txtBox_Search.Text = "Search Here";
             this.txtBox_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox_Search.Click += new System.EventHandler(this.VAA_Click);
+            this.txtBox_Search.TextChanged += new System.EventHandler(this.VAA_TextChanged);
             this.txtBox_Search.Enter += new System.EventHandler(this.VAA_Enter);
             this.txtBox_Search.Leave += new System.EventHandler(this.VAA_Leave);
             // 
@@ -122,6 +124,10 @@ namespace ProiectII.UserControls
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

@@ -68,7 +68,7 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        query = "SELECT * FROM dbo.Vizita WHERE MONTH(Ziua)='" + txtBox_Search.Text + "'";
+                        query = "SELECT * FROM dbo.Vizita WHERE MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
                     }
                 }
                 else if (comboBox_SearchBy.Text == "Year")
@@ -80,9 +80,10 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        query = "SELECT * FROM dbo.Vizita WHERE YEAR(Ziua)='" + txtBox_Search.Text + "' ";
+                        query = "SELECT * FROM dbo.Vizita WHERE YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%' ";
                     }
                 }
+
                 else
                 {
 
@@ -92,7 +93,7 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        query = "SELECT * FROM dbo.Vizita WHERE DAY(Ziua)='" + txtBox_Search.Text + "' ";
+                        query = "SELECT * FROM dbo.Vizita WHERE DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%' ";
                     }
                 }
 

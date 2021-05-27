@@ -16,12 +16,13 @@ namespace ProiectII.Forms
         Verifier verifier = new Verifier();
         Connection con = new Connection();
         Int64 Doc_CNP = 1111111111111;
+
         public AddNewUser()
         {
             InitializeComponent();
             PopulateEmailComboBox();
             comboBox_ShowDoctors.Visible = false;
-
+            radioBtn_Doctor.Checked = true;
         }
 
         private void PopulateEmailComboBox()
@@ -300,7 +301,7 @@ namespace ProiectII.Forms
                     }
                     else
                     {
-                       comboBox_ShowDoctors.Items.Add(set.Tables[0].Rows[i][0] + " " + set.Tables[0].Rows[i][1]);
+                       comboBox_ShowDoctors.Items.Add(fullName);
                     }
                 }
                 comboBox_ShowDoctors.SelectedIndex = 0;
@@ -324,6 +325,20 @@ namespace ProiectII.Forms
 
         private void btn_ResetFields_Click(object sender, EventArgs e)
         {
+            ClearFields();
+        }
+
+        private void ClearFields()
+        {
+            txtBox_PhoneNr.Text = "Phone Number";
+            txtBox_FirstName.Text = "First Name";
+            txtBox_LastName.Text = "Last Name";
+            txtBox_NIN.Text = "National Identification Number";
+            txtBox_EmailAddress.Text = "Email Address";
+            txtBox_SecurityCode.Text = "Security Code";
+            txtBox_Username.Text = "Username";
+            txtBox_Password.Text = "Password";
+            txtBox_ConfirmPassword.Text = "Confirm Password";
         }
 
         private void AddNewUser_Load(object sender, EventArgs e)
@@ -339,10 +354,13 @@ namespace ProiectII.Forms
                 try
                 {
                     con.Open();
-                    if (verifier.CheckName(txtBox_FirstName.Text)&&verifier.CheckName(txtBox_LastName.Text)&&verifier.CheckNIN(txtBox_NIN.Text)&&verifier.CheckPhoneNumber(txtBox_PhoneNr.Text))                                 
+                    if (verifier.CheckName(txtBox_FirstName.Text) && verifier.CheckName(txtBox_LastName.Text) && verifier.CheckNIN(txtBox_NIN.Text) && verifier.CheckPhoneNumber(txtBox_PhoneNr.Text))                                 
                     {
                         con.ExecuteNonQuery("INSERT INTO dbo.Doctori VALUES ('" + Int64.Parse(txtBox_NIN.Text) + "','" + txtBox_LastName.Text + "','" + txtBox_FirstName.Text + "','" + txtBox_Username.Text + "','" + txtBox_EmailAddress.Text + "" + comboBox_Email.Text + "','" + txtBox_Password.Text + "','" + Int32.Parse(txtBox_PhoneNr.Text) + "','" + txtBox_SecurityCode.Text + "')");
-                    }else
+                        ClearFields();
+                        MessageBox.Show("The doctor has been added succesfully!!!");
+                    }
+                    else
                     {
                         MessageBox.Show("Wrong information format!");
                     }
@@ -364,13 +382,15 @@ namespace ProiectII.Forms
                     SqlDataReader DocNameReader = con.ExecuteReader("Select CNP from dbo.Doctori where Nume='" + DocFullName[0] + "' AND Prenume='" + DocFullName[1] + "'");
                     while (DocNameReader.Read())
                     {
-                        Doc_CNP = DocNameReader.GetInt32(0);
+                        Doc_CNP = DocNameReader.GetInt64(0);
                     }
+
                     DocNameReader.Close();
                     if (verifier.CheckName(txtBox_FirstName.Text) && verifier.CheckName(txtBox_LastName.Text) && verifier.CheckNIN(txtBox_NIN.Text) && verifier.CheckPhoneNumber(txtBox_PhoneNr.Text))
                     {
                         con.ExecuteNonQuery("INSERT INTO dbo.Asistenti (CNP,CNP_Doctor,Nume,Prenume,Username,Email,Parola,Nr_Telefon,Security_Code) VALUES ('" + Int64.Parse(txtBox_NIN.Text) + "','"+Doc_CNP+"','" + txtBox_LastName.Text + "','" + txtBox_FirstName.Text + "','" + txtBox_Username.Text + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "','" + txtBox_Password.Text + "','" + Int32.Parse(txtBox_PhoneNr.Text) + "','" + txtBox_SecurityCode.Text + "')");
-                   
+                        ClearFields();
+                        MessageBox.Show("The nurse has been added successfully!!!");
                     }
                     else
                     {
@@ -388,6 +408,55 @@ namespace ProiectII.Forms
             {
                 MessageBox.Show("Are you a nurse or a doctor? Please select your ocupation!!");
             }
+        }
+
+        private void PhoneNumber_Click(object sender, EventArgs e)
+        {
+            if (txtBox_PhoneNr.Text == "Phone Number")
+            {
+                txtBox_PhoneNr.Text = "";
+            }
+        }
+
+        private void PhoneNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_PhoneNr.Text == "")
+            {
+                txtBox_PhoneNr.Text = "Phone Number";
+            }
+        }
+
+        private void NIN_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            Int64 a;
+            if (Int64.TryParse(txtBox_NIN.Text, out a))
+            {
+                Int64 NIN = Int64.Parse(txtBox_NIN.Text);
+                DataSet set;
+
+                if (radioBtn_Doctor.Checked)
+                {
+                    string queryDoc = "SELECT * FROM dbo.Doctori where CNP='" + NIN + "'";
+                    set = con.ExecuteDataSet(queryDoc);
+                    if (set.Tables[0].Rows.Count != 0)
+                    {
+                        MessageBox.Show("The National Identification Number you introduced already exists!!!");
+                        txtBox_NIN.Text = "National Identification Number";
+                    }
+                }
+                else if (radioBtn_Nurse.Checked)
+                {
+                    string queryAsist = "SELECT * FROM dbo.Asistenti WHERE CNP='" + NIN + "' OR CNP_Doctor='" + NIN + "'";
+                    set = con.ExecuteDataSet(queryAsist);
+                    if (set.Tables[0].Rows.Count != 0)
+                    {
+                        MessageBox.Show("The National Identification Number you introduced already exists!!!");
+                        txtBox_NIN.Text = "National Identification Number";
+                    }
+                }
+            }
+            con.Close();
         }
     }
 }

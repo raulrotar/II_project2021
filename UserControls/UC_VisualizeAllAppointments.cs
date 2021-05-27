@@ -68,7 +68,7 @@ namespace ProiectII.UserControls
 
                     else
                     {
-                        query = "SELECT * FROM dbo.Programare WHERE MONTH(Ziua)='" + txtBox_Search.Text + "'";
+                        query = "SELECT * FROM dbo.Programare WHERE MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
                     }
 
                 }
@@ -81,10 +81,22 @@ namespace ProiectII.UserControls
 
                     else
                     {
-                        query = "SELECT * FROM dbo.Programare WHERE YEAR(Ziua)='" + txtBox_Search.Text + "'";
+                        query = "SELECT * FROM dbo.Programare WHERE YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
                     }
 
                 }
+                else if (comboBox_SearchBy.Text == "Patient Name")
+                {
+                    if (txtBox_Search.Text=="Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Programare ORDER BY NumePacient ASC";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Programare WHERE NumePacient LIKE '%"+txtBox_Search.Text+"%'";
+                    }
+                }
+             
                 else
                 {
                     if (txtBox_Search.Text == "Search Here")
@@ -94,7 +106,76 @@ namespace ProiectII.UserControls
 
                     else
                     {
-                        query = "SELECT * FROM dbo.Programare WHERE DAY(Ziua)='" + txtBox_Search.Text + "'";
+                        query = "SELECT * FROM dbo.Programare WHERE DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                    }
+
+                }
+
+                DataSet set;
+                set = con.ExecuteDataSet(query);
+                DataTable dataTable = set.Tables[0];
+                dataGridView1.DataSource = dataTable;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void VAA_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            string query;
+            try
+            {
+                if (comboBox_SearchBy.Text == "Month")
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Programare ORDER BY MONTH(Ziua) DESC";
+                    }
+
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Programare WHERE MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                    }
+
+                }
+                else if (comboBox_SearchBy.Text == "Year")
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Programare ORDER BY YEAR(Ziua) DESC";
+                    }
+
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Programare WHERE YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                    }
+
+                }
+                else if (comboBox_SearchBy.Text == "Patient Name")
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Programare ORDER BY NumePacient ASC";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Programare WHERE NumePacient LIKE '%" + txtBox_Search.Text + "%'";
+                    }
+                }
+
+                else
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Programare ORDER BY DAY(Ziua) DESC";
+                    }
+
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Programare WHERE DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
                     }
 
                 }

@@ -167,6 +167,31 @@ namespace ProiectII
         }
         #endregion
 
+        public bool CheckDate(DateTime dateTime)
+        {
+            if (dateTime.Date < DateTime.Now)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool CheckHour(string Hour)
+        {
+            DateTime time = DateTime.Parse(Hour, System.Globalization.CultureInfo.CurrentCulture);
+            DateTime minTime = DateTime.Parse("08:00",System.Globalization.CultureInfo.CurrentCulture);
+            DateTime maxTime = DateTime.Parse("16:00", System.Globalization.CultureInfo.CurrentCulture);
+            if (time > maxTime || time < minTime)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         #region Verificare Numar de Telefon Mobil
         public bool CheckPhoneNumber(string PhoneNr)
         {

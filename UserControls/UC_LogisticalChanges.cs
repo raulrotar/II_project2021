@@ -79,7 +79,7 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        query = "SELECT * FROM dbo.Tratament WHERE Nume = '" + txtBox_Search.Text + "'";
+                        query = "SELECT * FROM dbo.Tratament WHERE Nume LIKE '%" + txtBox_Search.Text + "%'";
                     }
 
                 }
@@ -91,7 +91,7 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        query = "SELECT * FROM dbo.Lucrari WHERE Nume = '" + txtBox_Search.Text + "'";
+                        query = "SELECT * FROM dbo.Lucrari WHERE Nume LIKE '%" + txtBox_Search.Text + "%'";
                     }
                 }
                 else
@@ -102,7 +102,7 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        query = "SELECT * FROM dbo.Diagnostic WHERE Nume = '" + txtBox_Search.Text + "'";
+                        query = "SELECT * FROM dbo.Diagnostic WHERE Nume LIKE '%" + txtBox_Search.Text + "%'";
                     }
                 }
 
@@ -139,7 +139,7 @@ namespace ProiectII.UserControls
                     con.ExecuteNonQuery("INSERT INTO dbo.Diagnostic (Nume) VALUES ('" + txtBox_Name.Text + "')");
                 }
                 
-                MessageBox.Show("Informatiile au fost introduse cu Succes!");
+                MessageBox.Show("Information was added successfully!");
                 con.Close();
             }
 

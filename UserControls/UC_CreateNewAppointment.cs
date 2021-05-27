@@ -24,6 +24,7 @@ namespace ProiectII.UserControls
         {
             comboBox_Email.SelectedIndex = 0;
             PopulateComboBoxes();
+            dateTimePicker.Value = DateTime.Now;
         }
 
         private void PopulateComboBoxes()
@@ -38,34 +39,34 @@ namespace ProiectII.UserControls
                 setAsist = con.ExecuteDataSet(queryAsist);
                 for (int i = 0; i < setAsist.Tables[0].Rows.Count; i++)
                 {
-                    string DocFullName = (setDoc.Tables[0].Rows[i][0] + " " +setDoc.Tables[0].Rows[i][1]);
                     string AsistFullName = (setAsist.Tables[0].Rows[i][0] + " " + setAsist.Tables[0].Rows[i][1]);
-                    if (cmbBox_Doctor.Items.Contains(DocFullName))
-                    {
-
-                    }
-                    else
-                    {
-                        cmbBox_Doctor.Items.Add(DocFullName);
-                    }
-
                     if (cmbBox_Assistant.Items.Contains(AsistFullName))
                     {
-
                     }
                     else
                     {
                         cmbBox_Assistant.Items.Add(AsistFullName);
                     }
                 }
+                for (int i = 0; i < setDoc.Tables[0].Rows.Count; i++)
+                {
+                    string DocFullName = (setDoc.Tables[0].Rows[i][0] + " " + setDoc.Tables[0].Rows[i][1]);
+                    if (cmbBox_Doctor.Items.Contains(DocFullName))
+                    {
+                    }
+                    else
+                    {
+                        cmbBox_Doctor.Items.Add(DocFullName);
+                    }
+                }
                 cmbBox_Assistant.SelectedIndex = 0;
                 cmbBox_Doctor.SelectedIndex = 0;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -86,28 +87,36 @@ namespace ProiectII.UserControls
             try
             {
                 con.Open();
-                int DocCNP = 1, AsistCNP = 1;
+                Int64 DocCNP = 1111111111111, AsistCNP = 1222222222222;
                 string[] DocName = (cmbBox_Doctor.Text).Split(' ');
                 string[] AsistName = (cmbBox_Assistant.Text).Split(' ');
 
                 SqlDataReader DocNameReader = con.ExecuteReader("Select CNP from dbo.Doctori where Nume='" + DocName[0] + "' AND Prenume='" + DocName[1] + "'");
                 while (DocNameReader.Read())
                 {
-                     DocCNP = DocNameReader.GetInt32(0);
+                     DocCNP = DocNameReader.GetInt64(0);
                 }
                 DocNameReader.Close();
 
                 SqlDataReader AsistNameReader = con.ExecuteReader("Select CNP from dbo.Asistenti where Nume='" + AsistName[0] + "' AND Prenume='" + AsistName[1] + "'");
                 while (AsistNameReader.Read())
                 {
-                    AsistCNP = AsistNameReader.GetInt32(0);
+                    AsistCNP = AsistNameReader.GetInt64(0);
                 }
                 AsistNameReader.Close();
 
                 if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
                 {
+                    if (verifier.CheckDate(dateTimePicker.Value) && verifier.CheckHour(txtBox_Hour.Text))
+                    {
                      con.ExecuteNonQuery("INSERT INTO dbo.Pacienti (CNP,CNP_Doctor,CNP_Asistent,Nume,Prenume,Varsta,Nr_Telefon,Email) VALUES('" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DocCNP + "','" + AsistCNP + "','" + txtBox_PatientLName.Text + "','" + txtBox_PatientFName.Text + "','" + Int32.Parse(txtBox_PatientAge.Text) + "','" + Int32.Parse(txtBox_PatientPhoneNr.Text) + "','" + txtBox_EmailAddress.Text + comboBox_Email.Text + "')");
-                     con.ExecuteNonQuery("INSERT INTO dbo.Programare (NumePacient,PrenumePacient,CNP_Pacient,Varsta,NrTelefon,Email,CNP_Doctor,CNP_Asistent,Ziua,Ora)  VALUES ('"+txtBox_PatientLName.Text+"','"+txtBox_PatientFName.Text+"','"+Int64.Parse(txtBox_PatientNIN.Text)+"','"+Int32.Parse(txtBox_PatientAge.Text)+"','"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"','"+txtBox_EmailAddress.Text + comboBox_Email.Text+"','"+DocCNP+"','"+AsistCNP+"','"+dateTimePicker.Value+"','"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"')");                                                                                                                   
+                     con.ExecuteNonQuery("INSERT INTO dbo.Programare (NumePacient,PrenumePacient,CNP_Pacient,Varsta,NrTelefon,Email,CNP_Doctor,CNP_Asistent,Ziua,Ora)  VALUES ('"+txtBox_PatientLName.Text+"','"+txtBox_PatientFName.Text+"','"+Int64.Parse(txtBox_PatientNIN.Text)+"','"+Int32.Parse(txtBox_PatientAge.Text)+"','"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"','"+txtBox_EmailAddress.Text + comboBox_Email.Text+"','"+DocCNP+"','"+AsistCNP+"','"+dateTimePicker.Value+"','"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"')");
+                        MessageBox.Show("The appointment was created successfully!!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a date that is not in the past and an Hour between 08:00 and 16:00!!!");
+                    }
                 }
                 else
                 {

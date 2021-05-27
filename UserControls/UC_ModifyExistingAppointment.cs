@@ -41,17 +41,10 @@ namespace ProiectII.UserControls
                 setAsist = con.ExecuteDataSet(queryAsist);
                 for (int i = 0; i < setAsist.Tables[0].Rows.Count; i++)
                 {
-                    string DocFullName = (setDoc.Tables[0].Rows[i][0] + " " + setDoc.Tables[0].Rows[i][1]);
+                    
                     string AsistFullName = (setAsist.Tables[0].Rows[i][0] + " " + setAsist.Tables[0].Rows[i][1]);
-                    if (cmbBox_Doctor.Items.Contains(DocFullName))
-                    {
-
-                    }
-                    else
-                    {
-                        cmbBox_Doctor.Items.Add(DocFullName);
-                    }
-
+                   
+                 
                     if (cmbBox_Assistant.Items.Contains(AsistFullName))
                     {
 
@@ -61,14 +54,27 @@ namespace ProiectII.UserControls
                         cmbBox_Assistant.Items.Add(AsistFullName);
                     }
                 }
+                for (int i = 0; i < setDoc.Tables[0].Rows.Count; i++)
+                {
+                    string DocFullName = (setDoc.Tables[0].Rows[i][0] + " " + setDoc.Tables[0].Rows[i][1]);
+                    if (cmbBox_Doctor.Items.Contains(DocFullName))
+                    {
+
+                    }
+                    else
+                    {
+                        cmbBox_Doctor.Items.Add(DocFullName);
+                    }
+                }
+
                 cmbBox_Assistant.SelectedIndex = 0;
                 cmbBox_Doctor.SelectedIndex = 0;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -150,14 +156,14 @@ namespace ProiectII.UserControls
                 SqlDataReader DocNameReader = con.ExecuteReader("Select CNP from dbo.Doctori where Nume='" + DocName[0] + "' AND Prenume='" + DocName[1] + "'");
                 while (DocNameReader.Read())
                 {
-                    DocCNP = DocNameReader.GetInt32(0);
+                    DocCNP = DocNameReader.GetInt64(0);
                 }
                 DocNameReader.Close();
            
                 SqlDataReader AsistNameReader = con.ExecuteReader("Select CNP from dbo.Asistenti where Nume='" + AsistName[0] + "' AND Prenume='" + AsistName[1] + "'");
                 while (AsistNameReader.Read())
                 {
-                    AsistCNP = AsistNameReader.GetInt32(0);
+                    AsistCNP = AsistNameReader.GetInt64(0);
                 }
                 AsistNameReader.Close();
 
