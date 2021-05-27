@@ -253,5 +253,63 @@ namespace ProiectII.UserControls
                 txtBox_Name.Text = selectedRow.Cells[1].Value.ToString();
             }
         }
+
+        private void Search_TxtChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                con.Open();
+                string query;
+                if (comboBox_SearchBy.Text == "Treatment")
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Tratament";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Tratament WHERE Nume LIKE '%" + txtBox_Search.Text + "%'";
+                    }
+
+                }
+                else if (comboBox_SearchBy.Text == "Dental Work")
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Lucrari";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Lucrari WHERE Nume LIKE '%" + txtBox_Search.Text + "%'";
+                    }
+                }
+                else
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        query = "SELECT * FROM dbo.Diagnostic";
+                    }
+                    else
+                    {
+                        query = "SELECT * FROM dbo.Diagnostic WHERE Nume LIKE '%" + txtBox_Search.Text + "%'";
+                    }
+                }
+
+                DataSet set;
+                set = con.ExecuteDataSet(query);
+
+                DataTable dataTable = set.Tables[0];
+                dataGridView2.DataSource = dataTable;
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
     }
 }

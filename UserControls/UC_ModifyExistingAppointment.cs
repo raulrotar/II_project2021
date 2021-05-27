@@ -26,6 +26,7 @@ namespace ProiectII.UserControls
         {
             comboBox_SearchBy.SelectedIndex = 0;
             comboBox_Email.SelectedIndex = 0;
+            dateTimePicker.Value = DateTime.Now;
             PopulateComboBoxes();
         }
 
@@ -143,7 +144,27 @@ namespace ProiectII.UserControls
             dateTimePicker.Value =  DateTime.Parse(selectedRow.Cells[9].Value.ToString(),System.Globalization.CultureInfo.CurrentCulture);
             txtBox_Hour.Text = selectedRow.Cells[10].Value.ToString();
         }
+                public bool CheckAvailabilility(DateTime date, string Hour)
+                {
+                    DateTime hour = DateTime.Parse(Hour, System.Globalization.CultureInfo.CurrentCulture);
+                    DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua='" + date + "' AND Ora='" + hour + "'");
+                    if (set.Tables[0].Rows.Count > 0)
+                    {
+                        return false;
+                    }
 
+                    return true;
+                }
+                public bool CheckForPatient(string NIN)
+                {
+                    Int64 CNP = Int64.Parse(NIN);
+                    DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Pacienti WHERE CNP='" + Int64.Parse(NIN) + "'");
+                    if (set.Tables[0].Rows.Count > 0)
+                    {
+                        return false;
+                    }
+                    return true;
+                }
         private void btn_Save_Click(object sender, EventArgs e)
         {
             try
@@ -167,15 +188,112 @@ namespace ProiectII.UserControls
                 }
                 AsistNameReader.Close();
 
-                if(verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
+                if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
                 {
-                    con.ExecuteNonQuery("UPDATE dbo.Programare SET NumePacient='"+txtBox_PatientLName.Text+"', PrenumePacient='"+txtBox_PatientFName.Text+"',CNP_Pacient='"+Int64.Parse(txtBox_PatientNIN.Text)+"',Varsta='"+Int32.Parse(txtBox_PatientAge.Text)+"' , NrTelefon='"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"',Email='"+txtBox_EmailAddress.Text +comboBox_Email.Text+"',CNP_Doctor='"+DocCNP+"',CNP_Asistent='"+AsistCNP+"',Ziua='"+dateTimePicker.Value+"',Ora='"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"'  WHERE Id='"+id+"'");
-                    con.ExecuteNonQuery("UPDATE dbo.Pacienti SET CNP_Doctor='"+DocCNP+"',CNP_Asistent='"+AsistCNP+"',Nume='"+txtBox_PatientLName.Text+"',Prenume='"+txtBox_PatientFName.Text+"',Varsta='"+Int32.Parse(txtBox_PatientAge.Text)+"',Nr_Telefon='"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"',Email='"+txtBox_EmailAddress.Text + comboBox_Email.Text+"'  WHERE CNP='"+Int64.Parse(txtBox_PatientNIN.Text)+"'");
+                    if (verifier.CheckDate(dateTimePicker.Value) && verifier.CheckHour(txtBox_Hour.Text))
+                    {
+                        if (CheckAvailabilility(dateTimePicker.Value,txtBox_Hour.Text))
+                        {
+                            con.ExecuteNonQuery("UPDATE dbo.Programare SET NumePacient='"+txtBox_PatientLName.Text+"', PrenumePacient='"+txtBox_PatientFName.Text+"',CNP_Pacient='"+Int64.Parse(txtBox_PatientNIN.Text)+"',Varsta='"+Int32.Parse(txtBox_PatientAge.Text)+"' , NrTelefon='"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"',Email='"+txtBox_EmailAddress.Text +comboBox_Email.Text+"',CNP_Doctor='"+DocCNP+"',CNP_Asistent='"+AsistCNP+"',Ziua='"+dateTimePicker.Value+"',Ora='"+DateTime.Parse(txtBox_Hour.Text,System.Globalization.CultureInfo.CurrentCulture)+"'  WHERE Id='"+id+"'");
+                            con.ExecuteNonQuery("UPDATE dbo.Pacienti SET CNP_Doctor='"+DocCNP+"',CNP_Asistent='"+AsistCNP+"',Nume='"+txtBox_PatientLName.Text+"',Prenume='"+txtBox_PatientFName.Text+"',Varsta='"+Int32.Parse(txtBox_PatientAge.Text)+"',Nr_Telefon='"+Int32.Parse(txtBox_PatientPhoneNr.Text)+"',Email='"+txtBox_EmailAddress.Text + comboBox_Email.Text+"'  WHERE CNP='"+Int64.Parse(txtBox_PatientNIN.Text)+"'");
+                            MessageBox.Show("Appointment Updated Successfully!!!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The date and hour you selected are not available!!!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a date that is not in the past and an Hour between 08:00 and 16:00!!!");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Information was introduced in the wrong format!!!");
                 }
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Modify_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                DataSet set;
+                if (comboBox_SearchBy.Text == "Date")
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY Ziua DESC");
+                    }
+                    else
+                    {
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua LIKE '%" + txtBox_Search.Text + "%'");
+                    }
+                }
+                else if (comboBox_SearchBy.Text == "Hour")
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY Ora ASC");
+                    }
+                    else
+                    {
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ora LIKE '%" + txtBox_Search.Text + "%'");
+                    }
+                }
+                else
+                {
+                    if (txtBox_Search.Text == "Search Here")
+                    {
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY NumePacient ASC");
+                    }
+                    else
+                    {
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE NumePacient LIKE '%" + txtBox_Search.Text + "%'");
+                    }
+                }
+                DataTable dataTable = set.Tables[0];
+                dataGridView1.DataSource = dataTable;
+                con.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void MEA_Click(object sender, EventArgs e)
+        {
+            if (txtBox_Search.Text == "Search Here")
+            {
+                txtBox_Search.Text = "";
+            }
+        }
+
+        private void MEA_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_Search.Text == "")
+            {
+                txtBox_Search.Text = "Search Here";
+            }
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                con.ExecuteNonQuery("DELETE FROM dbo.Programare WHERE Id='"+id+"'");
+                MessageBox.Show("Record Deleted Successfully!!");
                 con.Close();
             }
             catch (Exception)

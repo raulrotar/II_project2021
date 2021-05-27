@@ -315,6 +315,9 @@ namespace ProiectII.UserControls
             this.txtBox_Search.TabIndex = 29;
             this.txtBox_Search.Text = "Search Here";
             this.txtBox_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_Search.Click += new System.EventHandler(this.MEA_Click);
+            this.txtBox_Search.TextChanged += new System.EventHandler(this.Modify_TextChanged);
+            this.txtBox_Search.Leave += new System.EventHandler(this.MEA_Leave);
             // 
             // comboBox_SearchBy
             // 
@@ -533,6 +536,7 @@ namespace ProiectII.UserControls
             this.btn_Delete.TabIndex = 66;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // pictureBox1
             // 

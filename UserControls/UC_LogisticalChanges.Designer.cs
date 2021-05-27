@@ -139,6 +139,7 @@ namespace ProiectII.UserControls
             this.txtBox_Search.Text = "Search Here";
             this.txtBox_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox_Search.Click += new System.EventHandler(this.SearchBy_Click);
+            this.txtBox_Search.TextChanged += new System.EventHandler(this.Search_TxtChanged);
             this.txtBox_Search.Leave += new System.EventHandler(this.SearchBy_Leave);
             // 
             // comboBox_SearchBy
