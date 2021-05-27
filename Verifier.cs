@@ -181,6 +181,11 @@ namespace ProiectII
 
         public bool CheckHour(string Hour)
         {
+            DateTime hourTest;
+            if (!DateTime.TryParse(Hour,out hourTest))
+            {
+                return false;
+            }
             DateTime time = DateTime.Parse(Hour, System.Globalization.CultureInfo.CurrentCulture);
             DateTime minTime = DateTime.Parse("08:00",System.Globalization.CultureInfo.CurrentCulture);
             DateTime maxTime = DateTime.Parse("16:00", System.Globalization.CultureInfo.CurrentCulture);
@@ -191,6 +196,8 @@ namespace ProiectII
 
             return true;
         }
+
+        
 
         #region Verificare Numar de Telefon Mobil
         public bool CheckPhoneNumber(string PhoneNr)
@@ -243,5 +250,7 @@ namespace ProiectII
             return true;
         }
         #endregion
+
+
     }
 }
