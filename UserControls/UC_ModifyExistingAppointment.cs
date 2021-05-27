@@ -15,11 +15,15 @@ namespace ProiectII.UserControls
     {
         Verifier verifier = new Verifier();
         Connection con = new Connection();
+        Int64 userCNP;
+        char position;
         Int64 id = 0;
 
-        public UC_ModifyExistingAppointment()
+        public UC_ModifyExistingAppointment(Int64 userCNP, char position)
         {
             InitializeComponent();
+            this.userCNP = userCNP;
+            this.position = position;
         }
 
         private void UC_ModifyExistingAppointment_Load(object sender, EventArgs e)
@@ -28,6 +32,14 @@ namespace ProiectII.UserControls
             comboBox_Email.SelectedIndex = 0;
             dateTimePicker.Value = DateTime.Now;
             PopulateComboBoxes();
+            if (position == 'd')
+            {
+                helloLabel.Text = "Hello Dr. " + verifier.SetUserName(userCNP, position);
+            }
+            else
+            {
+                helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
+            }
         }
 
         private void PopulateComboBoxes()

@@ -12,15 +12,28 @@ namespace ProiectII.UserControls
 {
     public partial class UC_VisualizeAllAppointments : UserControl
     {
+        Verifier verifier = new Verifier();
         Connection con = new Connection();
-        public UC_VisualizeAllAppointments()
+        Int64 userCNP;
+        char position;
+        public UC_VisualizeAllAppointments(Int64 userCNP, char position)
         {
             InitializeComponent();
+            this.userCNP = userCNP;
+            this.position = position;
         }
 
         private void UC_VisualizeAllAppointments_Load(object sender, EventArgs e)
         {
             comboBox_SearchBy.SelectedIndex = 0;
+            if (position == 'd')
+            {
+                helloLabel.Text = "Hello Dr. " + verifier.SetUserName(userCNP, position);
+            }
+            else
+            {
+                helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
+            }
         }
 
         private void VAA_Click(object sender, EventArgs e)

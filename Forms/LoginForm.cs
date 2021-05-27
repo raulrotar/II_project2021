@@ -170,7 +170,7 @@ namespace ProiectII
                             userCNP = Int64.Parse(row["CNP"].ToString());
                         }
                         if ((txt_Username.Equals(username))&&(txt_Password.Equals(password))) {
-                            using (MainApp main = new MainApp(userCNP))
+                            using (MainApp main = new MainApp(userCNP,'d'))
                             {
                                 this.Hide();
                                 main.ShowDialog();
@@ -193,7 +193,7 @@ namespace ProiectII
                             }
                             if((txt_Username.Equals(username))&&(txt_Password.Equals(password)))
                             {
-                                using (MainApp main = new MainApp(userCNP))
+                                using (MainApp main = new MainApp(userCNP,'a'))
                                 {
                                     this.Hide();
                                     main.ShowDialog();

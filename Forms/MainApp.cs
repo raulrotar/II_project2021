@@ -14,17 +14,18 @@ namespace ProiectII.Forms
     public partial class MainApp : Form
     {
         Int64 userCNP;
-        public MainApp(Int64 userCNP)
+        char position;
+        public MainApp(Int64 userCNP,char position)
         {
             InitializeComponent();
             this.userCNP = userCNP;
+            this.position = position;
         }
 
         private void MainApp_Load(object sender, EventArgs e)
         {
-            UC_VisualizeAllAppointments visualizeAllAppointments = new UC_VisualizeAllAppointments();
+            UC_VisualizeAllAppointments visualizeAllAppointments = new UC_VisualizeAllAppointments(userCNP,position);
             addControls(visualizeAllAppointments);
-            MessageBox.Show(userCNP.ToString());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace ProiectII.Forms
 
         private void btn_VizitaCurenta_Click(object sender, EventArgs e)
         {
-            UC_CurrentVisit currentVisit = new UC_CurrentVisit();
+            UC_CurrentVisit currentVisit = new UC_CurrentVisit(userCNP, position);
             addControls(currentVisit);
         }
 
@@ -60,37 +61,37 @@ namespace ProiectII.Forms
 
         private void btn_ToateProgramarile_Click(object sender, EventArgs e)
         {
-            UC_VisualizeAllAppointments visualizeAllAppointments = new UC_VisualizeAllAppointments();
+            UC_VisualizeAllAppointments visualizeAllAppointments = new UC_VisualizeAllAppointments(userCNP, position);
             addControls(visualizeAllAppointments);
         }
 
         private void btn_CreazaProgramare_Click(object sender, EventArgs e)
         {
-            UC_CreateNewAppointment createNewAppointment = new UC_CreateNewAppointment();
+            UC_CreateNewAppointment createNewAppointment = new UC_CreateNewAppointment(userCNP, position);
             addControls(createNewAppointment);
         }
 
         private void btn_ModificaProgramare_Click(object sender, EventArgs e)
         {
-            UC_ModifyExistingAppointment modifyExistingAppointment = new UC_ModifyExistingAppointment();
+            UC_ModifyExistingAppointment modifyExistingAppointment = new UC_ModifyExistingAppointment(userCNP, position);
             addControls(modifyExistingAppointment);
         }
 
         private void btn_SchimbariLogistice_Click(object sender, EventArgs e)
         {
-            UC_LogisticalChanges logisticalChanges = new UC_LogisticalChanges();
+            UC_LogisticalChanges logisticalChanges = new UC_LogisticalChanges(userCNP, position);
             addControls(logisticalChanges);
         }
 
         private void btn_CautaVizite_Click(object sender, EventArgs e)
         {
-            UC_VisualizeAllVisits visualizeAllVisits = new UC_VisualizeAllVisits();
+            UC_VisualizeAllVisits visualizeAllVisits = new UC_VisualizeAllVisits(userCNP, position);
             addControls(visualizeAllVisits);
         }
 
         private void btn_ModificaProgramare_Click_1(object sender, EventArgs e)
         {
-            UC_ModifyExistingAppointment modifyExistingAppointment = new UC_ModifyExistingAppointment();
+            UC_ModifyExistingAppointment modifyExistingAppointment = new UC_ModifyExistingAppointment(userCNP, position);
             addControls(modifyExistingAppointment);
         }
     }

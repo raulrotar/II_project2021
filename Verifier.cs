@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace ProiectII
 {
@@ -167,6 +165,8 @@ namespace ProiectII
         }
         #endregion
 
+        #region Verificare Data
+
         public bool CheckDate(DateTime dateTime)
         {
             if (dateTime.Date < DateTime.Now)
@@ -178,7 +178,9 @@ namespace ProiectII
                 return true;
             }
         }
+        #endregion
 
+        #region Verificare Ora
         public bool CheckHour(string Hour)
         {
             DateTime hourTest;
@@ -197,7 +199,7 @@ namespace ProiectII
             return true;
         }
 
-        
+        #endregion
 
         #region Verificare Numar de Telefon Mobil
         public bool CheckPhoneNumber(string PhoneNr)
@@ -251,6 +253,46 @@ namespace ProiectII
         }
         #endregion
 
+        #region Setare Nume User
 
+        public String SetUserName(Int64 userCNP,char position)
+        {
+            Connection con = new Connection();
+            String query_doctors = "SELECT Nume FROM dbo.Doctori WHERE CNP='"+userCNP+"'";
+            String query_asist = "SELECT Nume FROM dbo.Asistenti WHERE CNP='" + userCNP + "'";
+            String userName="";
+
+            con.Open();
+            SqlDataReader row;
+
+            //Daca e doctor caut in tabelul de doctori
+            if(position=='d')
+            {
+                row = con.ExecuteReader(query_doctors);
+
+                if(row.HasRows)
+                {
+                    while(row.Read())
+                    {
+                        userName = row["Nume"].ToString();
+                    }
+                }
+                row.Close();
+                return userName;
+            }else
+            {
+                row = con.ExecuteReader(query_asist);
+                if (row.HasRows)
+                {
+                    while (row.Read())
+                    {
+                        userName = row["Nume"].ToString();
+                    }
+                }
+                row.Close();
+                return userName;
+            }
+        }
+        #endregion
     }
 }

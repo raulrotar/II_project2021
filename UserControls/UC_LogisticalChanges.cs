@@ -12,12 +12,19 @@ namespace ProiectII.UserControls
 {
     public partial class UC_LogisticalChanges : UserControl
     {
+        Verifier verifier = new Verifier();
         Connection con = new Connection();
+        Int64 userCNP;
+        char position;
         int id = 0;
-        public UC_LogisticalChanges()
+        public UC_LogisticalChanges(Int64 userCNP, char position)
         {
             InitializeComponent();
+            this.userCNP = userCNP;
+            this.position = position;
         }
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -30,6 +37,14 @@ namespace ProiectII.UserControls
             picBox_Price.Visible = false;
             txtBox_Price.Visible = false;
             panel_Price.Visible = false;
+            if (position == 'd')
+            {
+                helloLabel.Text = "Hello Dr. " + verifier.SetUserName(userCNP, position);
+            }
+            else
+            {
+                helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
+            }
         }
 
         private void SearchBy_Click(object sender, EventArgs e)

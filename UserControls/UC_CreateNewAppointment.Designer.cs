@@ -31,10 +31,12 @@ namespace ProiectII.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CreateNewAppointment));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.helloLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Clear = new System.Windows.Forms.Button();
             this.btn_Create = new System.Windows.Forms.Button();
             this.grpBox_VisitInfo = new System.Windows.Forms.GroupBox();
+            this.Hour_Ok = new System.Windows.Forms.Label();
             this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
             this.cmbBox_Doctor = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -66,7 +68,6 @@ namespace ProiectII.UserControls
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtBox_PatientNIN = new System.Windows.Forms.TextBox();
-            this.Hour_Ok = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grpBox_VisitInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -87,12 +88,24 @@ namespace ProiectII.UserControls
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panel1.Controls.Add(this.helloLabel);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, -2);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1630, 150);
             this.panel1.TabIndex = 0;
+            // 
+            // helloLabel
+            // 
+            this.helloLabel.AutoSize = true;
+            this.helloLabel.Font = new System.Drawing.Font("Franklin Gothic Medium", 24F, System.Drawing.FontStyle.Bold);
+            this.helloLabel.ForeColor = System.Drawing.Color.White;
+            this.helloLabel.Location = new System.Drawing.Point(23, 52);
+            this.helloLabel.Name = "helloLabel";
+            this.helloLabel.Size = new System.Drawing.Size(122, 37);
+            this.helloLabel.TabIndex = 1;
+            this.helloLabel.Text = "HELLO,";
             // 
             // label1
             // 
@@ -102,9 +115,9 @@ namespace ProiectII.UserControls
             this.label1.Location = new System.Drawing.Point(639, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 37);
+            this.label1.Size = new System.Drawing.Size(277, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "NEW APPOINTMENT";
+            this.label1.Text = "New Appointment";
             // 
             // btn_Clear
             // 
@@ -160,6 +173,18 @@ namespace ProiectII.UserControls
             this.grpBox_VisitInfo.TabIndex = 47;
             this.grpBox_VisitInfo.TabStop = false;
             this.grpBox_VisitInfo.Text = "Appointment Information";
+            // 
+            // Hour_Ok
+            // 
+            this.Hour_Ok.AutoSize = true;
+            this.Hour_Ok.BackColor = System.Drawing.Color.Transparent;
+            this.Hour_Ok.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hour_Ok.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Hour_Ok.Location = new System.Drawing.Point(1481, 85);
+            this.Hour_Ok.Name = "Hour_Ok";
+            this.Hour_Ok.Size = new System.Drawing.Size(56, 37);
+            this.Hour_Ok.TabIndex = 48;
+            this.Hour_Ok.Text = "OK";
             // 
             // cmbBox_Assistant
             // 
@@ -556,18 +581,6 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.Click += new System.EventHandler(this.NIN_Click);
             this.txtBox_PatientNIN.Leave += new System.EventHandler(this.NIN_Leave);
             // 
-            // Hour_Ok
-            // 
-            this.Hour_Ok.AutoSize = true;
-            this.Hour_Ok.BackColor = System.Drawing.Color.Transparent;
-            this.Hour_Ok.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hour_Ok.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Hour_Ok.Location = new System.Drawing.Point(1481, 85);
-            this.Hour_Ok.Name = "Hour_Ok";
-            this.Hour_Ok.Size = new System.Drawing.Size(56, 37);
-            this.Hour_Ok.TabIndex = 48;
-            this.Hour_Ok.Text = "OK";
-            // 
             // UC_CreateNewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -641,5 +654,6 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.ComboBox cmbBox_Assistant;
         private System.Windows.Forms.ComboBox cmbBox_Doctor;
         private System.Windows.Forms.Label Hour_Ok;
+        private System.Windows.Forms.Label helloLabel;
     }
 }

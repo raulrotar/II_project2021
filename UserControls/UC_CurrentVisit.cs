@@ -15,12 +15,16 @@ namespace ProiectII.UserControls
     {
         Verifier verifier = new Verifier();
         Connection con = new Connection();
+        Int64 userCNP;
+        char position;
         Int64 CNP_Asistant = 0, CNP_Doctor = 0;
         int Id_Lucrare = 1, Id_Diagnostic = 1,Id_Tratament=1;
         bool existsAppointments=true;
-        public UC_CurrentVisit()
+        public UC_CurrentVisit(Int64 userCNP, char position)
         {
             InitializeComponent();
+            this.userCNP = userCNP;
+            this.position = position;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -139,6 +143,14 @@ namespace ProiectII.UserControls
             comboBox_Email.SelectedIndex = 0;
             dateTimePicker.Value = DateTime.Now;
             PopulateComboBoxes();
+            if (position == 'd')
+            {
+                helloLabel.Text = "Hello Dr. " + verifier.SetUserName(userCNP, position);
+            }
+            else
+            {
+                helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
+            }
         }
 
         private void PopulateComboBoxes()

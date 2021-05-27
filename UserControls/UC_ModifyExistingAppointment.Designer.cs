@@ -31,6 +31,7 @@ namespace ProiectII.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ModifyExistingAppointment));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.helloLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Clear = new System.Windows.Forms.Button();
@@ -90,12 +91,24 @@ namespace ProiectII.UserControls
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panel1.Controls.Add(this.helloLabel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1630, 150);
             this.panel1.TabIndex = 0;
+            // 
+            // helloLabel
+            // 
+            this.helloLabel.AutoSize = true;
+            this.helloLabel.Font = new System.Drawing.Font("Franklin Gothic Medium", 24F, System.Drawing.FontStyle.Bold);
+            this.helloLabel.ForeColor = System.Drawing.Color.White;
+            this.helloLabel.Location = new System.Drawing.Point(23, 52);
+            this.helloLabel.Name = "helloLabel";
+            this.helloLabel.Size = new System.Drawing.Size(122, 37);
+            this.helloLabel.TabIndex = 3;
+            this.helloLabel.Text = "HELLO,";
             // 
             // label1
             // 
@@ -105,9 +118,9 @@ namespace ProiectII.UserControls
             this.label1.Location = new System.Drawing.Point(545, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(551, 37);
+            this.label1.Size = new System.Drawing.Size(480, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "MODIFY AN EXISTING APPOINTMENT";
+            this.label1.Text = "Modify an Existing Appointment";
             // 
             // dataGridView1
             // 
@@ -695,5 +708,6 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ComboBox cmbBox_Assistant;
         private System.Windows.Forms.ComboBox cmbBox_Doctor;
+        private System.Windows.Forms.Label helloLabel;
     }
 }
