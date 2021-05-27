@@ -13,15 +13,18 @@ namespace ProiectII.Forms
 {
     public partial class MainApp : Form
     {
-        public MainApp()
+        Int64 userCNP;
+        public MainApp(Int64 userCNP)
         {
             InitializeComponent();
+            this.userCNP = userCNP;
         }
 
         private void MainApp_Load(object sender, EventArgs e)
         {
             UC_VisualizeAllAppointments visualizeAllAppointments = new UC_VisualizeAllAppointments();
             addControls(visualizeAllAppointments);
+            MessageBox.Show(userCNP.ToString());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

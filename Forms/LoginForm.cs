@@ -138,6 +138,7 @@ namespace ProiectII
             String txt_Password = txtBox_Password.Text;
             String username= "";
             String password="";
+            Int64 userCNP = new Int64();
 
             if ((txt_Username == "User Name") || (txt_Password == "Password"))
             {
@@ -147,7 +148,7 @@ namespace ProiectII
                 error_Msg.Text = "Empty field!";
             } else if (txt_Username.ElementAt(0) == ' ')
             {
-                error_Msg.Text = "First value must be alphanum! ";
+                error_Msg.Text = "Do not use blank spaces!";
             }
             
             else
@@ -156,36 +157,63 @@ namespace ProiectII
                 try
                 {
                     connection.Open();
-                    string query = "SELECT Username,Parola FROM dbo.Doctori WHERE Username='" + txt_Username + "' AND Parola ='" + txt_Password + "'";
-                    SqlDataReader row;
-                    row = connection.ExecuteReader(query);
+                    string query_doctors = "SELECT Username,Parola,CNP FROM dbo.Doctori WHERE Username='" + txt_Username + "' AND Parola ='" + txt_Password + "'";
+                    string query_asist = "SELECT Username,Parola,CNP FROM dbo.Asistenti WHERE Username='"+txt_Username+"' AND Parola='"+txt_Password+"'";
+                    SqlDataReader row,row2;
+                    row = connection.ExecuteReader(query_doctors);
                     if (row.HasRows)
                     {
                         while (row.Read())
                         {
                             username = row["Username"].ToString();
                             password = row["Parola"].ToString();
+                            userCNP = Int64.Parse(row["CNP"].ToString());
                         }
                         if ((txt_Username.Equals(username))&&(txt_Password.Equals(password))) {
-                            MessageBox.Show("Datele sunt valide: username= " + username + " password= " + password);
-                            using (MainApp main = new MainApp())
+                            using (MainApp main = new MainApp(userCNP))
                             {
                                 this.Hide();
                                 main.ShowDialog();
                                 this.Close();
-                            }
-                            connection.Close();
+                            } 
                         }
+                        row.Close();
                     }
                     else
                     {
-                        error_Msg.Text = "Credentials not found!";
+                        row.Close();
+                        row2 = connection.ExecuteReader(query_asist);
+                        if(row2.HasRows)
+                        {
+                            while(row2.Read())
+                            {
+                                username = row2["Username"].ToString();
+                                password = row2["Parola"].ToString();
+                                userCNP = Int64.Parse(row2["CNP"].ToString());
+                            }
+                            if((txt_Username.Equals(username))&&(txt_Password.Equals(password)))
+                            {
+                                using (MainApp main = new MainApp(userCNP))
+                                {
+                                    this.Hide();
+                                    main.ShowDialog();
+                                    this.Close();
+                                }
+                            }
+                            row2.Close();
+                        }
+                        else
+                        {
+                            row2.Close();
+                            error_Msg.Text = "Credentials not found!";
+                        }
+                        
                     }
-                    
 
-                    
+
+                    connection.Close();
                 }
-                catch(Exception ex)
+                catch(Exception )
                 {
                     MessageBox.Show("Connection Error!","Information");
                 }
@@ -200,14 +228,6 @@ namespace ProiectII
         private void txtBox_Password_TextChanged_1(object sender, EventArgs e)
         {
             txtBox_Password.PasswordChar = '*';
-        }
-
-        private void btn_QuickAccess_Click(object sender, EventArgs e)
-        {
-            using( MainApp mainApp = new MainApp())
-            {
-                mainApp.ShowDialog();
-            }
         }
     }
 }
