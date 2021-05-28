@@ -64,6 +64,9 @@ CREATE TABLE Programare (
  Ora time
 );
 
+
+
+
 CREATE TABLE Vizita (
 	Id int identity(1,1) primary key not null,
 	CNP_Doctor bigint not null foreign key references Doctori(CNP),
@@ -71,9 +74,17 @@ CREATE TABLE Vizita (
 	CNP_Pacient bigint not null foreign key references Pacienti(CNP),
 	Ora time ,
 	Ziua date ,
-	Id_Lucrare int not null foreign key references Lucrari(Id),
-	Id_Diagnostic int not null foreign key references Diagnostic(Id),
-	Id_Tratament int not null foreign key references Tratament(Id)
+	Nume_Diagnostic varchar(255),
+	Nume_Lucrare varchar(255),
+	Nume_Tratament varchar(255)
+);
+
+CREATE TABLE Logistics (
+Id int identity(1,1) primary key not null,
+Id_Vizita int not null foreign key references Vizita(Id),
+Id_Diagnostic int not null foreign key references Diagnostic(Id),
+Id_Lucrare int not null foreign key references Lucrari(Id),
+Id_Tratament int not null foreign key references Tratament(Id)
 );
 
 SELECT * FROM Doctori
@@ -106,7 +117,7 @@ INSERT INTO Programare
 VALUES('Georgescu','Andrei',123456787,35,789523547,'andrei.georgescu@gmail.com',123456789,123456788,'2021-05-21','10:40:00');
 
 INSERT INTO Vizita
-VALUES(123456789,123456788,123456787,'10:40:00','2021-05-21',1,1,1);
+VALUES(123456789,123456788,123456787,'10:40:00','2021-05-21','Infectie','Extragere dinte','Compresa');
  
  INSERT INTO Pacienti
 VALUES (123456777,123456789,123456788,'Timar','Adelin',21,789523546,'adelin.timar@gmail.com');
@@ -116,7 +127,7 @@ VALUES('Timar','Adelin',123456777,21,789523546,'adelin.timar@gmail.com',12345678
 
 
 INSERT INTO Vizita
-VALUES(123456789,123456788,123456777,'10:50:00','2019-01-21',1,1,1);
+VALUES(123456789,123456788,123456777,'10:50:00','2019-01-21','Infectie','Extragere dinte','Compresa');
 
 
 INSERT INTO Pacienti
@@ -127,7 +138,7 @@ VALUES('Lupastean','Iulian',111111111,21,754959944,'ilupastean@yahoo.com',123456
 
 
 INSERT INTO Vizita
-VALUES(123456789,123456788,111111111,'10:50:00','2021-03-21',1,1,1);
+VALUES(123456789,123456788,111111111,'10:50:00','2021-03-21','Infectie','Extragere dinte','Compresa');
  
 
 

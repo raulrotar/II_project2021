@@ -169,7 +169,7 @@ namespace ProiectII
 
         public bool CheckDate(DateTime dateTime)
         {
-            if (dateTime.Date < DateTime.Now)
+            if (dateTime.Date < DateTime.Now.Date)
             {
                 return false;
             }

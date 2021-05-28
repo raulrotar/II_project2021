@@ -34,6 +34,14 @@ namespace ProiectII.UserControls
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
             }
+
+            con.Open();
+            string query = "Select * from dbo.Vizita";
+            DataSet set;
+            set = con.ExecuteDataSet(query);
+            DataTable dataTable = set.Tables[0];
+            dataGridView1.DataSource = dataTable;
+            con.Close();
         }
 
         private void btn_ClearSearchFields_Click(object sender, EventArgs e)

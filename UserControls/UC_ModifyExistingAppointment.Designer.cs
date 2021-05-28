@@ -339,7 +339,7 @@ namespace ProiectII.UserControls
             this.comboBox_SearchBy.ForeColor = System.Drawing.Color.DodgerBlue;
             this.comboBox_SearchBy.FormattingEnabled = true;
             this.comboBox_SearchBy.Items.AddRange(new object[] {
-            "Last Name",
+            "Patient Last Name",
             "Date",
             "Hour"});
             this.comboBox_SearchBy.Location = new System.Drawing.Point(279, 185);

@@ -34,6 +34,13 @@ namespace ProiectII.UserControls
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
             }
+            con.Open();
+            string query = "Select * from dbo.Programare";
+            DataSet set;
+            set = con.ExecuteDataSet(query);
+            DataTable dataTable = set.Tables[0];
+            dataGridView1.DataSource = dataTable;
+            con.Close();
         }
 
         private void VAA_Click(object sender, EventArgs e)
@@ -98,7 +105,7 @@ namespace ProiectII.UserControls
                     }
 
                 }
-                else if (comboBox_SearchBy.Text == "Patient Name")
+                else if (comboBox_SearchBy.Text == "Patient Last Name")
                 {
                     if (txtBox_Search.Text=="Search Here")
                     {

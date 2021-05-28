@@ -18,7 +18,6 @@ namespace ProiectII.UserControls
         Int64 userCNP;
         char position;
         Int64 CNP_Asistant = 0, CNP_Doctor = 0;
-        int Id_Lucrare = 1, Id_Diagnostic = 1,Id_Tratament=1;
         bool existsAppointments=true;
         public UC_CurrentVisit(Int64 userCNP, char position)
         {
@@ -278,6 +277,21 @@ namespace ProiectII.UserControls
 
             return true;
         }
+        public void ResetFields()
+        {
+            txtBox_PatientFName.Text = "Patient First Name";
+            txtBox_Hour.Text = "Hour";
+            txtBox_PatientLName.Text = "Patient Last Name";
+            txtBox_PatientNIN.Text = "Patient NIN";
+            txtBox_PatientAge.Text = "Patient Age";
+            txtBox_PatientPhoneNr.Text = "Patient Phone Number";
+            txtBox_EmailAddress.Text = "Email Address";
+            dateTimePicker.Value = DateTime.Now.Date;
+            cmbBox_Assistant.Text = "Assistant's Name";
+            cmbBox_Diagnostic.Text = "Diagnostic";
+            cmbBox_Work.Text = "Dental Work";
+            cmbBox_Treatment.Text = "Treatment";
+        }
 
         private void btn_FinishVisit_Click(object sender, EventArgs e)
         {
@@ -290,6 +304,7 @@ namespace ProiectII.UserControls
                 try
                 {
                     con.Open();
+                    /*
                     SqlDataReader DiagnosticReader = con.ExecuteReader("Select Id From dbo.Diagnostic WHERE Nume='" + cmbBox_Diagnostic.Text + "'");
                     while (DiagnosticReader.Read())
                     {
@@ -310,9 +325,10 @@ namespace ProiectII.UserControls
                         Id_Tratament = TreatmentReader.GetInt32(0);
                     }
                     TreatmentReader.Close();
+                    */
                     if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
                     {
-                        con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Id_Lucrare,Id_Diagnostic,Id_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + Id_Diagnostic + "','" + Id_Lucrare + "','" + Id_Tratament + "')");
+                        con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Nume_Lucrare,Nume_Diagnostic,Nume_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + cmbBox_Diagnostic.Text + "','" + cmbBox_Work.Text + "','" + cmbBox_Treatment.Text + "')");
                     }
                     else
                     {

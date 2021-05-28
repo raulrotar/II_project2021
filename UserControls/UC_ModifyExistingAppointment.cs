@@ -40,6 +40,14 @@ namespace ProiectII.UserControls
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
             }
+
+            con.Open();
+            string query = "Select * from dbo.Programare WHERE Ziua > '"+DateTime.Now.Date+"'";
+            DataSet set;
+            set = con.ExecuteDataSet(query);
+            DataTable dataTable = set.Tables[0];
+            dataGridView1.DataSource = dataTable;
+            con.Close();
         }
 
         private void PopulateComboBoxes()
@@ -105,7 +113,7 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua='" + txtBox_Search.Text + "'");
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua LIKE '%" + txtBox_Search.Text + "%'");
                     }
                 }
                 else if (comboBox_SearchBy.Text=="Hour")
@@ -116,7 +124,7 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ora='" + txtBox_Search.Text + "'");
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ora LIKE '%" + txtBox_Search.Text + "%'");
                     }
                 }
                 else
@@ -127,7 +135,7 @@ namespace ProiectII.UserControls
                     }
                     else
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE NumePacient='" + txtBox_Search.Text + "'");
+                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE NumePacient LIKE '%" + txtBox_Search.Text + "%'");
                     }
                 }
                 DataTable dataTable = set.Tables[0];

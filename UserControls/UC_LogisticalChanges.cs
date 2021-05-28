@@ -45,6 +45,14 @@ namespace ProiectII.UserControls
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
             }
+
+            con.Open();
+            string query = "Select * from dbo.Diagnostic";
+            DataSet set;
+            set = con.ExecuteDataSet(query);
+            DataTable dataTable = set.Tables[0];
+            dataGridView2.DataSource = dataTable;
+            con.Close();
         }
 
         private void SearchBy_Click(object sender, EventArgs e)
