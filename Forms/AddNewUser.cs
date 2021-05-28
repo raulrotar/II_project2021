@@ -255,7 +255,7 @@ namespace ProiectII.Forms
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("If you are a nurse please select the name of the doctor that you will be working with from the list down below.", "Nurse Information");
+            MessageBox.Show("If you are a nurse please select the name of the doctor that you will be working with from the list.", "Nurse Information");
         }
 
         private void picBox_SecurityCodeInfo_Click(object sender, EventArgs e)

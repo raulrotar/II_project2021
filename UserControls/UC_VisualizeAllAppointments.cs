@@ -174,7 +174,7 @@ namespace ProiectII.UserControls
                     }
 
                 }
-                else if (comboBox_SearchBy.Text == "Patient Name")
+                else if (comboBox_SearchBy.Text == "Patient Last Name")
                 {
                     if (txtBox_Search.Text == "Search Here")
                     {
