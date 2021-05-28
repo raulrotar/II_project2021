@@ -33,7 +33,6 @@ namespace ProiectII.UserControls
             this.panel1 = new System.Windows.Forms.Panel();
             this.helloLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Clear = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.txtBox_PatientFName = new System.Windows.Forms.TextBox();
@@ -41,10 +40,8 @@ namespace ProiectII.UserControls
             this.txtBox_Hour = new System.Windows.Forms.TextBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -71,11 +68,9 @@ namespace ProiectII.UserControls
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
-            this.cmbBox_Doctor = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -84,6 +79,7 @@ namespace ProiectII.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -121,22 +117,6 @@ namespace ProiectII.UserControls
             this.label1.Size = new System.Drawing.Size(480, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Modify an Existing Appointment";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dataGridView1.Location = new System.Drawing.Point(686, 274);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(928, 556);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Select_ALL);
             // 
             // btn_Clear
             // 
@@ -187,7 +167,7 @@ namespace ProiectII.UserControls
             // 
             this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel5.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel5.Location = new System.Drawing.Point(72, 713);
+            this.panel5.Location = new System.Drawing.Point(71, 618);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(225, 1);
@@ -198,7 +178,7 @@ namespace ProiectII.UserControls
             this.txtBox_Hour.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Hour.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
             this.txtBox_Hour.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_Hour.Location = new System.Drawing.Point(72, 678);
+            this.txtBox_Hour.Location = new System.Drawing.Point(71, 583);
             this.txtBox_Hour.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Hour.Name = "txtBox_Hour";
             this.txtBox_Hour.Size = new System.Drawing.Size(223, 28);
@@ -211,7 +191,7 @@ namespace ProiectII.UserControls
             this.dateTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dateTimePicker.Font = new System.Drawing.Font("Franklin Gothic Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(65, 786);
+            this.dateTimePicker.Location = new System.Drawing.Point(65, 685);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(381, 32);
@@ -222,21 +202,11 @@ namespace ProiectII.UserControls
             // 
             this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel4.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel4.Location = new System.Drawing.Point(392, 625);
+            this.panel4.Location = new System.Drawing.Point(430, 622);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(225, 1);
             this.panel4.TabIndex = 19;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel3.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel3.Location = new System.Drawing.Point(70, 625);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(225, 1);
-            this.panel3.TabIndex = 20;
             // 
             // panel2
             // 
@@ -251,7 +221,7 @@ namespace ProiectII.UserControls
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(336, 586);
+            this.pictureBox5.Location = new System.Drawing.Point(374, 583);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 40);
@@ -259,21 +229,10 @@ namespace ProiectII.UserControls
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(17, 589);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(17, 678);
+            this.pictureBox3.Location = new System.Drawing.Point(16, 583);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
@@ -286,7 +245,7 @@ namespace ProiectII.UserControls
             this.pictureBox2.ErrorImage = null;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 778);
+            this.pictureBox2.Location = new System.Drawing.Point(17, 677);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
@@ -579,23 +538,27 @@ namespace ProiectII.UserControls
             this.cmbBox_Assistant.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBox_Assistant.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cmbBox_Assistant.FormattingEnabled = true;
-            this.cmbBox_Assistant.Location = new System.Drawing.Point(392, 586);
+            this.cmbBox_Assistant.Location = new System.Drawing.Point(430, 583);
             this.cmbBox_Assistant.Name = "cmbBox_Assistant";
             this.cmbBox_Assistant.Size = new System.Drawing.Size(225, 34);
             this.cmbBox_Assistant.TabIndex = 68;
             this.cmbBox_Assistant.Text = "Assistant\'s Name";
             // 
-            // cmbBox_Doctor
+            // dataGridView1
             // 
-            this.cmbBox_Doctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbBox_Doctor.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBox_Doctor.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cmbBox_Doctor.FormattingEnabled = true;
-            this.cmbBox_Doctor.Location = new System.Drawing.Point(70, 586);
-            this.cmbBox_Doctor.Name = "cmbBox_Doctor";
-            this.cmbBox_Doctor.Size = new System.Drawing.Size(225, 34);
-            this.cmbBox_Doctor.TabIndex = 67;
-            this.cmbBox_Doctor.Text = "Doctor\'s Name";
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dataGridView1.Location = new System.Drawing.Point(686, 274);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(928, 556);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Select_ALL);
             // 
             // UC_ModifyExistingAppointment
             // 
@@ -604,7 +567,6 @@ namespace ProiectII.UserControls
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.cmbBox_Assistant);
-            this.Controls.Add(this.cmbBox_Doctor);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.comboBox_Email);
             this.Controls.Add(this.txtBox_EmailAddress);
@@ -632,10 +594,8 @@ namespace ProiectII.UserControls
             this.Controls.Add(this.txtBox_Hour);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -649,9 +609,7 @@ namespace ProiectII.UserControls
             this.Load += new System.EventHandler(this.UC_ModifyExistingAppointment_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -660,6 +618,7 @@ namespace ProiectII.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,7 +628,6 @@ namespace ProiectII.UserControls
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.TextBox txtBox_PatientFName;
@@ -677,10 +635,8 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.TextBox txtBox_Hour;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel6;
@@ -707,7 +663,7 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ComboBox cmbBox_Assistant;
-        private System.Windows.Forms.ComboBox cmbBox_Doctor;
         private System.Windows.Forms.Label helloLabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -27,16 +27,21 @@ namespace ProiectII.UserControls
         private void UC_CreateNewAppointment_Load(object sender, EventArgs e)
         {
             comboBox_Email.SelectedIndex = 0;
-            PopulateComboBoxes();
+            
             dateTimePicker.Value = DateTime.Now;
             Hour_Ok.Visible = false;
             if(position == 'd')
             {
                 helloLabel.Text = "Hello Dr. " + verifier.SetUserName(userCNP, position);
+                PopulateComboBoxes();
+
             }
             else
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
+                cmbBox_Assistant.Visible = false;
+                pictureBox5.Visible = false;
+                panel3.Visible = false;
             }
         }
 
@@ -45,10 +50,8 @@ namespace ProiectII.UserControls
             try
             {
                 con.Open();
-                string queryDoc = "SELECT Nume,Prenume FROM dbo.Doctori";
                 string queryAsist = "SELECT Nume,Prenume FROM dbo.Asistenti";
-                DataSet setDoc, setAsist;
-                setDoc = con.ExecuteDataSet(queryDoc);
+                DataSet setAsist;
                 setAsist = con.ExecuteDataSet(queryAsist);
                 for (int i = 0; i < setAsist.Tables[0].Rows.Count; i++)
                 {
@@ -61,20 +64,8 @@ namespace ProiectII.UserControls
                         cmbBox_Assistant.Items.Add(AsistFullName);
                     }
                 }
-                for (int i = 0; i < setDoc.Tables[0].Rows.Count; i++)
-                {
-                    string DocFullName = (setDoc.Tables[0].Rows[i][0] + " " + setDoc.Tables[0].Rows[i][1]);
-                    if (cmbBox_Doctor.Items.Contains(DocFullName))
-                    {
-                    }
-                    else
-                    {
-                        cmbBox_Doctor.Items.Add(DocFullName);
-                    }
-                }
+                
                 cmbBox_Assistant.SelectedIndex = 0;
-                cmbBox_Doctor.SelectedIndex = 0;
-
             }
             catch (Exception ex)
             {
@@ -124,22 +115,29 @@ namespace ProiectII.UserControls
             {
                 con.Open();
                 Int64 DocCNP = 1111111111111, AsistCNP = 1222222222222;
-                string[] DocName = (cmbBox_Doctor.Text).Split(' ');
                 string[] AsistName = (cmbBox_Assistant.Text).Split(' ');
 
-                SqlDataReader DocNameReader = con.ExecuteReader("Select CNP from dbo.Doctori where Nume='" + DocName[0] + "' AND Prenume='" + DocName[1] + "'");
-                while (DocNameReader.Read())
+                if(position =='d')
                 {
-                     DocCNP = DocNameReader.GetInt64(0);
+                    DocCNP = userCNP;
+                    SqlDataReader AsistNameReader = con.ExecuteReader("Select CNP from dbo.Asistenti where Nume='" + AsistName[0] + "' AND Prenume='" + AsistName[1] + "'");
+                    while (AsistNameReader.Read())
+                    {
+                        AsistCNP = AsistNameReader.GetInt64(0);
+                    }
+                    AsistNameReader.Close();
                 }
-                DocNameReader.Close();
-
-                SqlDataReader AsistNameReader = con.ExecuteReader("Select CNP from dbo.Asistenti where Nume='" + AsistName[0] + "' AND Prenume='" + AsistName[1] + "'");
-                while (AsistNameReader.Read())
+                else
                 {
-                    AsistCNP = AsistNameReader.GetInt64(0);
+                    
+                    AsistCNP = userCNP;
+                    SqlDataReader docCNPReader = con.ExecuteReader("Select CNP_Doctor from dbo.Asistenti where CNP='"+AsistCNP+"'");
+                    while (docCNPReader.Read())
+                    {
+                        DocCNP = docCNPReader.GetInt64(0);
+                    }
+                    docCNPReader.Close();
                 }
-                AsistNameReader.Close();
 
                 if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
                 {

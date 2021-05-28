@@ -8,7 +8,7 @@ namespace ProiectII
     class Connection
     {
         SqlConnection con;
-        string connectionString = "Data Source=DESKTOP-4NUOG8A;Initial Catalog=DentalApp1;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-50EC7V7;Initial Catalog=DentalApp1;Integrated Security=True";
 
         //raul:   ROG-GL703GM
         //adelin: DESKTOP-50EC7V7
@@ -23,7 +23,7 @@ namespace ProiectII
                 return true;
             }catch(Exception ex)
             {
-                MessageBox.Show("Connection error!"+ex.Message,"Information");
+                MessageBox.Show(ex.Message,"Information");
             }
             return false;
         }
@@ -44,7 +44,7 @@ namespace ProiectII
                 return dataSet;
             }catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Information");
             }
             return null;
         }
@@ -59,7 +59,7 @@ namespace ProiectII
                 return reader;
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Information");
             }
             return null;
         }
@@ -75,7 +75,7 @@ namespace ProiectII
                 return affected;
             }catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Information");
             }
             return -1;
         }

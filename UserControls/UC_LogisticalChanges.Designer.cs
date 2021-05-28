@@ -35,11 +35,9 @@ namespace ProiectII.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_DeleteRecord = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Search = new System.Windows.Forms.Button();
             this.txtBox_Search = new System.Windows.Forms.TextBox();
             this.comboBox_SearchBy = new System.Windows.Forms.ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtBox_Name = new System.Windows.Forms.TextBox();
@@ -49,11 +47,11 @@ namespace ProiectII.UserControls
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_UpdateRecord = new System.Windows.Forms.Button();
             this.btn_InsertRecord = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -115,16 +113,6 @@ namespace ProiectII.UserControls
             this.btn_DeleteRecord.UseVisualStyleBackColor = false;
             this.btn_DeleteRecord.Click += new System.EventHandler(this.btn_DeleteRecord_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(153, 373);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1325, 437);
-            this.dataGridView1.TabIndex = 19;
-            // 
             // btn_Search
             // 
             this.btn_Search.BackColor = System.Drawing.Color.DodgerBlue;
@@ -170,18 +158,6 @@ namespace ProiectII.UserControls
             this.comboBox_SearchBy.Size = new System.Drawing.Size(310, 38);
             this.comboBox_SearchBy.TabIndex = 16;
             this.comboBox_SearchBy.SelectedIndexChanged += new System.EventHandler(this.comboBox_SearchBy_SelectedIndexChanged);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.Silver;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(153, 373);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1325, 437);
-            this.dataGridView2.TabIndex = 27;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Select_All);
             // 
             // label3
             // 
@@ -288,6 +264,17 @@ namespace ProiectII.UserControls
             this.btn_InsertRecord.UseVisualStyleBackColor = false;
             this.btn_InsertRecord.Click += new System.EventHandler(this.btn_InsertRecord_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(153, 373);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1325, 437);
+            this.dataGridView1.TabIndex = 19;
+            // 
             // UC_LogisticalChanges
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,7 +288,6 @@ namespace ProiectII.UserControls
             this.Controls.Add(this.txtBox_Price);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtBox_Name);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_DeleteRecord);
@@ -316,10 +302,9 @@ namespace ProiectII.UserControls
             this.Load += new System.EventHandler(this.UC_LogisticalChanges_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,12 +315,10 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_DeleteRecord;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.TextBox txtBox_Search;
         private System.Windows.Forms.ComboBox comboBox_SearchBy;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtBox_Name;
@@ -346,5 +329,6 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.Button btn_UpdateRecord;
         private System.Windows.Forms.Button btn_InsertRecord;
         private System.Windows.Forms.Label helloLabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

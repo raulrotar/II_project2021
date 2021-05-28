@@ -51,7 +51,7 @@ namespace ProiectII.UserControls
             DataSet set;
             set = con.ExecuteDataSet(query);
             DataTable dataTable = set.Tables[0];
-            dataGridView2.DataSource = dataTable;
+            dataGridView1.DataSource = dataTable;
             con.Close();
         }
 
@@ -133,7 +133,7 @@ namespace ProiectII.UserControls
                 set = con.ExecuteDataSet(query);
 
                 DataTable dataTable = set.Tables[0];
-                dataGridView2.DataSource = dataTable;
+                dataGridView1.DataSource = dataTable;
                 con.Close();
             }
             catch (Exception)
@@ -264,7 +264,7 @@ namespace ProiectII.UserControls
         private void Select_All(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView2.Rows[index];
+            DataGridViewRow selectedRow = dataGridView1.Rows[index];
              id = Int32.Parse(selectedRow.Cells[0].Value.ToString());
             if (comboBox_SearchBy.Text == "Dental Work")
             {
@@ -323,7 +323,7 @@ namespace ProiectII.UserControls
                 set = con.ExecuteDataSet(query);
 
                 DataTable dataTable = set.Tables[0];
-                dataGridView2.DataSource = dataTable;
+                dataGridView1.DataSource = dataTable;
                 con.Close();
             }
             catch (Exception)

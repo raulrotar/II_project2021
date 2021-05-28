@@ -38,14 +38,9 @@ namespace ProiectII.UserControls
             this.grpBox_VisitInfo = new System.Windows.Forms.GroupBox();
             this.Hour_Ok = new System.Windows.Forms.Label();
             this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
-            this.cmbBox_Doctor = new System.Windows.Forms.ComboBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtBox_Hour = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.grpBox_PatientInfo = new System.Windows.Forms.GroupBox();
@@ -68,9 +63,10 @@ namespace ProiectII.UserControls
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtBox_PatientNIN = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.grpBox_VisitInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -153,16 +149,13 @@ namespace ProiectII.UserControls
             // 
             // grpBox_VisitInfo
             // 
+            this.grpBox_VisitInfo.Controls.Add(this.panel3);
+            this.grpBox_VisitInfo.Controls.Add(this.panel5);
             this.grpBox_VisitInfo.Controls.Add(this.Hour_Ok);
             this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Assistant);
-            this.grpBox_VisitInfo.Controls.Add(this.cmbBox_Doctor);
-            this.grpBox_VisitInfo.Controls.Add(this.pictureBox4);
-            this.grpBox_VisitInfo.Controls.Add(this.panel3);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox5);
-            this.grpBox_VisitInfo.Controls.Add(this.panel4);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox3);
             this.grpBox_VisitInfo.Controls.Add(this.txtBox_Hour);
-            this.grpBox_VisitInfo.Controls.Add(this.panel5);
             this.grpBox_VisitInfo.Controls.Add(this.pictureBox2);
             this.grpBox_VisitInfo.Controls.Add(this.dateTimePicker);
             this.grpBox_VisitInfo.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,7 +173,7 @@ namespace ProiectII.UserControls
             this.Hour_Ok.BackColor = System.Drawing.Color.Transparent;
             this.Hour_Ok.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hour_Ok.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Hour_Ok.Location = new System.Drawing.Point(1481, 85);
+            this.Hour_Ok.Location = new System.Drawing.Point(1291, 90);
             this.Hour_Ok.Name = "Hour_Ok";
             this.Hour_Ok.Size = new System.Drawing.Size(56, 37);
             this.Hour_Ok.TabIndex = 48;
@@ -192,49 +185,16 @@ namespace ProiectII.UserControls
             this.cmbBox_Assistant.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBox_Assistant.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cmbBox_Assistant.FormattingEnabled = true;
-            this.cmbBox_Assistant.Location = new System.Drawing.Point(412, 85);
+            this.cmbBox_Assistant.Location = new System.Drawing.Point(134, 87);
             this.cmbBox_Assistant.Name = "cmbBox_Assistant";
             this.cmbBox_Assistant.Size = new System.Drawing.Size(225, 34);
             this.cmbBox_Assistant.TabIndex = 25;
             this.cmbBox_Assistant.Text = "Assistant\'s Name";
             // 
-            // cmbBox_Doctor
-            // 
-            this.cmbBox_Doctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbBox_Doctor.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBox_Doctor.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cmbBox_Doctor.FormattingEnabled = true;
-            this.cmbBox_Doctor.Location = new System.Drawing.Point(99, 85);
-            this.cmbBox_Doctor.Name = "cmbBox_Doctor";
-            this.cmbBox_Doctor.Size = new System.Drawing.Size(225, 34);
-            this.cmbBox_Doctor.TabIndex = 24;
-            this.cmbBox_Doctor.Text = "Doctor\'s Name";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(45, 85);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel3.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel3.Location = new System.Drawing.Point(99, 124);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(225, 1);
-            this.panel3.TabIndex = 20;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(360, 85);
+            this.pictureBox5.Location = new System.Drawing.Point(80, 87);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 40);
@@ -242,20 +202,10 @@ namespace ProiectII.UserControls
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel4.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel4.Location = new System.Drawing.Point(412, 124);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(225, 1);
-            this.panel4.TabIndex = 19;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1197, 85);
+            this.pictureBox3.Location = new System.Drawing.Point(1073, 87);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
@@ -268,32 +218,22 @@ namespace ProiectII.UserControls
             this.txtBox_Hour.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Hour.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold);
             this.txtBox_Hour.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtBox_Hour.Location = new System.Drawing.Point(1253, 90);
+            this.txtBox_Hour.Location = new System.Drawing.Point(1129, 93);
             this.txtBox_Hour.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Hour.Name = "txtBox_Hour";
-            this.txtBox_Hour.Size = new System.Drawing.Size(223, 28);
+            this.txtBox_Hour.Size = new System.Drawing.Size(157, 28);
             this.txtBox_Hour.TabIndex = 23;
             this.txtBox_Hour.Text = "Hour";
             this.txtBox_Hour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox_Hour.Click += new System.EventHandler(this.Hour_Click);
             this.txtBox_Hour.Leave += new System.EventHandler(this.Hour_Leave);
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel5.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel5.Location = new System.Drawing.Point(1251, 124);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(225, 1);
-            this.panel5.TabIndex = 21;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.ErrorImage = null;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(703, 85);
+            this.pictureBox2.Location = new System.Drawing.Point(459, 87);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
@@ -309,7 +249,7 @@ namespace ProiectII.UserControls
             this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.White;
             this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.Color.White;
             this.dateTimePicker.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(759, 90);
+            this.dateTimePicker.Location = new System.Drawing.Point(515, 90);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(434, 35);
@@ -581,6 +521,26 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.Click += new System.EventHandler(this.NIN_Click);
             this.txtBox_PatientNIN.Leave += new System.EventHandler(this.NIN_Leave);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel5.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel5.Location = new System.Drawing.Point(1122, 124);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(225, 1);
+            this.panel5.TabIndex = 49;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel3.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel3.Location = new System.Drawing.Point(132, 126);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(225, 1);
+            this.panel3.TabIndex = 48;
+            // 
             // UC_CreateNewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,7 +559,6 @@ namespace ProiectII.UserControls
             this.panel1.PerformLayout();
             this.grpBox_VisitInfo.ResumeLayout(false);
             this.grpBox_VisitInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -622,13 +581,9 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Button btn_Create;
         private System.Windows.Forms.GroupBox grpBox_VisitInfo;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtBox_Hour;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.GroupBox grpBox_PatientInfo;
@@ -652,8 +607,9 @@ namespace ProiectII.UserControls
         private System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.TextBox txtBox_PatientNIN;
         private System.Windows.Forms.ComboBox cmbBox_Assistant;
-        private System.Windows.Forms.ComboBox cmbBox_Doctor;
         private System.Windows.Forms.Label Hour_Ok;
         private System.Windows.Forms.Label helloLabel;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel3;
     }
 }

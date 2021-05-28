@@ -32,17 +32,22 @@ namespace ProiectII.UserControls
             comboBox_Email.SelectedIndex = 0;
             dateTimePicker.Value = DateTime.Now;
             PopulateComboBoxes();
+            string query = "";
             if (position == 'd')
             {
                 helloLabel.Text = "Hello Dr. " + verifier.SetUserName(userCNP, position);
+                query = "SELECT * FROM dbo.Programare WHERE Ziua > '" + DateTime.Now.Date + "' AND CNP_Doctor='"+userCNP+"'";
             }
             else
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
+                query = "SELECT * FROM dbo.Programare WHERE Ziua > '" + DateTime.Now.Date + "' AND CNP_Asistent='" + userCNP + "'";
+                cmbBox_Assistant.Visible = false;
+                pictureBox5.Visible = false;
+                panel4.Visible = false;
             }
 
             con.Open();
-            string query = "Select * from dbo.Programare WHERE Ziua > '"+DateTime.Now.Date+"'";
             DataSet set;
             set = con.ExecuteDataSet(query);
             DataTable dataTable = set.Tables[0];
@@ -55,10 +60,8 @@ namespace ProiectII.UserControls
             try
             {
                 con.Open();
-                string queryDoc = "SELECT Nume,Prenume FROM dbo.Doctori";
                 string queryAsist = "SELECT Nume,Prenume FROM dbo.Asistenti";
-                DataSet setDoc, setAsist;
-                setDoc = con.ExecuteDataSet(queryDoc);
+                DataSet setAsist;
                 setAsist = con.ExecuteDataSet(queryAsist);
                 for (int i = 0; i < setAsist.Tables[0].Rows.Count; i++)
                 {
@@ -75,21 +78,8 @@ namespace ProiectII.UserControls
                         cmbBox_Assistant.Items.Add(AsistFullName);
                     }
                 }
-                for (int i = 0; i < setDoc.Tables[0].Rows.Count; i++)
-                {
-                    string DocFullName = (setDoc.Tables[0].Rows[i][0] + " " + setDoc.Tables[0].Rows[i][1]);
-                    if (cmbBox_Doctor.Items.Contains(DocFullName))
-                    {
-
-                    }
-                    else
-                    {
-                        cmbBox_Doctor.Items.Add(DocFullName);
-                    }
-                }
 
                 cmbBox_Assistant.SelectedIndex = 0;
-                cmbBox_Doctor.SelectedIndex = 0;
 
             }
             catch (Exception ex)
@@ -97,6 +87,7 @@ namespace ProiectII.UserControls
 
                 MessageBox.Show(ex.Message);
             }
+            con.Close();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
@@ -151,62 +142,77 @@ namespace ProiectII.UserControls
 
         private void Select_ALL(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[index];
-            id = Int32.Parse(selectedRow.Cells[0].Value.ToString());
-            txtBox_PatientLName.Text = selectedRow.Cells[1].Value.ToString();
-            txtBox_PatientFName.Text = selectedRow.Cells[2].Value.ToString();
-            txtBox_PatientNIN.Text = selectedRow.Cells[3].Value.ToString();
-            txtBox_PatientAge.Text = selectedRow.Cells[4].Value.ToString();
-            txtBox_PatientPhoneNr.Text = selectedRow.Cells[5].Value.ToString();
-            string [] Email = (selectedRow.Cells[6].Value.ToString()).Split('@');
-            txtBox_EmailAddress.Text = Email[0];
-            dateTimePicker.Value =  DateTime.Parse(selectedRow.Cells[9].Value.ToString(),System.Globalization.CultureInfo.CurrentCulture);
-            txtBox_Hour.Text = selectedRow.Cells[10].Value.ToString();
+            if(e.RowIndex>=0)
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                if (selectedRow.Cells[0].Value.ToString() != "")
+                {
+                    id = Int64.Parse(selectedRow.Cells[0].Value.ToString());
+                    txtBox_PatientLName.Text = selectedRow.Cells[1].Value.ToString();
+                    txtBox_PatientFName.Text = selectedRow.Cells[2].Value.ToString();
+                    txtBox_PatientNIN.Text = selectedRow.Cells[3].Value.ToString();
+                    txtBox_PatientAge.Text = selectedRow.Cells[4].Value.ToString();
+                    txtBox_PatientPhoneNr.Text = selectedRow.Cells[5].Value.ToString();
+                    string[] Email = (selectedRow.Cells[6].Value.ToString()).Split('@');
+                    txtBox_EmailAddress.Text = Email[0];
+                    dateTimePicker.Value = DateTime.Parse(selectedRow.Cells[9].Value.ToString(), System.Globalization.CultureInfo.CurrentCulture);
+                    txtBox_Hour.Text = selectedRow.Cells[10].Value.ToString();
+                }
+            }
         }
-                public bool CheckAvailabilility(DateTime date, string Hour)
-                {
-                    DateTime hour = DateTime.Parse(Hour, System.Globalization.CultureInfo.CurrentCulture);
-                    DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua='" + date + "' AND Ora='" + hour + "'");
-                    if (set.Tables[0].Rows.Count > 0)
-                    {
-                        return false;
-                    }
+        public bool CheckAvailabilility(DateTime date, string Hour)
+        {
+            DateTime hour = DateTime.Parse(Hour, System.Globalization.CultureInfo.CurrentCulture);
+            DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua='" + date + "' AND Ora='" + hour + "'");
+            if (set.Tables[0].Rows.Count > 0)
+            {
+                return false;
+            }
 
-                    return true;
-                }
-                public bool CheckForPatient(string NIN)
-                {
-                    Int64 CNP = Int64.Parse(NIN);
-                    DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Pacienti WHERE CNP='" + Int64.Parse(NIN) + "'");
-                    if (set.Tables[0].Rows.Count > 0)
-                    {
-                        return false;
-                    }
-                    return true;
-                }
+            return true;
+        }
+        public bool CheckForPatient(string NIN)
+        {
+            Int64 CNP = Int64.Parse(NIN);
+            DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Pacienti WHERE CNP='" + Int64.Parse(NIN) + "'");
+            if (set.Tables[0].Rows.Count > 0)
+            {
+                return false;
+            }
+            return true;
+        }
         private void btn_Save_Click(object sender, EventArgs e)
         {
             try
             {
                 con.Open();
                 Int64 DocCNP = 1, AsistCNP = 1;
-                string[] DocName = (cmbBox_Doctor.Text).Split(' ');
-                string[] AsistName = (cmbBox_Assistant.Text).Split(' ');
 
-                SqlDataReader DocNameReader = con.ExecuteReader("Select CNP from dbo.Doctori where Nume='" + DocName[0] + "' AND Prenume='" + DocName[1] + "'");
-                while (DocNameReader.Read())
+                if(position == 'd')
                 {
-                    DocCNP = DocNameReader.GetInt64(0);
+                    DocCNP = userCNP;
+                    string[] AsistName = (cmbBox_Assistant.Text).Split(' ');
+                    SqlDataReader AsistNameReader = con.ExecuteReader("Select CNP from dbo.Asistenti where Nume='" + AsistName[0] + "' AND Prenume='" + AsistName[1] + "'");
+                    while (AsistNameReader.Read())
+                    {
+                        AsistCNP = AsistNameReader.GetInt64(0);
+                    }
+                    AsistNameReader.Close();
                 }
-                DocNameReader.Close();
-           
-                SqlDataReader AsistNameReader = con.ExecuteReader("Select CNP from dbo.Asistenti where Nume='" + AsistName[0] + "' AND Prenume='" + AsistName[1] + "'");
-                while (AsistNameReader.Read())
+                else
                 {
-                    AsistCNP = AsistNameReader.GetInt64(0);
+                    AsistCNP = userCNP;
+                    SqlDataReader docCNPReader = con.ExecuteReader("Select CNP_Doctor from dbo.Asistenti where CNP='" + AsistCNP + "'");
+                    while (docCNPReader.Read())
+                    {
+                        DocCNP = docCNPReader.GetInt64(0);
+                    }
+                    docCNPReader.Close();
                 }
-                AsistNameReader.Close();
+                
+                
+                
 
                 if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
                 {

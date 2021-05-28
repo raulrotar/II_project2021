@@ -149,6 +149,9 @@ namespace ProiectII.UserControls
             else
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
+                pictureBox5.Visible = false;
+                cmbBox_Assistant.Visible = false;
+                panel4.Visible = false;
             }
         }
 
