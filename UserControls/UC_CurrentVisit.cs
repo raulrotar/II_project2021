@@ -331,7 +331,12 @@ namespace ProiectII.UserControls
                     */
                     if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
                     {
-                        con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Nume_Lucrare,Nume_Diagnostic,Nume_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + cmbBox_Diagnostic.Text + "','" + cmbBox_Work.Text + "','" + cmbBox_Treatment.Text + "')");
+                        MessageBox.Show("");
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to finish the visit?", "Finish visit confirmation", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Nume_Lucrare,Nume_Diagnostic,Nume_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + cmbBox_Diagnostic.Text + "','" + cmbBox_Work.Text + "','" + cmbBox_Treatment.Text + "')");
+                        }
                     }
                     else
                     {
