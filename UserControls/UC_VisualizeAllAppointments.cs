@@ -41,7 +41,7 @@ namespace ProiectII.UserControls
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
                 con.Open();
-                string query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "'";
+                string query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "'";
                 DataSet set;
                 set = con.ExecuteDataSet(query);
                 DataTable dataTable = set.Tables[0];
@@ -87,57 +87,115 @@ namespace ProiectII.UserControls
             string query;
             try
             {
-                if (comboBox_SearchBy.Text == "Month")
+                if(position =='d')
                 {
-                    if (txtBox_Search.Text == "Search Here")
+                    if (comboBox_SearchBy.Text == "Month")
                     {
-                        query = "SELECT * FROM dbo.Programare ORDER BY MONTH(Ziua) DESC";
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='"+userCNP+"' ORDER BY MONTH(Ziua) DESC";
+                        }
+
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' AND MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
+                    else if (comboBox_SearchBy.Text == "Year")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' ORDER BY YEAR(Ziua) DESC";
+                        }
+
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' AND YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
+                    else if (comboBox_SearchBy.Text == "Patient Last Name")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' ORDER BY NumePacient ASC";
+                        }
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' AND NumePacient LIKE '%" + txtBox_Search.Text + "%'";
+                        }
                     }
 
                     else
                     {
-                        query = "SELECT * FROM dbo.Programare WHERE MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
-                    }
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' ORDER BY DAY(Ziua) DESC";
+                        }
 
-                }
-                else if (comboBox_SearchBy.Text == "Year")
-                {
-                    if (txtBox_Search.Text == "Search Here")
-                    {
-                        query = "SELECT * FROM dbo.Programare ORDER BY YEAR(Ziua) DESC";
-                    }
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' AND DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
 
-                    else
-                    {
-                        query = "SELECT * FROM dbo.Programare WHERE YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
-                    }
-
-                }
-                else if (comboBox_SearchBy.Text == "Patient Last Name")
-                {
-                    if (txtBox_Search.Text=="Search Here")
-                    {
-                        query = "SELECT * FROM dbo.Programare ORDER BY NumePacient ASC";
-                    }
-                    else
-                    {
-                        query = "SELECT * FROM dbo.Programare WHERE NumePacient LIKE '%"+txtBox_Search.Text+"%'";
                     }
                 }
-             
                 else
                 {
-                    if (txtBox_Search.Text == "Search Here")
+                    if (comboBox_SearchBy.Text == "Month")
                     {
-                        query = "SELECT * FROM dbo.Programare ORDER BY DAY(Ziua) DESC";
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='"+userCNP+"' ORDER BY MONTH(Ziua) DESC";
+                        }
+
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' AND MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
+                    else if (comboBox_SearchBy.Text == "Year")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' ORDER BY YEAR(Ziua) DESC";
+                        }
+
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' AND YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
+                    else if (comboBox_SearchBy.Text == "Patient Last Name")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' ORDER BY NumePacient ASC";
+                        }
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' AND NumePacient LIKE '%" + txtBox_Search.Text + "%'";
+                        } 
                     }
 
                     else
                     {
-                        query = "SELECT * FROM dbo.Programare WHERE DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
-                    }
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' ORDER BY DAY(Ziua) DESC";
+                        }
 
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' AND DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
                 }
+                
 
                 DataSet set;
                 set = con.ExecuteDataSet(query);
@@ -156,56 +214,113 @@ namespace ProiectII.UserControls
             string query;
             try
             {
-                if (comboBox_SearchBy.Text == "Month")
+                if (position == 'd')
                 {
-                    if (txtBox_Search.Text == "Search Here")
+                    if (comboBox_SearchBy.Text == "Month")
                     {
-                        query = "SELECT * FROM dbo.Programare ORDER BY MONTH(Ziua) DESC";
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' ORDER BY MONTH(Ziua) DESC";
+                        }
+
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' AND MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
+                    else if (comboBox_SearchBy.Text == "Year")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' ORDER BY YEAR(Ziua) DESC";
+                        }
+
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' AND YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
+                    else if (comboBox_SearchBy.Text == "Patient Last Name")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' ORDER BY NumePacient ASC";
+                        }
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' AND NumePacient LIKE '%" + txtBox_Search.Text + "%'";
+                        }
                     }
 
                     else
                     {
-                        query = "SELECT * FROM dbo.Programare WHERE MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
-                    }
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' ORDER BY DAY(Ziua) DESC";
+                        }
 
-                }
-                else if (comboBox_SearchBy.Text == "Year")
-                {
-                    if (txtBox_Search.Text == "Search Here")
-                    {
-                        query = "SELECT * FROM dbo.Programare ORDER BY YEAR(Ziua) DESC";
-                    }
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor='" + userCNP + "' AND DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
 
-                    else
-                    {
-                        query = "SELECT * FROM dbo.Programare WHERE YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
-                    }
-
-                }
-                else if (comboBox_SearchBy.Text == "Patient Last Name")
-                {
-                    if (txtBox_Search.Text == "Search Here")
-                    {
-                        query = "SELECT * FROM dbo.Programare ORDER BY NumePacient ASC";
-                    }
-                    else
-                    {
-                        query = "SELECT * FROM dbo.Programare WHERE NumePacient LIKE '%" + txtBox_Search.Text + "%'";
                     }
                 }
-
                 else
                 {
-                    if (txtBox_Search.Text == "Search Here")
+                    if (comboBox_SearchBy.Text == "Month")
                     {
-                        query = "SELECT * FROM dbo.Programare ORDER BY DAY(Ziua) DESC";
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' ORDER BY MONTH(Ziua) DESC";
+                        }
+
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' AND MONTH(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
+                    else if (comboBox_SearchBy.Text == "Year")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' ORDER BY YEAR(Ziua) DESC";
+                        }
+
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' AND YEAR(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
+                    else if (comboBox_SearchBy.Text == "Patient Last Name")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' ORDER BY NumePacient ASC";
+                        }
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' AND NumePacient LIKE '%" + txtBox_Search.Text + "%'";
+                        }
                     }
 
                     else
                     {
-                        query = "SELECT * FROM dbo.Programare WHERE DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
-                    }
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' ORDER BY DAY(Ziua) DESC";
+                        }
 
+                        else
+                        {
+                            query = "SELECT * FROM dbo.Programare WHERE CNP_Asistent='" + userCNP + "' AND DAY(Ziua) LIKE '%" + txtBox_Search.Text + "%'";
+                        }
+
+                    }
                 }
 
                 DataSet set;
