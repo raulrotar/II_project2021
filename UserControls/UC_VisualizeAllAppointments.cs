@@ -29,18 +29,26 @@ namespace ProiectII.UserControls
             if (position == 'd')
             {
                 helloLabel.Text = "Hello Dr. " + verifier.SetUserName(userCNP, position);
+                con.Open();
+                string query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor = '"+userCNP+"'";
+                DataSet set;
+                set = con.ExecuteDataSet(query);
+                DataTable dataTable = set.Tables[0];
+                dataGridView1.DataSource = dataTable;
+                con.Close();
             }
             else
             {
                 helloLabel.Text = "Hello Asist. " + verifier.SetUserName(userCNP, position);
+                con.Open();
+                string query = "SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "'";
+                DataSet set;
+                set = con.ExecuteDataSet(query);
+                DataTable dataTable = set.Tables[0];
+                dataGridView1.DataSource = dataTable;
+                con.Close();
             }
-            con.Open();
-            string query = "Select * from dbo.Programare";
-            DataSet set;
-            set = con.ExecuteDataSet(query);
-            DataTable dataTable = set.Tables[0];
-            dataGridView1.DataSource = dataTable;
-            con.Close();
+            
         }
 
         private void VAA_Click(object sender, EventArgs e)
