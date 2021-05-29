@@ -96,39 +96,79 @@ namespace ProiectII.UserControls
             {
                 con.Open();
                 DataSet set;
-                 if (comboBox_SearchBy.Text == "Date")
+                if(position == 'd')
                 {
-                    if (txtBox_Search.Text == "Search Here")
+                    if (comboBox_SearchBy.Text == "Date")
                     {
-                       set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY Ziua DESC");
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '"+userCNP+"' ORDER BY Ziua DESC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' AND Ziua LIKE '%" + txtBox_Search.Text + "%'");
+                        }
+                    }
+                    else if (comboBox_SearchBy.Text == "Hour")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' ORDER BY Ora ASC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' AND Ora LIKE '%" + txtBox_Search.Text + "%'");
+                        }
                     }
                     else
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua LIKE '%" + txtBox_Search.Text + "%'");
-                    }
-                }
-                else if (comboBox_SearchBy.Text=="Hour")
-                {
-                    if (txtBox_Search.Text == "Search Here")
-                    {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY Ora ASC");
-                    }
-                    else
-                    {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ora LIKE '%" + txtBox_Search.Text + "%'");
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' ORDER BY NumePacient ASC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' AND NumePacient LIKE '%" + txtBox_Search.Text + "%'");
+                        }
                     }
                 }
                 else
                 {
-                    if (txtBox_Search.Text == "Search Here")
+                    if (comboBox_SearchBy.Text == "Date")
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY NumePacient ASC");
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '"+userCNP+"' ORDER BY Ziua DESC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' AND Ziua LIKE '%" + txtBox_Search.Text + "%'");
+                        }
+                    }
+                    else if (comboBox_SearchBy.Text == "Hour")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' ORDER BY Ora ASC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' AND Ora LIKE '%" + txtBox_Search.Text + "%'");
+                        }
                     }
                     else
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE NumePacient LIKE '%" + txtBox_Search.Text + "%'");
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' ORDER BY NumePacient ASC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' AND NumePacient LIKE '%" + txtBox_Search.Text + "%'");
+                        }
                     }
                 }
+                 
                 DataTable dataTable = set.Tables[0];
                 dataGridView1.DataSource = dataTable;
                 con.Close();
@@ -253,37 +293,76 @@ namespace ProiectII.UserControls
             {
                 con.Open();
                 DataSet set;
-                if (comboBox_SearchBy.Text == "Date")
+                if (position == 'd')
                 {
-                    if (txtBox_Search.Text == "Search Here")
+                    if (comboBox_SearchBy.Text == "Date")
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY Ziua DESC");
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' ORDER BY Ziua DESC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' AND Ziua LIKE '%" + txtBox_Search.Text + "%'");
+                        }
+                    }
+                    else if (comboBox_SearchBy.Text == "Hour")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' ORDER BY Ora ASC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' AND Ora LIKE '%" + txtBox_Search.Text + "%'");
+                        }
                     }
                     else
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua LIKE '%" + txtBox_Search.Text + "%'");
-                    }
-                }
-                else if (comboBox_SearchBy.Text == "Hour")
-                {
-                    if (txtBox_Search.Text == "Search Here")
-                    {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY Ora ASC");
-                    }
-                    else
-                    {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ora LIKE '%" + txtBox_Search.Text + "%'");
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' ORDER BY NumePacient ASC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Doctor = '" + userCNP + "' AND NumePacient LIKE '%" + txtBox_Search.Text + "%'");
+                        }
                     }
                 }
                 else
                 {
-                    if (txtBox_Search.Text == "Search Here")
+                    if (comboBox_SearchBy.Text == "Date")
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare ORDER BY NumePacient ASC");
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' ORDER BY Ziua DESC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' AND Ziua LIKE '%" + txtBox_Search.Text + "%'");
+                        }
+                    }
+                    else if (comboBox_SearchBy.Text == "Hour")
+                    {
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' ORDER BY Ora ASC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' AND Ora LIKE '%" + txtBox_Search.Text + "%'");
+                        }
                     }
                     else
                     {
-                        set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE NumePacient LIKE '%" + txtBox_Search.Text + "%'");
+                        if (txtBox_Search.Text == "Search Here")
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' ORDER BY NumePacient ASC");
+                        }
+                        else
+                        {
+                            set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE CNP_Asistent = '" + userCNP + "' AND NumePacient LIKE '%" + txtBox_Search.Text + "%'");
+                        }
                     }
                 }
                 DataTable dataTable = set.Tables[0];
