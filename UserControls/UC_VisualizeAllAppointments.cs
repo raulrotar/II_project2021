@@ -83,11 +83,12 @@ namespace ProiectII.UserControls
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            con.Open();
-            string query;
+            
             try
             {
-                if(position =='d')
+                con.Open();
+                string query;
+                if (position =='d')
                 {
                     if (comboBox_SearchBy.Text == "Month")
                     {
@@ -210,10 +211,11 @@ namespace ProiectII.UserControls
 
         private void VAA_TextChanged(object sender, EventArgs e)
         {
-            con.Open();
-            string query;
+            
             try
             {
+                con.Open();
+                string query;
                 if (position == 'd')
                 {
                     if (comboBox_SearchBy.Text == "Month")
