@@ -132,6 +132,7 @@ namespace ProiectII.UserControls
             this.btn_Clear.TabIndex = 11;
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.UseVisualStyleBackColor = false;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // btn_Save
             // 

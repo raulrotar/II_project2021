@@ -328,5 +328,16 @@ namespace ProiectII.UserControls
                 throw;
             }
         }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txtBox_PatientFName.Text = "Patient First Name";
+            txtBox_Hour.Text = "Hour";
+            txtBox_PatientLName.Text = "Patient Last Name";
+            txtBox_PatientNIN.Text = "Patient NIN";
+            txtBox_PatientAge.Text = "Patient Age";
+            txtBox_PatientPhoneNr.Text = "Patient Phone Number";
+            txtBox_EmailAddress.Text = "Email Address";
+        }
     }
 }
