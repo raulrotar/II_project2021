@@ -84,7 +84,6 @@ namespace ProiectII.UserControls
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             con.Close();
@@ -205,7 +204,7 @@ namespace ProiectII.UserControls
         {
             DateTime hour = DateTime.Parse(Hour, System.Globalization.CultureInfo.CurrentCulture);
             DataSet set = con.ExecuteDataSet("SELECT * FROM dbo.Programare WHERE Ziua='" + date + "' AND Ora='" + hour + "'");
-            if (set.Tables[0].Rows.Count > 0)
+            if (set.Tables[0].Rows.Count > 1)
             {
                 return false;
             }
@@ -567,5 +566,7 @@ namespace ProiectII.UserControls
                 MessageBox.Show("Please insert a valid email address!!!");
             }
         }
+
+
     }
 }

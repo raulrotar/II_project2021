@@ -164,23 +164,55 @@ namespace ProiectII.UserControls
 
         private void btn_InsertRecord_Click(object sender, EventArgs e)
         {
+            int a;
             try
             {
                 con.Open();
                 if (comboBox_SearchBy.Text == "Treatment")
                 {
-                    con.ExecuteNonQuery("INSERT INTO dbo.Tratament (Nume) VALUES ('" + txtBox_Name.Text + "')");
+                    if (txtBox_Name.Text=="Name" || txtBox_Name.Text=="")
+                    {
+                        MessageBox.Show("Please insert a valid name!!!");
+                    }
+                    else
+                    {
+                         con.ExecuteNonQuery("INSERT INTO dbo.Tratament (Nume) VALUES ('" + txtBox_Name.Text + "')");
+                        MessageBox.Show("Information was added successfully!");
+                    }
+
                 }
                 else if (comboBox_SearchBy.Text == "Dental Work")
                 {
-                    con.ExecuteNonQuery("INSERT INTO dbo.Lucrari (Nume,Pret) VALUES ('" + txtBox_Name.Text + "' , '" + Int32.Parse(txtBox_Price.Text) + "')");
+                    if (txtBox_Name.Text == "Name" || txtBox_Name.Text=="")
+                    {
+                        MessageBox.Show("Please insert a valid name!!!");
+                    }
+                    else if (!int.TryParse(txtBox_Price.Text, out a))
+                    {
+                        MessageBox.Show("Please insert a valid price !!!");
+                    }
+                    else
+                    {
+                         con.ExecuteNonQuery("INSERT INTO dbo.Lucrari (Nume,Pret) VALUES ('" + txtBox_Name.Text + "' , '" + Int32.Parse(txtBox_Price.Text) + "')");
+                        MessageBox.Show("Information was added successfully!");
+                    }
+                   
                 }
                 else
                 {
-                    con.ExecuteNonQuery("INSERT INTO dbo.Diagnostic (Nume) VALUES ('" + txtBox_Name.Text + "')");
+                    if (txtBox_Name.Text == "Name" || txtBox_Name.Text == "")
+                    {
+                        MessageBox.Show("Please insert a valid name !!!");
+                    }
+                    else
+                    {
+                        con.ExecuteNonQuery("INSERT INTO dbo.Diagnostic (Nume) VALUES ('" + txtBox_Name.Text + "')");
+                        MessageBox.Show("Information was added successfully!");
+                    }
+
                 }
                 
-                MessageBox.Show("Information was added successfully!");
+                
                 con.Close();
             }
 
@@ -193,23 +225,54 @@ namespace ProiectII.UserControls
 
         private void btn_UpdateRecord_Click(object sender, EventArgs e)
         {
+            int a;
             con.Open();
             try
             {
                 if (comboBox_SearchBy.Text == "Treatment")
                 {
-                    con.ExecuteNonQuery("UPDATE dbo.Tratament SET Nume ='" + txtBox_Name.Text + "' WHERE Id='" + id + "' ");
+                    if (txtBox_Name.Text == "Name" || txtBox_Name.Text == "")
+                    {
+                        MessageBox.Show("Please insert a valid name !!!");
+                    }
+                    else
+                    {
+                      con.ExecuteNonQuery("UPDATE dbo.Tratament SET Nume ='" + txtBox_Name.Text + "' WHERE Id='" + id + "' ");
+                        MessageBox.Show("Record Updated Successfully!");
+                    }
                 }
                 else if (comboBox_SearchBy.Text == "Dental Work")
                 {
-                    con.ExecuteNonQuery("UPDATE dbo.Lucrari SET Nume ='" + txtBox_Name.Text + "',Pret='" + Int32.Parse(txtBox_Price.Text) + "' WHERE Id='" + id + "' ");
+                    if (txtBox_Name.Text=="Name" || txtBox_Name.Text=="")
+                    {
+                        MessageBox.Show("Please select a valid name!!!");
+                    }
+                    else if (!int.TryParse(txtBox_Price.Text,out a))
+                    {
+                        MessageBox.Show("Please insert a valid price !!!");
+                    }
+                    else
+                    {
+                        con.ExecuteNonQuery("UPDATE dbo.Lucrari SET Nume ='" + txtBox_Name.Text + "',Pret='" + Int32.Parse(txtBox_Price.Text) + "' WHERE Id='" + id + "' ");
+                        MessageBox.Show("Record Updated Successfully!");
+                    }
+
                 }
                 else
                 {
-                    con.ExecuteNonQuery("UPDATE dbo.Diagnostic SET Nume ='" + txtBox_Name.Text + "' WHERE Id='" + id + "' ");
+                    if (txtBox_Name.Text == "Name" || txtBox_Name.Text == "")
+                    {
+                        MessageBox.Show("Please insert a valid name !!!");
+                    }
+                    else
+                    {
+                        con.ExecuteNonQuery("UPDATE dbo.Diagnostic SET Nume ='" + txtBox_Name.Text + "' WHERE Id='" + id + "' ");
+                        MessageBox.Show("Record Updated Successfully!");
+                    }
+
                 }
 
-                MessageBox.Show("Record Updated Successfully!");
+
                 con.Close();
             }
             catch (Exception)
@@ -221,6 +284,7 @@ namespace ProiectII.UserControls
 
         private void btn_DeleteRecord_Click(object sender, EventArgs e)
         {
+            int a;
             con.Open();
             try
             {
@@ -230,7 +294,7 @@ namespace ProiectII.UserControls
                 }
                 else if (comboBox_SearchBy.Text == "Dental Work")
                 {
-                    con.ExecuteNonQuery("DELETE FROM dbo.Lucrari WHERE Id='" + id + "'");
+                        con.ExecuteNonQuery("DELETE FROM dbo.Lucrari WHERE Id='" + id + "'");
                 }
                 else
                 {
