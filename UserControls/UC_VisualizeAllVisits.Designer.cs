@@ -142,7 +142,6 @@ namespace ProiectII.UserControls
             this.comboBox_SearchBy.FormattingEnabled = true;
             this.comboBox_SearchBy.Items.AddRange(new object[] {
             "Day",
-            "Patient Last Name",
             "Month",
             "Year"});
             this.comboBox_SearchBy.Location = new System.Drawing.Point(369, 232);
