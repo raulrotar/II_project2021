@@ -315,13 +315,21 @@ namespace ProiectII.UserControls
                     con.Open();
                     if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text) && verifier.CheckEmailAddress(txtBox_EmailAddress.Text))
                     {
-                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to finish the visit?", "Finish visit confirmation", MessageBoxButtons.YesNo);
-                        if (dialogResult == DialogResult.Yes)
+                        if (cmbBox_Diagnostic.Text=="Diagnostic" || cmbBox_Work.Text=="Dental Work" || cmbBox_Treatment.Text=="Treatment")
                         {
-                            con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Nume_Lucrare,Nume_Diagnostic,Nume_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + cmbBox_Diagnostic.Text + "','" + cmbBox_Work.Text + "','" + cmbBox_Treatment.Text + "')");
-                            MessageBox.Show("Visit was completed successfully!!!");
-                            ResetFields();
+                            MessageBox.Show("Please select the diagnostic ,dental work and treatment used in this visit!!!");
                         }
+                        else
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Are you sure you want to finish the visit?", "Finish visit confirmation", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Nume_Lucrare,Nume_Diagnostic,Nume_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + cmbBox_Diagnostic.Text + "','" + cmbBox_Work.Text + "','" + cmbBox_Treatment.Text + "')");
+                                MessageBox.Show("Visit was completed successfully!!!");
+                                ResetFields();
+                            }
+                        }
+                        
                     }
                     else
                     {
