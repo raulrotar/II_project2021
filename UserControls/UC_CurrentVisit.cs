@@ -233,6 +233,7 @@ namespace ProiectII.UserControls
                 if (set.Tables[0].Rows.Count == 0)
                 {
                     existsAppointments = false;
+                    ResetFields();
                     MessageBox.Show("There are no appointments left for today!!!");
                 } 
 
@@ -301,41 +302,20 @@ namespace ProiectII.UserControls
             if (existsAppointments == false)
             {
                 MessageBox.Show("Visits don't happen without appointmets!!!");
+                ResetFields();
             }
             else
             {
                 try
                 {
                     con.Open();
-                    /*
-                    SqlDataReader DiagnosticReader = con.ExecuteReader("Select Id From dbo.Diagnostic WHERE Nume='" + cmbBox_Diagnostic.Text + "'");
-                    while (DiagnosticReader.Read())
-                    {
-                        Id_Diagnostic = DiagnosticReader.GetInt32(0);
-                    }
-                    DiagnosticReader.Close();
-
-                    SqlDataReader WorkReader = con.ExecuteReader("Select Id From dbo.Lucrari WHERE Nume='" + cmbBox_Work.Text + "'");
-                    while (WorkReader.Read())
-                    {
-                        Id_Lucrare = WorkReader.GetInt32(0);
-                    }
-                    WorkReader.Close();
-
-                    SqlDataReader TreatmentReader = con.ExecuteReader("Select Id From dbo.Tratament WHERE Nume='" + cmbBox_Treatment.Text + "'");
-                    while (TreatmentReader.Read())
-                    {
-                        Id_Tratament = TreatmentReader.GetInt32(0);
-                    }
-                    TreatmentReader.Close();
-                    */
                     if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
                     {
-                        MessageBox.Show("");
                         DialogResult dialogResult = MessageBox.Show("Are you sure you want to finish the visit?", "Finish visit confirmation", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
                             con.ExecuteNonQuery("INSERT INTO dbo.Vizita (CNP_Doctor,CNP_Asistent,CNP_Pacient,Ora,Ziua,Nume_Lucrare,Nume_Diagnostic,Nume_Tratament) VALUES('" + CNP_Doctor + "','" + CNP_Asistant + "','" + Int64.Parse(txtBox_PatientNIN.Text) + "','" + DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture) + "','" + dateTimePicker.Value + "','" + cmbBox_Diagnostic.Text + "','" + cmbBox_Work.Text + "','" + cmbBox_Treatment.Text + "')");
+                            ResetFields();
                         }
                     }
                     else

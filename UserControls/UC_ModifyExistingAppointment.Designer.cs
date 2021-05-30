@@ -163,6 +163,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientFName.TabIndex = 24;
             this.txtBox_PatientFName.Text = "Patient First Name";
             this.txtBox_PatientFName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientFName.Click += new System.EventHandler(this.PFN_Click);
+            this.txtBox_PatientFName.Leave += new System.EventHandler(this.PFN_Leave);
             // 
             // panel5
             // 
@@ -186,6 +188,8 @@ namespace ProiectII.UserControls
             this.txtBox_Hour.TabIndex = 23;
             this.txtBox_Hour.Text = "Hour";
             this.txtBox_Hour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_Hour.Click += new System.EventHandler(this.Hour_Click);
+            this.txtBox_Hour.Leave += new System.EventHandler(this.Hour_Leave);
             // 
             // dateTimePicker
             // 
@@ -331,6 +335,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientLName.TabIndex = 34;
             this.txtBox_PatientLName.Text = "Patient Last Name";
             this.txtBox_PatientLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientLName.Click += new System.EventHandler(this.PLN_Click);
+            this.txtBox_PatientLName.Leave += new System.EventHandler(this.PLN_Leave);
             // 
             // panel7
             // 
@@ -375,6 +381,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.TabIndex = 37;
             this.txtBox_PatientNIN.Text = "Patient NIN";
             this.txtBox_PatientNIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientNIN.Click += new System.EventHandler(this.PNIN_Click);
+            this.txtBox_PatientNIN.Leave += new System.EventHandler(this.PNIN_Leave);
             // 
             // pictureBox12
             // 
@@ -410,6 +418,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientAge.TabIndex = 58;
             this.txtBox_PatientAge.Text = "Patient Age";
             this.txtBox_PatientAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientAge.Click += new System.EventHandler(this.PAge_Click);
+            this.txtBox_PatientAge.Leave += new System.EventHandler(this.PAge_Leave);
             // 
             // pictureBox13
             // 
@@ -445,6 +455,8 @@ namespace ProiectII.UserControls
             this.txtBox_PatientPhoneNr.TabIndex = 61;
             this.txtBox_PatientPhoneNr.Text = "Patient Phone Number";
             this.txtBox_PatientPhoneNr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox_PatientPhoneNr.Click += new System.EventHandler(this.PPN_Click);
+            this.txtBox_PatientPhoneNr.Leave += new System.EventHandler(this.PPN_Leave);
             // 
             // comboBox_Email
             // 
@@ -474,6 +486,8 @@ namespace ProiectII.UserControls
             this.txtBox_EmailAddress.Size = new System.Drawing.Size(223, 28);
             this.txtBox_EmailAddress.TabIndex = 64;
             this.txtBox_EmailAddress.Text = "Email Address";
+            this.txtBox_EmailAddress.Click += new System.EventHandler(this.PEmailAddress_Click);
+            this.txtBox_EmailAddress.Leave += new System.EventHandler(this.PEmailAddress_Leave);
             // 
             // panel10
             // 

@@ -418,5 +418,146 @@ namespace ProiectII.UserControls
             txtBox_PatientPhoneNr.Text = "Patient Phone Number";
             txtBox_EmailAddress.Text = "Email Address";
         }
+
+        #region Patient Personal Info 
+
+        //Patient First Name 
+        private void PFN_Click(object sender, EventArgs e)
+        {
+            if (txtBox_PatientFName.Text == "Patient First Name")
+            {
+                txtBox_PatientFName.Text = "";
+            }
+        }
+        private void PFN_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_PatientFName.Text == "")
+            {
+                txtBox_PatientFName.Text = "Patient First Name";
+            }
+        }
+
+        //Patient Last Name
+        private void PLN_Click(object sender, EventArgs e)
+        {
+            if (txtBox_PatientLName.Text == "Patient Last Name")
+            {
+                txtBox_PatientLName.Text = "";
+            }
+        }
+
+        private void PLN_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_PatientLName.Text == "")
+            {
+                txtBox_PatientLName.Text = "Patient Last Name";
+            }
+        }
+
+        //Patient National Identification Number
+        private void PNIN_Click(object sender, EventArgs e)
+        {
+            if (txtBox_PatientNIN.Text == "Patient NIN")
+            {
+                txtBox_PatientNIN.Text = "";
+            }
+        }
+
+        private void PNIN_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_PatientNIN.Text == "")
+            {
+                txtBox_PatientNIN.Text = "Patient NIN";
+            }
+        }
+
+        //Patient Age
+        private void PAge_Click(object sender, EventArgs e)
+        {
+            if (txtBox_PatientAge.Text == "Patient Age")
+            {
+                txtBox_PatientAge.Text = "";
+            }
+        }
+
+        private void PAge_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_PatientAge.Text == "")
+            {
+                txtBox_PatientAge.Text = "Patient Age";
+            }
+        }
+
+        //PAtient Phone Number
+        private void PPN_Click(object sender, EventArgs e)
+        {
+            if (txtBox_PatientPhoneNr.Text == "Patient Phone Number")
+            {
+                txtBox_PatientPhoneNr.Text = "";
+            }
+        }
+
+        private void PPN_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_PatientPhoneNr.Text == "")
+            {
+                txtBox_PatientPhoneNr.Text = "Patient Phone Number";
+            }
+        }
+
+        //Patient Email Address
+        private void PEmailAddress_Click(object sender, EventArgs e)
+        {
+            if (txtBox_EmailAddress.Text == "Email Address")
+            {
+                txtBox_EmailAddress.Text = "";
+            }
+        }
+
+        private void PEmailAddress_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_EmailAddress.Text == "")
+            {
+                txtBox_EmailAddress.Text = "Email Address";
+            }
+        }
+
+        private void Hour_Click(object sender, EventArgs e)
+        {
+            if (txtBox_Hour.Text == "Hour")
+            {
+                txtBox_Hour.Text = "";
+            }
+        }
+
+        private void Hour_Leave(object sender, EventArgs e)
+        {
+            if (txtBox_Hour.Text == "")
+            {
+                txtBox_Hour.Text = "Hour";
+            }
+
+            if (!verifier.CheckHour(txtBox_Hour.Text) )
+            {
+                MessageBox.Show("The hour is not in a corect format!!!  Please use this format Hour:Minutes");
+                return;
+            }
+            else
+            {
+                DateTime hour = DateTime.Parse(txtBox_Hour.Text, System.Globalization.CultureInfo.CurrentCulture);
+                if (hour.Minute == 30 || hour.Minute == 0)
+                {
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Visits take place every 30 minutes;  minutes are:" + hour.Minute);
+                }
+            }
+
+
+        }
+
+        #endregion
     }
 }

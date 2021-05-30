@@ -16,7 +16,7 @@ namespace ProiectII.UserControls
         Connection con = new Connection();
         Int64 userCNP;
         char position;
-        int id = 0;
+        Int64 id = 0;
         public UC_LogisticalChanges(Int64 userCNP, char position)
         {
             InitializeComponent();
@@ -24,11 +24,29 @@ namespace ProiectII.UserControls
             this.position = position;
         }
 
-
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Select_ALL(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                if (selectedRow.Cells[0].Value.ToString() != "")
+                {
+                    id = Int64.Parse(selectedRow.Cells[0].Value.ToString());
+                    txtBox_Name.Text = selectedRow.Cells[1].Value.ToString();
+                    if(selectedRow.Cells.Count>2)
+                    {
+                        txtBox_Price.Text = selectedRow.Cells[2].Value.ToString();
+                    }
+                }
+            }
         }
 
         private void UC_LogisticalChanges_Load(object sender, EventArgs e)

@@ -70,9 +70,9 @@ namespace ProiectII
             this.loginGB.Controls.Add(this.btn_Login);
             this.loginGB.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginGB.Location = new System.Drawing.Point(388, 46);
-            this.loginGB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginGB.Margin = new System.Windows.Forms.Padding(2);
             this.loginGB.Name = "loginGB";
-            this.loginGB.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginGB.Padding = new System.Windows.Forms.Padding(2);
             this.loginGB.Size = new System.Drawing.Size(286, 489);
             this.loginGB.TabIndex = 1;
             this.loginGB.TabStop = false;
@@ -95,7 +95,7 @@ namespace ProiectII
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(255, 104);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(22, 24);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +108,7 @@ namespace ProiectII
             this.txtBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_Password.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtBox_Password.Location = new System.Drawing.Point(50, 102);
-            this.txtBox_Password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBox_Password.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_Password.Multiline = true;
             this.txtBox_Password.Name = "txtBox_Password";
             this.txtBox_Password.Size = new System.Drawing.Size(202, 24);
@@ -124,7 +124,7 @@ namespace ProiectII
             this.txtBox_UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_UserName.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtBox_UserName.Location = new System.Drawing.Point(50, 37);
-            this.txtBox_UserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBox_UserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_UserName.Multiline = true;
             this.txtBox_UserName.Name = "txtBox_UserName";
             this.txtBox_UserName.Size = new System.Drawing.Size(202, 24);
@@ -139,7 +139,7 @@ namespace ProiectII
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Location = new System.Drawing.Point(19, 132);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 1);
             this.panel1.TabIndex = 14;
@@ -148,7 +148,7 @@ namespace ProiectII
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(19, 102);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(22, 24);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,7 +159,7 @@ namespace ProiectII
             // 
             this.panel.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel.Location = new System.Drawing.Point(20, 67);
-            this.panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel.Margin = new System.Windows.Forms.Padding(2);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(228, 1);
             this.panel.TabIndex = 12;
@@ -168,7 +168,7 @@ namespace ProiectII
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(19, 37);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(22, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -182,7 +182,7 @@ namespace ProiectII
             this.btn_NewAcount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NewAcount.ForeColor = System.Drawing.Color.White;
             this.btn_NewAcount.Location = new System.Drawing.Point(19, 414);
-            this.btn_NewAcount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_NewAcount.Margin = new System.Windows.Forms.Padding(2);
             this.btn_NewAcount.Name = "btn_NewAcount";
             this.btn_NewAcount.Size = new System.Drawing.Size(247, 32);
             this.btn_NewAcount.TabIndex = 10;
@@ -197,7 +197,7 @@ namespace ProiectII
             this.btn_ResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ResetPassword.ForeColor = System.Drawing.Color.White;
             this.btn_ResetPassword.Location = new System.Drawing.Point(19, 311);
-            this.btn_ResetPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_ResetPassword.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ResetPassword.Name = "btn_ResetPassword";
             this.btn_ResetPassword.Size = new System.Drawing.Size(247, 32);
             this.btn_ResetPassword.TabIndex = 4;
@@ -237,7 +237,7 @@ namespace ProiectII
             this.btn_Login.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Login.Location = new System.Drawing.Point(20, 201);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(246, 41);
             this.btn_Login.TabIndex = 7;
@@ -249,7 +249,7 @@ namespace ProiectII
             // 
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.Location = new System.Drawing.Point(34, 67);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(261, 162);
             this.pictureBox.TabIndex = 2;
@@ -258,12 +258,12 @@ namespace ProiectII
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 247);
+            this.label1.Location = new System.Drawing.Point(93, 247);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.Size = new System.Drawing.Size(249, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Insert nume grup here";
+            this.label1.Text = "Copyright 2021 | All rights reserved | ABIR Company";
             // 
             // LoginForm
             // 
@@ -275,7 +275,7 @@ namespace ProiectII
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.loginGB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.ShowIcon = false;
