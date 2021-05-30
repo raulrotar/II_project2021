@@ -559,5 +559,13 @@ namespace ProiectII.UserControls
         }
 
         #endregion
+
+        private void EmailAddress_TextChanged(object sender, EventArgs e)
+        {
+            if (!verifier.CheckEmailAddress(txtBox_EmailAddress.Text))
+            {
+                MessageBox.Show("Please insert a valid email address!!!");
+            }
+        }
     }
 }

@@ -567,6 +567,7 @@ namespace ProiectII.UserControls
             this.txtBox_EmailAddress.TabIndex = 48;
             this.txtBox_EmailAddress.Text = "Email Address";
             this.txtBox_EmailAddress.Click += new System.EventHandler(this.PEmailAddress_Click);
+            this.txtBox_EmailAddress.TextChanged += new System.EventHandler(this.EmailAddress_textChanged);
             this.txtBox_EmailAddress.Leave += new System.EventHandler(this.PEmailAddress_Leave);
             // 
             // panel10

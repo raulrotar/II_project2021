@@ -294,5 +294,14 @@ namespace ProiectII
             }
         }
         #endregion
+
+        public bool CheckEmailAddress(String Email)
+        {
+            if (Email.Contains("@"))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

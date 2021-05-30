@@ -139,7 +139,7 @@ namespace ProiectII.UserControls
                     docCNPReader.Close();
                 }
 
-                if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text))
+                if (verifier.CheckNIN(txtBox_PatientNIN.Text) && verifier.CheckName(txtBox_PatientFName.Text) && verifier.CheckName(txtBox_PatientLName.Text) && verifier.CheckPhoneNumber(txtBox_PatientPhoneNr.Text) && verifier.CheckAge(txtBox_PatientAge.Text) && verifier.CheckEmailAddress(txtBox_EmailAddress.Text))
                 {
                     if (verifier.CheckDate(dateTimePicker.Value) && verifier.CheckHour(txtBox_Hour.Text))
                     {
@@ -307,6 +307,14 @@ namespace ProiectII.UserControls
             }
 
 
+        }
+
+        private void EmailAddress_ttextChanged(object sender, EventArgs e)
+        {
+            if (!verifier.CheckEmailAddress(txtBox_EmailAddress.Text))
+            {
+                MessageBox.Show("Please insert a valid email address!!!");
+            }
         }
     }
 }

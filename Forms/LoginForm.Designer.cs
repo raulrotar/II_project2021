@@ -69,7 +69,7 @@ namespace ProiectII
             this.loginGB.Controls.Add(this.label2);
             this.loginGB.Controls.Add(this.btn_Login);
             this.loginGB.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginGB.Location = new System.Drawing.Point(388, 46);
+            this.loginGB.Location = new System.Drawing.Point(388, 31);
             this.loginGB.Margin = new System.Windows.Forms.Padding(2);
             this.loginGB.Name = "loginGB";
             this.loginGB.Padding = new System.Windows.Forms.Padding(2);
@@ -252,18 +252,20 @@ namespace ProiectII
             this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(261, 162);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 2;
             this.pictureBox.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 247);
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 539);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 13);
+            this.label1.Size = new System.Drawing.Size(439, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Copyright 2021 | All rights reserved | ABIR Company";
+            this.label1.Text = "© Copyright 2021 | All rights reserved | ABIR Company";
             // 
             // LoginForm
             // 

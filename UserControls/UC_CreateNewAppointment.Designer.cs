@@ -36,6 +36,8 @@ namespace ProiectII.UserControls
             this.btn_Clear = new System.Windows.Forms.Button();
             this.btn_Create = new System.Windows.Forms.Button();
             this.grpBox_VisitInfo = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.Hour_Ok = new System.Windows.Forms.Label();
             this.cmbBox_Assistant = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -63,8 +65,6 @@ namespace ProiectII.UserControls
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtBox_PatientNIN = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.grpBox_VisitInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -166,6 +166,26 @@ namespace ProiectII.UserControls
             this.grpBox_VisitInfo.TabIndex = 47;
             this.grpBox_VisitInfo.TabStop = false;
             this.grpBox_VisitInfo.Text = "Appointment Information";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel3.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel3.Location = new System.Drawing.Point(132, 126);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(225, 1);
+            this.panel3.TabIndex = 48;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel5.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel5.Location = new System.Drawing.Point(1122, 124);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(225, 1);
+            this.panel5.TabIndex = 49;
             // 
             // Hour_Ok
             // 
@@ -426,6 +446,7 @@ namespace ProiectII.UserControls
             this.txtBox_EmailAddress.TabIndex = 48;
             this.txtBox_EmailAddress.Text = "Email Address";
             this.txtBox_EmailAddress.Click += new System.EventHandler(this.Email_Click);
+            this.txtBox_EmailAddress.TextChanged += new System.EventHandler(this.EmailAddress_ttextChanged);
             this.txtBox_EmailAddress.Leave += new System.EventHandler(this.Email_Leave);
             // 
             // pictureBox1
@@ -520,26 +541,6 @@ namespace ProiectII.UserControls
             this.txtBox_PatientNIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox_PatientNIN.Click += new System.EventHandler(this.NIN_Click);
             this.txtBox_PatientNIN.Leave += new System.EventHandler(this.NIN_Leave);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel5.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel5.Location = new System.Drawing.Point(1122, 124);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(225, 1);
-            this.panel5.TabIndex = 49;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel3.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel3.Location = new System.Drawing.Point(132, 126);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(225, 1);
-            this.panel3.TabIndex = 48;
             // 
             // UC_CreateNewAppointment
             // 
